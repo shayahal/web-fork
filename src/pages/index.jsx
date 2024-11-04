@@ -2,14 +2,14 @@ import { graphql } from 'gatsby';
 import get from 'lodash/get';
 import React from 'react';
 
-import Header from '../components/header';
-import Layout from '../components/layout';
-import SectionAbout from '../components/section-about';
-import SectionBlog from '../components/section-blog';
-import SectionExperience from '../components/section-experience';
-import SectionProjects from '../components/section-projects';
-import SectionSkills from '../components/section-skills';
-import SEO from '../components/seo';
+import Header from '../../src/components/header';
+import Layout from '../../src/components/layout';
+import SectionAbout from '../../src/components/section-about';
+import SectionBlog from '../../src/components/section-blog';
+import SectionExperience from '../../src/components/section-experience';
+import SectionProjects from '../../src/components/section-projects';
+import SectionSkills from '../../src/components/section-skills';
+import SEO from '../../src/components/seo';
 
 const Index = ({ data }) => {
   const about = get(data, 'site.siteMetadata.about', false);
