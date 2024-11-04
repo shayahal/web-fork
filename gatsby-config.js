@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     // Site URL for when it goes live
-    siteUrl: `https://elastic-meninsky-aa7c74.netlify.app/`,
+    siteUrl: `https://shayahal.com/`,
     // Your Name
     name: 'Shay Yahal',
     // Main Site Title
@@ -9,7 +9,7 @@ module.exports = {
     // Description that goes under your name in main bio
     description: `Lorem ipsum dolor sit amet consectetur adipisicing elit, ipsum.`,
     // Optional: Twitter account handle
-    author: `@rfitzio`,
+    author: `@shayahal`,
     // Optional: Github account URL
     github: `https://github.com/shayahal`,
     // Optional: LinkedIn account URL
@@ -109,7 +109,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-postcss`,
-    `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
