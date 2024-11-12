@@ -3,6 +3,7 @@
   "private": true,
   "description": "A modern and production-ready personal portfolio + blog template built with GatsbyJs and TailwindCSS",
   "version": "0.1.0",
+  "homepage": "https://shayahal.github.io/web-fork",
   "author": "Ryan Fitzgerald",
   "dependencies": {
     "gatsby": "^5.13.1",
@@ -46,9 +47,7 @@
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "clean": "gatsby clean", 
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "clean": "gatsby clean"
   },
   "repository": {
     "type": "git",
