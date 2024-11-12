@@ -4,7 +4,6 @@
   "description": "A modern and production-ready personal portfolio + blog template built with GatsbyJs and TailwindCSS",
   "version": "0.1.0",
   "author": "Ryan Fitzgerald",
-  "homepage": "https://shayahal.com",
   "dependencies": {
     "gatsby": "^5.13.1",
     "gatsby-image": "^3.11.0",
