@@ -1,13 +1,15 @@
 module.exports = {
   siteMetadata: {
     // Site URL for when it goes live
-    siteUrl: `https://shayahal.com/`,
+    siteUrl: `https://shayahal.github.com/web-fork`,
+    pathPrefix: "/web-fork", 
     // Your Name
     name: 'Shay Yahal',
     // Main Site Title
     title: `Shay Yahal | Yours`,
     // Description that goes under your name in main bio
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit, ipsum.`,
+    description: `Lorem ipsum dolornpm run clean
+ sit amet consectetur adipisicing elit, ipsum.`,
     // Optional: Twitter account handle
     author: `@shayahal`,
     // Optional: Github account URL

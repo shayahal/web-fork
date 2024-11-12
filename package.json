@@ -47,11 +47,13 @@
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "predeploy": "gatsby build --prefix-paths",
+    "deploy": "gh-pages -d public"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/RyanFitzgerald/devfolio"
+    "url": "https://github.com/shayahal/web-fork"
   },
   "bugs": {
     "url": "https://github.com/RyanFitzgerald/devfolio/issues"
