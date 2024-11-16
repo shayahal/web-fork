@@ -5,6 +5,7 @@ import React from 'react';
 import Header from '../components/header';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import '../css/styles.css'; 
 
 const classes = {
   wrapper: 'mt-16 blog-content',
@@ -14,19 +15,22 @@ const classes = {
 
 const BlogPost = ({ data }) => {
   const post = data.markdownRemark;
+  const isRTL = post.frontmatter.language === 'he'; 
 
   return (
     <Layout>
       <Header metadata={data.site.siteMetadata} />
       <SEO title={post.frontmatter.title} />
-      <h1 className={classes.title}>{post.frontmatter.title}</h1>
-      <p className={classes.date}>
-        Posted on {moment(post.frontmatter.date).format('MMMM D, YYYY')}
-      </p>
-      <div
-        className={classes.wrapper}
-        dangerouslySetInnerHTML={{ __html: post.html }}
-      />
+      <div className={`blog-post ${isRTL ? 'rtl' : ''}`}>
+        <h1 className={classes.title}>{post.frontmatter.title}</h1>
+        <p className={classes.date}>
+          Posted on {moment(post.frontmatter.date).format('MMMM D, YYYY')}
+        </p>
+        <div
+          className={classes.wrapper}
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
+      </div>
     </Layout>
   );
 };
@@ -54,6 +58,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        language
       }
     }
   }

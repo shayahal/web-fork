@@ -11,7 +11,7 @@ module.exports = {
     description: `Lorem ipsum dolornpm run clean
  sit amet consectetur adipisicing elit, ipsum.`,
     // Optional: Twitter account handle
-    author: `@shayahal`,
+    author: `@shayahal1`,
     // Optional: Github account URL
     github: `https://github.com/shayahal`,
     // Optional: LinkedIn account URL
@@ -23,31 +23,21 @@ module.exports = {
       {
         name: 'ShayShu',
         description:
-          'A zero-config and blazing fast personal site + blog built with GatsbyJs and TailwindCSS',
-        link: 'https://github.com/RyanFitzgerald/devfolio',
+          'A zero-config Blah Blah',
+        link: 'Non',
       },
       {
-        name: 'Another Cool Project',
+        name: 'This Repo is',
         description:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit ducimus perferendis',
         link: 'https://github.com/RyanFitzgerald/devfolio',
       },
     ],
-    // Optional: List your experience, they must have `name` and `description`. `link` is optional.
-    experience: [
+    // Optional: List your recommendations, they must have `name` and `description`. `link` is optional.
+    recommendations: [
       {
-        name: 'Acme Corp',
-        description: 'Full-Stack Developer, February 2020 - Present',
-        link: 'https://github.com/RyanFitzgerald/devfolio',
-      },
-      {
-        name: 'Globex Corp',
-        description: 'Full-Stack Developer, December 2017 - February 2020',
-        link: 'https://github.com/RyanFitzgerald/devfolio',
-      },
-      {
-        name: 'Hooli',
-        description: 'Full-Stack Developer, May 2015 - December 2017',
+        name: 'Nothing intersting',
+        description: 'Data Data',
         link: 'https://github.com/RyanFitzgerald/devfolio',
       },
     ],

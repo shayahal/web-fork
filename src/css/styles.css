@@ -1,0 +1,12 @@
+/* Styles for blog posts */
+.blog-post {
+    margin: 0 auto;
+    max-width: 800px;
+  }
+  
+  /* Apply RTL for Hebrew posts */
+  .rtl {
+    direction: rtl;
+    text-align: right;
+  }
+  
