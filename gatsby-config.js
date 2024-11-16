@@ -38,7 +38,7 @@ module.exports = {
       {
         name: 'Nothing intersting',
         description: 'Data Data',
-        link: 'https://github.com/RyanFitzgerald/devfolio',
+        link: 'https://github.com/Blahblah',
       },
     ],
     // Optional: List your skills, they must have `name` and `description`.

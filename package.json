@@ -1,10 +1,9 @@
 {
-  "name": "devfolio",
+  "name": "web-fork",
   "private": true,
   "description": "A modern and production-ready personal portfolio + blog template built with GatsbyJs and TailwindCSS",
   "version": "0.1.0",
   "homepage": "https://shayahal.github.io/web-fork",
-  "author": "Ryan Fitzgerald",
   "dependencies": {
     "gatsby": "^5.13.1",
     "gatsby-image": "^3.11.0",
