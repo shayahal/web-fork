@@ -21,7 +21,7 @@
     "gatsby-remark-smartypants": "^6.13.0",
     "gatsby-source-filesystem": "^5.13.0",
     "gatsby-transformer-remark": "^6.13.0",
-    "gatsby-transformer-sharp": "^5.13.0",
+    "gatsby-transformer-sharp": "^5.14.0",
     "gray-matter": "^4.0.3",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",
@@ -34,14 +34,7 @@
     "react-helmet": "^6.1.0",
     "react-markdown": "^9.0.1",
     "remark": "^15.0.1",
-    "remark-html": "^16.0.1",
-    "gatsby-plugin-image": "^3.0.0",
-    "gatsby-plugin-sharp": "^3.0.0",
-    "gatsby-remark-images": "^6.0.0",
-    "gatsby-remark-responsive-iframe": "^5.0.0",
-    "gatsby-source-filesystem": "^3.0.0",
-    "gatsby-transformer-remark": "^5.0.0",
-    "gatsby-transformer-sharp": "^3.0.0"
+    "remark-html": "^16.0.1"
   },
   "devDependencies": {
     "gh-pages": "^6.2.0",
