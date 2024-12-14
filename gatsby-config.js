@@ -17,9 +17,12 @@ module.exports = {
     linkedin: `https://www.linkedin.com/in/shay-yahal/`,
     // Content of the About Me section
     about: 
-    `I've built this site because I:\n
-    1. Was jealous of my friends' sites.\n
-    2. Needed a place to store my cocktail recipes.\n
+    `I've built this site because I:
+
+    1. Was kind of jealous of my friend's sites. 
+    
+    2. Needed a place to store my cocktail recipes.
+    
     3. Always wanted to write and lied to myself that I would do it only if I had a place to store it.`,
 
     // Optional: List your projects, they must have `name` and `description`. `link` is optional.
