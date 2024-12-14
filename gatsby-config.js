@@ -8,8 +8,7 @@ module.exports = {
     // Main Site Title
     title: `Shay Yahal | Yours`,
     // Description that goes under your name in main bio
-    description: `Lorem ipsum dolornpm run clean
-  sit amet consectetur adipisicing elit, ipsum.`,
+    description: `Also knows as: ShayShu`,
     // Optional: Twitter account handle
     author: `@shayahal1`,
     // Optional: Github account URL
@@ -17,7 +16,12 @@ module.exports = {
     // Optional: LinkedIn account URL
     linkedin: `https://www.linkedin.com/in/shay-yahal/`,
     // Content of the About Me section
-    about: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus perferendis porro cumque ea error ab voluptatem. Temporibus adipisci exercitationem similique itaque quibusdam laudantium, qui molestiae quas, aut amet animi id.`,
+    about: 
+    `I've built this site because I: 
+    1. Was jealous of my friends' sites.
+    2. Needed a place to store my cocktail recipes.
+    3. Always wanted to write and lied to myself that I would do it only if I had a place to store it.`,
+    
     // Optional: List your projects, they must have `name` and `description`. `link` is optional.
     projects: [
       {
@@ -25,12 +29,6 @@ module.exports = {
         description:
           'A zero-config Blah Blah',
         link: 'Non',
-      },
-      {
-        name: 'This Repo is',
-        description:
-          'Lorem ipsum dolor sit amet consectetur adipisicing elit ducimus perferendis',
-        link: 'https://github.com/RyanFitzgerald/devfolio',
       },
     ],
     // Optional: List your recommendations, they must have `name` and `description`. `link` is optional.
@@ -44,18 +42,19 @@ module.exports = {
     // Optional: List your skills, they must have `name` and `description`.
     skills: [
       {
-        name: 'Languages & Frameworks',
-        description:
-          'Python mostly',
+        name: 'Cooking',
+        description: 
+        'None',
       },
       {
-        name: 'Databases',
-        description: 'MongoDB, PostreSQL, MySQL',
+        name: 'Tech',
+        description: 
+        'Some',
       },
       {
-        name: 'Other',
+        name: 'Reading',
         description:
-          'Docker, Amazon Web Services (AWS), CI / CD, Microservices, API design, Agile / Scrum',
+          'Really fast',
       },
     ],
   },
