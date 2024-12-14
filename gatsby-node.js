@@ -5,6 +5,8 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
   const blogPost = path.resolve(`./src/templates/blog-post.jsx`);
+  const cabinetPost = path.resolve(`./src/templates/cabinet-post.jsx`);
+
   const result = await graphql(
     `
       {
@@ -16,6 +18,11 @@ exports.createPages = async ({ graphql, actions }) => {
             node {
               fields {
                 slug
+              }
+              parent {
+                ... on File {
+                  sourceInstanceName
+                }
               }
               frontmatter {
                 title
@@ -31,16 +38,37 @@ exports.createPages = async ({ graphql, actions }) => {
     throw result.errors;
   }
 
-  // Create blog posts pages.
   const posts = result.data.allMarkdownRemark.edges;
 
-  posts.forEach((post, index) => {
-    const previous = index === posts.length - 1 ? null : posts[index + 1].node;
-    const next = index === 0 ? null : posts[index - 1].node;
+  const blogPosts = posts.filter(
+    post => post.node.parent.sourceInstanceName === 'blog'
+  );
+  const cabinetPosts = posts.filter(
+    post => post.node.parent.sourceInstanceName === 'my-cabinet'
+  );
+
+  blogPosts.forEach((post, index) => {
+    const previous = index === blogPosts.length - 1 ? null : blogPosts[index + 1].node;
+    const next = index === 0 ? null : blogPosts[index - 1].node;
 
     createPage({
       path: post.node.fields.slug,
       component: blogPost,
+      context: {
+        slug: post.node.fields.slug,
+        previous,
+        next,
+      },
+    });
+  });
+
+  cabinetPosts.forEach((post, index) => {
+    const previous = index === cabinetPosts.length - 1 ? null : cabinetPosts[index + 1].node;
+    const next = index === 0 ? null : cabinetPosts[index - 1].node;
+
+    createPage({
+      path: post.node.fields.slug,
+      component: cabinetPost,
       context: {
         slug: post.node.fields.slug,
         previous,
@@ -55,10 +83,18 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode });
+    const fileNode = getNode(node.parent);
+    const source = fileNode.sourceInstanceName;
+    
+    let prefix = '/blog';
+    if (source === 'my-cabinet') {
+      prefix = '/cabinet';
+    }
+    
     createNodeField({
       name: `slug`,
       node,
-      value: `/blog${value}`,
+      value: `${prefix}${value}`,
     });
   }
 };
