@@ -8,7 +8,7 @@ module.exports = {
     // Main Site Title
     title: `Shay Yahal | Yours`,
     // Description that goes under your name in main bio
-    description: `Also knows as: ShayShu`,
+    description: `Also known as: ShayShu`,
     // Optional: Twitter account handle
     author: `@shayahal1`,
     // Optional: Github account URL
@@ -16,15 +16,11 @@ module.exports = {
     // Optional: LinkedIn account URL
     linkedin: `https://www.linkedin.com/in/shay-yahal/`,
     // Content of the About Me section
-    about: 
-    `I've built this site because I:
-
-    1. Was kind of jealous of my friend's sites. 
-    
+    about: `I've built this site because I:
+    1. Was kind of jealous of my friend's sites.
     2. Needed a place to store my cocktail recipes.
-    
     3. Always wanted to write and lied to myself that I would do it only if I had a place to store it.`,
-
+    
     // Optional: List your projects, they must have `name` and `description`. `link` is optional.
     projects: [
       {
@@ -37,8 +33,8 @@ module.exports = {
     // Optional: List your recommendations, they must have `name` and `description`. `link` is optional.
     recommendations: [
       {
-        name: 'Nothing intersting',
-        description: 'Data Data',
+        name: 'Nothing intersting here yet',
+        description: 'To Be Added',
         link: 'https://github.com/Blahblah',
       },
     ],
