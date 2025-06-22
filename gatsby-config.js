@@ -24,10 +24,14 @@ module.exports = {
     // Optional: List your projects, they must have `name` and `description`. `link` is optional.
     projects: [
       {
-        name: 'ShayShu',
-        description:
-          'A zero-config Blah Blah',
-        link: 'Non',
+        name: '20Questions',
+        description: 'A comprehansive analysis of the 20 questions by Yoaana Gonen',
+        link: 'None',
+      },
+      {
+        name: 'Senior-it',
+        description: 'Research the differences between men and womens career paths in the Israeli Tech industry',
+        link: 'https://www.mako.co.il/nexter-news/Article-75518b5b5f2c681027.htm',
       },
     ],
     // Optional: List your recommendations, they must have `name` and `description`. `link` is optional.
@@ -35,7 +39,7 @@ module.exports = {
       {
         name: 'Nothing intersting here yet',
         description: 'To Be Added',
-        link: 'https://github.com/Blahblah',
+        link: 'https://github.com/shayahal',
       },
     ],
     // Optional: List your skills, they must have `name` and `description`.
