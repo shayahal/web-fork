@@ -53,7 +53,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "predeploy": "gatsby build --prefix-paths",
-    "deploy": "gh-pages -d public"
+    "deploy": "gh-pages -d public",
+    "release": "npm install && npm run deploy"
   },
   "repository": {
     "type": "git",
