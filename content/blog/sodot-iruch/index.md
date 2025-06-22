@@ -22,8 +22,8 @@ language: 'he'
 
 קוקטייל אפריטיף שעובד מושלם בטכניקה: 
 ### ISLAND WINE 
-2½ oz. / 75 ml. white vermouth 
-¾ oz. / 22.5 ml. fresh lime juice 
-½ oz. / 15 ml. passionfruit syrup 3–4 dashes 
-Angostura bitters 
+- 2½ oz. / 75 ml. white vermouth 
+- ¾ oz. / 22.5 ml. fresh lime juice 
+- ½ oz. / 15 ml. passionfruit syrup 3–4 dashes 
+- 2-3 drops of Angostura bitters 
 
