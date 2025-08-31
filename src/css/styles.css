@@ -2,11 +2,13 @@
 .blog-post {
     margin: 0 auto;
     max-width: 800px;
+    font-family: 'Heebo', 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
   }
   
   /* Apply RTL for Hebrew posts */
   .rtl {
     direction: rtl;
     text-align: right;
+    font-family: 'Heebo', 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
   }
   

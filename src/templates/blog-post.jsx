@@ -3,14 +3,15 @@ import moment from 'moment';
 import React from 'react';
 
 import Header from '../components/header';
+import BlogNavigation from '../components/blog-navigation';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import '../css/styles.css'; 
 
 const classes = {
-  wrapper: 'mt-16 blog-content',
-  title: 'mt-16 text-4xl text-gray-900 font-bold',
-  date: 'text-gray-600 font-light',
+  wrapper: 'mt-16 blog-content font-heebo',
+  title: 'mt-16 text-4xl text-gray-900 font-bold font-heebo',
+  date: 'text-gray-600 font-light font-heebo',
 };
 
 const BlogPost = ({ data }) => {
@@ -19,6 +20,7 @@ const BlogPost = ({ data }) => {
 
   return (
     <Layout>
+      <BlogNavigation currentPage="blog" />
       <Header metadata={data.site.siteMetadata} />
       <SEO title={post.frontmatter.title} />
       <div className={`blog-post ${isRTL ? 'rtl' : ''}`}>

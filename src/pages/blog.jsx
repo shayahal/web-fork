@@ -2,6 +2,7 @@ import { graphql } from 'gatsby';
 import React from 'react';
 
 import BlogPosts from '../components/blog-posts';
+import BlogNavigation from '../components/blog-navigation';
 import Header from '../components/header';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -18,6 +19,7 @@ const Index = ({ data }) => {
   return (
     <Layout>
       <SEO title="Blog" />
+      <BlogNavigation currentPage="blog" />
       <Header metadata={data.site.siteMetadata} />
       {!noBlog && <BlogPosts posts={posts} />}
     </Layout>

@@ -8,14 +8,14 @@ const RTLMarkdownViewer = ({ content, metadata }) => {
   // Custom components for MDX
   const components = {
     // You can customize how different markdown elements are rendered
-    h1: (props) => <h1 className="text-3xl font-bold my-4" {...props} />,
-    h2: (props) => <h2 className="text-2xl font-bold my-3" {...props} />,
-    p: (props) => <p className="my-2" {...props} />,
+    h1: (props) => <h1 className="text-3xl font-bold my-4 font-heebo" {...props} />,
+    h2: (props) => <h2 className="text-2xl font-bold my-3 font-heebo" {...props} />,
+    p: (props) => <p className="my-2 font-heebo" {...props} />,
     // Add more custom components as needed
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto">
+    <div className="w-full max-w-4xl mx-auto font-heebo">
       <div className="mb-4 flex justify-end space-x-2">
         <button
           onClick={() => setDirection('ltr')}
@@ -38,7 +38,7 @@ const RTLMarkdownViewer = ({ content, metadata }) => {
       </div>
       
       <article 
-        className={`prose lg:prose-xl max-w-none ${direction === 'rtl' ? 'text-right' : ''}`}
+        className={`prose lg:prose-xl max-w-none font-heebo ${direction === 'rtl' ? 'text-right' : ''}`}
         dir={direction}
       >
         <MDXRemote {...content} components={components} />

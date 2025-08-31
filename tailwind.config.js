@@ -9,6 +9,9 @@ module.exports = {
       screens: {
         xs: '480px',
       },
+      fontFamily: {
+        'heebo': ['Heebo', 'sans-serif'],
+      },
     },
   },
   variants: {},
