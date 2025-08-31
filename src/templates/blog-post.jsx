@@ -20,7 +20,7 @@ const BlogPost = ({ data }) => {
 
   return (
     <Layout>
-      <BlogNavigation currentPage="blog" />
+      <BlogNavigation currentPage="blog" metadata={data.site.siteMetadata} />
       <Header metadata={data.site.siteMetadata} />
       <SEO title={post.frontmatter.title} />
       <div className={`blog-post ${isRTL ? 'rtl' : ''}`}>

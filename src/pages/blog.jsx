@@ -19,7 +19,7 @@ const Index = ({ data }) => {
   return (
     <Layout>
       <SEO title="Blog" />
-      <BlogNavigation currentPage="blog" />
+      <BlogNavigation currentPage="blog" metadata={data.site.siteMetadata} />
       <Header metadata={data.site.siteMetadata} />
       {!noBlog && <BlogPosts posts={posts} />}
     </Layout>
