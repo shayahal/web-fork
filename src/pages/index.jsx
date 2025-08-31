@@ -23,7 +23,7 @@ const Index = ({ data }) => {
   return (
     <Layout>
       <SEO />
-      <BlogNavigation currentPage="about" />
+      <BlogNavigation currentPage="about" metadata={data.site.siteMetadata} />
       <Header metadata={data.site.siteMetadata} noBlog={noBlog} />
       {about && <SectionAbout about={about} />}
       {projects && projects.length && <SectionProjects projects={projects} />}

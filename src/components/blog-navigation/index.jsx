@@ -13,7 +13,7 @@ const classes = {
   icon: 'text-blue-700 hover:text-blue-900 transition-colors duration-200',
 };
 
-const BlogNavigation = ({ currentPage = 'blog' }) => {
+const BlogNavigation = ({ currentPage = 'blog', metadata = {} }) => {
   const navigationItems = [
     { title: 'About', path: '/', key: 'about' },
     { title: 'Blog', path: '/blog', key: 'blog' },
@@ -28,7 +28,7 @@ const BlogNavigation = ({ currentPage = 'blog' }) => {
       <div className={classes.container}>
         <nav className={classes.nav}>
           <div className={classes.name}>
-            <Link to="/">Neel Nanda</Link>
+            <Link to="/">{metadata.name || 'Shay Yahal'}</Link>
           </div>
           
           <div className={classes.links}>
