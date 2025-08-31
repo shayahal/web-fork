@@ -1,7 +1,7 @@
+import { graphql } from 'gatsby';
 import React from 'react';
 import { Link } from 'gatsby';
 
-import BlogNavigation from '../components/blog-navigation';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
@@ -10,10 +10,9 @@ const classes = {
   link: 'underline font-heebo',
 };
 
-const NotFoundPage = () => (
+const NotFoundPage = ({ data }) => (
   <Layout>
     <SEO title="Not found" />
-    <BlogNavigation currentPage="about" />
     <h1 className={classes.title}>404: Not Found</h1>
     <p>
       You just hit a route that doesn't exist.{' '}
@@ -26,3 +25,19 @@ const NotFoundPage = () => (
 );
 
 export default NotFoundPage;
+
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        name
+        title
+        description
+        about
+        author
+        github
+        linkedin
+      }
+    }
+  }
+`;

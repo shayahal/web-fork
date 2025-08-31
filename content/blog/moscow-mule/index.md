@@ -4,6 +4,7 @@ date: '2024-11-16T12:00:00.00Z'
 description: 'היופי שבפשטות'
 direction: rtl
 language: 'he'
+tags: ['cocktails', 'vodka', 'ginger', 'classic']
 
 ---
 

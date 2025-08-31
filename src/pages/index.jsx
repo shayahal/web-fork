@@ -2,7 +2,6 @@ import { graphql } from 'gatsby';
 import get from 'lodash/get';
 import React from 'react';
 
-import BlogNavigation from '../components/blog-navigation';
 import Header from '../components/header';
 import Layout from '../components/layout';
 import SectionAbout from '../components/section-about';
@@ -10,6 +9,7 @@ import SectionBlog from '../components/section-blog';
 import SectionRecommendations from '../components/section-recommendations';
 import SectionProjects from '../components/section-projects';
 import SectionSkills from '../components/section-skills';
+import SectionTopPosts from '../components/section-top-posts';
 import SEO from '../components/seo';
 
 const Index = ({ data }) => {
@@ -23,10 +23,10 @@ const Index = ({ data }) => {
   return (
     <Layout>
       <SEO />
-      <BlogNavigation currentPage="about" metadata={data.site.siteMetadata} />
       <Header metadata={data.site.siteMetadata} noBlog={noBlog} />
       {about && <SectionAbout about={about} />}
       {projects && projects.length && <SectionProjects projects={projects} />}
+      {!noBlog && <SectionTopPosts posts={posts} />}
       {!noBlog && <SectionBlog posts={posts} />}
       {recommendations && recommendations.length && (
         <SectionRecommendations recommendations={recommendations} />
@@ -79,6 +79,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            tags
           }
         }
       }

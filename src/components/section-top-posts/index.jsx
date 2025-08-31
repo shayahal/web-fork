@@ -4,10 +4,20 @@ import React from 'react';
 import Section from '../section';
 import SummaryItem from '../summary-item';
 
-const SectionBlog = ({ posts }) => {
+const SectionTopPosts = ({ posts }) => {
+  // Filter posts that have "top" in their tags
+  const topPosts = posts.filter(post => 
+    post.node.frontmatter.tags && 
+    post.node.frontmatter.tags.includes('top')
+  );
+
+  if (topPosts.length === 0) {
+    return null;
+  }
+
   return (
-    <Section title="Latest Posts">
-      {posts.map((post, index) => (
+    <Section title="Top Posts">
+      {topPosts.map((post, index) => (
         <div 
           key={post.node.fields.slug}
           className="animate-fade-in-up"
@@ -21,15 +31,8 @@ const SectionBlog = ({ posts }) => {
           />
         </div>
       ))}
-      {posts.length >= 5 && (
-        <div className="animate-fade-in-up" style={{animationDelay: `${(posts.length + 1) * 0.1}s`}}>
-          <Link className="text-gray-500 text-sm hover:text-black font-heebo animated-link" to="/blog">
-            View all posts &rarr;
-          </Link>
-        </div>
-      )}
     </Section>
   );
 };
 
-export default SectionBlog;
+export default SectionTopPosts; 

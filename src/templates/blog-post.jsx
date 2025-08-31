@@ -3,7 +3,6 @@ import moment from 'moment';
 import React from 'react';
 
 import Header from '../components/header';
-import BlogNavigation from '../components/blog-navigation';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import '../css/styles.css'; 
@@ -12,6 +11,8 @@ const classes = {
   wrapper: 'mt-16 blog-content font-heebo',
   title: 'mt-16 text-4xl text-gray-900 font-bold font-heebo',
   date: 'text-gray-600 font-light font-heebo',
+  tags: 'mt-4 flex flex-wrap gap-2',
+  tag: 'px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full font-medium hover:bg-blue-200 transition-colors',
 };
 
 const BlogPost = ({ data }) => {
@@ -20,7 +21,6 @@ const BlogPost = ({ data }) => {
 
   return (
     <Layout>
-      <BlogNavigation currentPage="blog" metadata={data.site.siteMetadata} />
       <Header metadata={data.site.siteMetadata} />
       <SEO title={post.frontmatter.title} />
       <div className={`blog-post ${isRTL ? 'rtl' : ''}`}>
@@ -28,6 +28,15 @@ const BlogPost = ({ data }) => {
         <p className={classes.date}>
           Posted on {moment(post.frontmatter.date).format('MMMM D, YYYY')}
         </p>
+        {post.frontmatter.tags && (
+          <div className={classes.tags}>
+            {post.frontmatter.tags.map((tag, index) => (
+              <span key={index} className={classes.tag}>
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
         <div
           className={classes.wrapper}
           dangerouslySetInnerHTML={{ __html: post.html }}
@@ -61,6 +70,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         description
         language
+        tags
       }
     }
   }

@@ -2,8 +2,8 @@ import { Link } from 'gatsby';
 import React from 'react';
 
 const classes = {
-  wrapper: 'mb-6 font-heebo',
-  name: 'font-semibold text-gray-900 pb-1 font-heebo',
+  wrapper: 'mb-6 font-heebo post-card',
+  name: 'font-semibold text-gray-900 pb-1 font-heebo animated-link',
   description: 'text-md text-gray-600 font-light font-heebo',
 };
 
