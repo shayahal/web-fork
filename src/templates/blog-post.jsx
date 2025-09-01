@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import moment from 'moment';
 import React from 'react';
 
@@ -13,11 +13,24 @@ const classes = {
   date: 'text-gray-600 font-light font-heebo',
   tags: 'mt-4 flex flex-wrap gap-2',
   tag: 'px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full font-medium hover:bg-blue-200 transition-colors',
+  navigation: 'mt-12 pt-8 border-t border-gray-200 flex justify-between items-center',
+  navLink: 'flex items-center space-x-2 text-gray-600 hover:text-black transition-colors font-heebo',
+  navLinkRTL: 'flex items-center space-x-reverse space-x-2 text-gray-600 hover:text-black transition-colors font-heebo',
+  navText: 'text-sm',
+  navTitle: 'font-medium',
 };
 
 const BlogPost = ({ data }) => {
   const post = data.markdownRemark;
-  const isRTL = post.frontmatter.language === 'he'; 
+  const allPosts = data.allMarkdownRemark.edges;
+  const isRTL = post.frontmatter.language === 'he';
+
+  // Find current post index
+  const currentIndex = allPosts.findIndex(edge => edge.node.id === post.id);
+  
+  // Get previous and next posts
+  const previousPost = currentIndex > 0 ? allPosts[currentIndex - 1] : null;
+  const nextPost = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null;
 
   return (
     <Layout>
@@ -41,6 +54,45 @@ const BlogPost = ({ data }) => {
           className={classes.wrapper}
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
+        
+        {/* Navigation */}
+        <div className={classes.navigation}>
+          {previousPost ? (
+            <Link 
+              to={previousPost.node.fields.slug} 
+              className={isRTL ? classes.navLinkRTL : classes.navLink}
+            >
+              <span className={classes.navText}>
+                {isRTL ? '← הפוסט הקודם' : '← Previous Post'}
+              </span>
+              <div>
+                <div className={classes.navTitle}>
+                  {previousPost.node.frontmatter.title}
+                </div>
+              </div>
+            </Link>
+          ) : (
+            <div></div>
+          )}
+          
+          {nextPost ? (
+            <Link 
+              to={nextPost.node.fields.slug} 
+              className={isRTL ? classes.navLinkRTL : classes.navLink}
+            >
+              <div>
+                <div className={classes.navTitle}>
+                  {nextPost.node.frontmatter.title}
+                </div>
+              </div>
+              <span className={classes.navText}>
+                {isRTL ? 'הפוסט הבא →' : 'Next Post →'}
+              </span>
+            </Link>
+          ) : (
+            <div></div>
+          )}
+        </div>
       </div>
     </Layout>
   );
@@ -71,6 +123,25 @@ export const pageQuery = graphql`
         description
         language
         tags
+      }
+    }
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
+      edges {
+        node {
+          id
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            date(formatString: "MMMM DD, YYYY")
+            description
+            language
+            tags
+          }
+        }
       }
     }
   }
