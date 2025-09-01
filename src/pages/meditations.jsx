@@ -13,8 +13,8 @@ const MeditationsPage = ({ data }) => {
       <SEO title="Meditations" />
       <Header metadata={data.site.siteMetadata} />
       <div className="mt-16 max-w-4xl mx-auto px-4">
-        <h1 className="text-4xl font-bold text-gray-900 mb-6 animate-fade-in-up pulse-gentle">Meditations</h1>
-        <p className="text-lg text-gray-600 mb-4 animate-fade-in-up" style={{animationDelay: '0.1s'}}>
+        <h1 className="text-4xl font-bold text-gray-900 mb-6 animate-fade-in-up">Meditations</h1>
+        <p className="text-lg text-gray-600 mb-4 animate-fade-in-up">
           Welcome to the meditations section. This is where you'll find thoughtful reflections and insights.
         </p>
         
@@ -23,8 +23,7 @@ const MeditationsPage = ({ data }) => {
             {posts.map((post, index) => (
               <article 
                 key={post.node.fields.slug} 
-                className="border-b border-gray-200 pb-6 post-card animate-fade-in-up micro-bounce"
-                style={{animationDelay: `${(index + 1) * 0.1}s`}}
+                className="border-b border-gray-200 pb-6 post-card animate-fade-in-up"
               >
                 <h2 className="text-2xl font-bold text-gray-900 mb-2">
                   <Link 
@@ -42,7 +41,7 @@ const MeditationsPage = ({ data }) => {
                       {post.node.frontmatter.tags.map((tag, tagIndex) => (
                         <span 
                           key={tagIndex} 
-                          className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full tag-item micro-bounce"
+                          className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full tag-item"
                         >
                           {tag}
                         </span>

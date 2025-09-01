@@ -8,8 +8,8 @@ import SEO from '../components/seo';
 import '../css/styles.css'; 
 
 const classes = {
-  wrapper: 'mt-16 blog-content font-heebo',
-  title: 'mt-16 text-4xl text-gray-900 font-bold font-heebo',
+  wrapper: 'mt-16 blog-content font-heebo animate-fade-in-up',
+  title: 'mt-16 text-4xl text-gray-900 font-bold font-heebo animate-slide-in-left',
   date: 'text-gray-600 font-light font-heebo',
   tags: 'mt-4 flex flex-wrap gap-2',
   tag: 'px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full font-medium hover:bg-blue-200 transition-colors',
@@ -39,7 +39,7 @@ const BlogPost = ({ data }) => {
       <div className={`blog-post ${isRTL ? 'rtl' : ''}`}>
         <h1 className={classes.title}>{post.frontmatter.title}</h1>
         <p className={classes.date}>
-          Posted on {moment(post.frontmatter.date).format('MMMM D, YYYY')}
+          {moment(post.frontmatter.date).format('MMMM D, YYYY')}
         </p>
         {post.frontmatter.tags && (
           <div className={classes.tags}>

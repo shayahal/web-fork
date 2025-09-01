@@ -21,7 +21,7 @@ const BlogPage = ({ data }) => {
       <Header metadata={data.site.siteMetadata} />
       <div className="mt-16 max-w-4xl mx-auto px-4">
         <h1 className="text-4xl font-bold text-gray-900 mb-6 animate-fade-in-up">Blog</h1>
-        <p className="text-lg text-gray-600 mb-4 animate-fade-in-up" style={{animationDelay: '0.1s'}}>
+        <p className="text-lg text-gray-600 mb-4 animate-fade-in-up">
           Thoughts, insights, and stories from my journey.
         </p>
         
@@ -31,7 +31,6 @@ const BlogPage = ({ data }) => {
               <article 
                 key={post.node.fields.slug} 
                 className="border-b border-gray-200 pb-6 post-card animate-fade-in-up"
-                style={{animationDelay: `${(index + 1) * 0.1}s`}}
               >
                 <h2 className="text-2xl font-bold text-gray-900 mb-2">
                   <Link 
