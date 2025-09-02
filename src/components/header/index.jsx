@@ -4,26 +4,28 @@ import React from 'react';
 import profileImg from '../../images/profile.jpg';
 
 const classes = {
-  wrapper: 'block mb-6 md:flex font-heebo animate-fade-in-up',
+  wrapper: 'block mb-6 md:flex font-huninn animate-fade-in-up',
   imageWrapper: 'w-full max-w-150 animate-scale-in',
   image: 'rounded-full transform transition-all duration-150 hover:scale-105',
-  contentWrapper: 'flex-none pt-6 md:pt-1 md:flex-1 md:pl-20 font-heebo animate-fade-in-up',
-  name: 'text-5xl text-terracotta font-bold leading-tight hover:text-sage font-heebo animated-link',
-  description: 'text-sage font-heebo',
-  list: 'mt-6 uppercase tracking-wider font-heebo',
+  contentWrapper: 'flex-none pt-6 md:pt-1 md:flex-1 md:pl-20 font-huninn animate-fade-in-up',
+  name: 'text-5xl text-terracotta font-bold leading-tight hover:text-sage font-huninn animated-link',
+  description: 'text-sage font-huninn',
+  list: 'mt-6 uppercase tracking-wider font-huninn',
   item: 'inline list-none pr-4',
   link:
-    'inline-block py-2 font-semibold text-xs text-sage hover:text-terracotta font-heebo animated-link',
+    'inline-block py-2 font-semibold text-xs text-sage hover:text-terracotta font-huninn animated-link',
 };
 
-const Header = ({ metadata = {}, noBlog = false }) => {
+const Header = ({ metadata = {}, noBlog = false, showProfileImage = true }) => {
   return (
     <div className={classes.wrapper}>
-      <div className={classes.imageWrapper}>
-        <Link to="/">
-          <img className={classes.image} src={profileImg} alt={metadata.name} />
-        </Link>
-      </div>
+      {showProfileImage && (
+        <div className={classes.imageWrapper}>
+          <Link to="/">
+            <img className={classes.image} src={profileImg} alt={metadata.name} />
+          </Link>
+        </div>
+      )}
       <div className={classes.contentWrapper}>
         <h1 className={classes.name}>
           <Link to="/">{metadata.name}</Link>

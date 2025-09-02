@@ -8,14 +8,14 @@ import SEO from '../components/seo';
 import '../css/styles.css'; 
 
 const classes = {
-  wrapper: 'mt-16 blog-content font-heebo animate-fade-in-up',
-  title: 'mt-16 text-4xl text-terracotta font-bold font-heebo animate-slide-in-left',
-  date: 'text-sage font-light font-heebo',
+  wrapper: 'mt-16 blog-content font-huninn animate-fade-in-up text-text-dark',
+  title: 'mt-16 text-4xl text-terracotta font-bold font-huninn animate-slide-in-left',
+  date: 'text-sage font-light font-huninn',
   tags: 'mt-4 flex flex-wrap gap-2',
   tag: 'px-3 py-1 bg-blush text-terracotta text-sm rounded-full font-medium hover:bg-sage hover:text-cream transition-colors',
   navigation: 'mt-12 pt-8 border-t border-blush flex justify-between items-center',
-  navLink: 'flex items-center space-x-2 text-sage hover:text-terracotta transition-colors font-heebo',
-  navLinkRTL: 'flex items-center space-x-reverse space-x-2 text-sage hover:text-terracotta transition-colors font-heebo',
+  navLink: 'flex items-center space-x-2 text-sage hover:text-terracotta transition-colors font-huninn',
+  navLinkRTL: 'flex items-center space-x-reverse space-x-2 text-sage hover:text-terracotta transition-colors font-huninn',
   navText: 'text-sm',
   navTitle: 'font-medium',
 };

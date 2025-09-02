@@ -12,9 +12,9 @@ const TopPostsPage = ({ data }) => {
     <Layout>
       <SEO title="Top Posts" />
       <Header metadata={data.site.siteMetadata} />
-      <div className="mt-16 max-w-4xl mx-auto px-4 animate-fade-in-up">
-        <h1 className="text-4xl font-bold text-terracotta mb-6 animate-slide-in-left">Top Posts</h1>
-        <p className="text-lg text-sage mb-4 animate-fade-in-up" style={{animationDelay: '0.1s'}}>
+      <div className="mt-16 max-w-4xl mx-auto px-4 animate-fade-in-up font-huninn">
+        <h1 className="text-4xl font-bold text-terracotta mb-6 animate-slide-in-left font-huninn">Top Posts</h1>
+        <p className="text-lg text-text-dark mb-4 animate-fade-in-up font-huninn" style={{animationDelay: '0.1s'}}>
           Discover the most popular and highly-rated blog posts.
         </p>
         
@@ -26,7 +26,7 @@ const TopPostsPage = ({ data }) => {
                 className="border-b border-blush pb-6 post-card animate-fade-in-up"
                 style={{animationDelay: `${(index + 1) * 0.1}s`}}
               >
-                <h2 className="text-2xl font-bold text-terracotta mb-2">
+                <h2 className="text-2xl font-bold text-terracotta mb-2 font-huninn">
                   <Link 
                     to={post.node.fields.slug} 
                     className="animated-link hover:text-sage transition-colors"
@@ -34,9 +34,9 @@ const TopPostsPage = ({ data }) => {
                     {post.node.frontmatter.title}
                   </Link>
                 </h2>
-                <p className="text-sage mb-3">{post.node.frontmatter.description}</p>
+                <p className="text-text-dark mb-3 font-huninn">{post.node.frontmatter.description}</p>
                 <div className="flex items-center justify-between">
-                  <p className="text-sm text-sage">{post.node.frontmatter.date}</p>
+                  <p className="text-sm text-text-dark font-huninn">{post.node.frontmatter.date}</p>
                   {post.node.frontmatter.tags && (
                     <div className="flex gap-2">
                       {post.node.frontmatter.tags.map((tag, tagIndex) => (
@@ -54,7 +54,7 @@ const TopPostsPage = ({ data }) => {
             ))}
           </div>
         ) : (
-          <p className="text-sage animate-fade-in">No top posts found yet.</p>
+          <p className="text-text-dark animate-fade-in font-huninn">No top posts found yet.</p>
         )}
       </div>
     </Layout>

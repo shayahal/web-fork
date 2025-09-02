@@ -13,10 +13,9 @@ import SectionProjects from '../components/section-projects';
 import SEO from '../components/seo';
 
 const Index = ({ data }) => {
-  const about = get(data, 'site.siteMetadata.about', false);
   const projects = get(data, 'site.siteMetadata.projects', false);
   const posts = data.allMarkdownRemark.edges;
-
+  const aboutContent = data.aboutMarkdown ? data.aboutMarkdown.html : null;
 
   const noBlog = !posts || !posts.length;
 
@@ -24,7 +23,7 @@ const Index = ({ data }) => {
     <Layout>
       <SEO />
       <Header metadata={data.site.siteMetadata} noBlog={noBlog} />
-      {about && <SectionAbout about={about} />}
+      {aboutContent && <SectionAbout aboutContent={aboutContent} />}
       {projects && projects.length && <SectionProjects projects={projects} />}
 
       {!noBlog && <SectionBlog posts={posts} />}
@@ -43,7 +42,6 @@ export const pageQuery = graphql`
         name
         title
         description
-        about
         author
         github
         linkedin
@@ -52,8 +50,12 @@ export const pageQuery = graphql`
           description
           link
         }
-
-
+      }
+    }
+    aboutMarkdown: markdownRemark(fileAbsolutePath: { regex: "/about.md$/" }) {
+      html
+      frontmatter {
+        title
       }
     }
     allMarkdownRemark(

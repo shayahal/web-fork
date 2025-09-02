@@ -6,13 +6,15 @@ module.exports = {
         xs: '480px',
       },
       fontFamily: {
-        'heebo': ['Heebo', 'sans-serif'],
+        'huninn': ['Huninn', 'sans-serif'],
+        'play': ['Play', 'sans-serif'],
       },
       colors: {
-        'sage': '#748873',
+        'sage': '#3E3F29',
         'cream': '#F7F4EA',
         'blush': '#EBD9D1',
-        'terracotta': '#B87C4C',
+        'terracotta': 'rgb(188, 168, 141)',
+        'text-dark': '#37353E',
       },
       keyframes: {
         'fade-in-up': {
