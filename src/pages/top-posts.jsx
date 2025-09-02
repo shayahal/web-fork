@@ -12,8 +12,8 @@ const TopPostsPage = ({ data }) => {
     <Layout>
       <SEO title="Top Posts" />
       <Header metadata={data.site.siteMetadata} />
-      <div className="mt-16 max-w-4xl mx-auto px-4">
-        <h1 className="text-4xl font-bold text-gray-900 mb-6 animate-fade-in-up">Top Posts</h1>
+      <div className="mt-16 max-w-4xl mx-auto px-4 animate-fade-in-up">
+        <h1 className="text-4xl font-bold text-gray-900 mb-6 animate-slide-in-left">Top Posts</h1>
         <p className="text-lg text-gray-600 mb-4 animate-fade-in-up" style={{animationDelay: '0.1s'}}>
           Discover the most popular and highly-rated blog posts.
         </p>

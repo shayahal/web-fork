@@ -43,7 +43,7 @@ const BlogPage = ({ data }) => {
                 <p className="text-gray-600 mb-3">{post.node.frontmatter.description}</p>
                 <div className="flex items-center justify-between">
                   <p className="text-sm text-gray-500">
-                    Posted on {moment(post.node.frontmatter.date).format('MMMM D, YYYY')}
+                    {moment(post.node.frontmatter.date).format('MMMM D, YYYY')}
                   </p>
                   {post.node.frontmatter.tags && (
                     <div className="flex gap-2">
