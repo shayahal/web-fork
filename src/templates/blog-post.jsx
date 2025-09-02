@@ -9,13 +9,13 @@ import '../css/styles.css';
 
 const classes = {
   wrapper: 'mt-16 blog-content font-heebo animate-fade-in-up',
-  title: 'mt-16 text-4xl text-gray-900 font-bold font-heebo animate-slide-in-left',
-  date: 'text-gray-600 font-light font-heebo',
+  title: 'mt-16 text-4xl text-terracotta font-bold font-heebo animate-slide-in-left',
+  date: 'text-sage font-light font-heebo',
   tags: 'mt-4 flex flex-wrap gap-2',
-  tag: 'px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full font-medium hover:bg-blue-200 transition-colors',
-  navigation: 'mt-12 pt-8 border-t border-gray-200 flex justify-between items-center',
-  navLink: 'flex items-center space-x-2 text-gray-600 hover:text-black transition-colors font-heebo',
-  navLinkRTL: 'flex items-center space-x-reverse space-x-2 text-gray-600 hover:text-black transition-colors font-heebo',
+  tag: 'px-3 py-1 bg-blush text-terracotta text-sm rounded-full font-medium hover:bg-sage hover:text-cream transition-colors',
+  navigation: 'mt-12 pt-8 border-t border-blush flex justify-between items-center',
+  navLink: 'flex items-center space-x-2 text-sage hover:text-terracotta transition-colors font-heebo',
+  navLinkRTL: 'flex items-center space-x-reverse space-x-2 text-sage hover:text-terracotta transition-colors font-heebo',
   navText: 'text-sm',
   navTitle: 'font-medium',
 };

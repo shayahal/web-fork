@@ -1,8 +1,8 @@
 import React from 'react';
 
 const classes = {
-  wrapper: 'p-8 relative max-w-screen-xl xs:p-24 font-heebo animate-fade-in',
-  outerWrapper: 'relative font-heebo',
+  wrapper: 'p-8 relative max-w-screen-xl xs:p-24 font-heebo animate-fade-in bg-cream min-h-screen',
+  outerWrapper: 'relative font-heebo bg-cream',
   svg: 'hidden fixed transform right-0 top-5 z-0 xl:block animate-slide-in-left float-gentle',
 };
 
@@ -30,8 +30,8 @@ const Layout = ({ children }) => {
               y="0"
               width="4"
               height="4"
-              className="text-gray-200"
-              fill="#edf2f7"
+              className="text-blush"
+              fill="#EBD9D1"
             />
           </pattern>
         </defs>

@@ -8,6 +8,12 @@ module.exports = {
       fontFamily: {
         'heebo': ['Heebo', 'sans-serif'],
       },
+      colors: {
+        'sage': '#748873',
+        'cream': '#F7F4EA',
+        'blush': '#EBD9D1',
+        'terracotta': '#B87C4C',
+      },
       keyframes: {
         'fade-in-up': {
           '0%': {

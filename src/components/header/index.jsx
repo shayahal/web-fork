@@ -8,12 +8,12 @@ const classes = {
   imageWrapper: 'w-full max-w-150 animate-scale-in',
   image: 'rounded-full transform transition-all duration-150 hover:scale-105',
   contentWrapper: 'flex-none pt-6 md:pt-1 md:flex-1 md:pl-20 font-heebo animate-fade-in-up',
-  name: 'text-5xl text-gray-900 font-bold leading-tight hover:text-black font-heebo animated-link',
-  description: 'text-gray-600 font-heebo',
+  name: 'text-5xl text-terracotta font-bold leading-tight hover:text-sage font-heebo animated-link',
+  description: 'text-sage font-heebo',
   list: 'mt-6 uppercase tracking-wider font-heebo',
   item: 'inline list-none pr-4',
   link:
-    'inline-block py-2 font-semibold text-xs text-gray-600 hover:text-black font-heebo animated-link',
+    'inline-block py-2 font-semibold text-xs text-sage hover:text-terracotta font-heebo animated-link',
 };
 
 const Header = ({ metadata = {}, noBlog = false }) => {
@@ -60,6 +60,11 @@ const Header = ({ metadata = {}, noBlog = false }) => {
           <li className={classes.item}>
             <Link className={classes.link} to="/top-posts">
               Top Posts
+            </Link>
+          </li>
+          <li className={classes.item}>
+            <Link className={classes.link} to="/recommendations">
+              Recommendations
             </Link>
           </li>
         </ul>

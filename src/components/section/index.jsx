@@ -4,8 +4,8 @@ const classes = {
   wrapper: 'block pt-12 md:flex font-heebo animate-fade-in-up',
   title: 'pb-6 md:w-full md:max-w-150 md:p-0 animate-slide-in-left',
   heading:
-    'font-xs font-light tracking-widest text-sm text-gray-600 leading-normal uppercase font-heebo',
-  content: 'flex-none text-lg text-gray-600 font-light md:flex-1 md:pl-20 font-heebo',
+    'font-xs font-light tracking-widest text-sm text-sage leading-normal uppercase font-heebo',
+  content: 'flex-none text-lg text-sage font-light md:flex-1 md:pl-20 font-heebo',
 };
 
 const Section = ({ title, children }) => {

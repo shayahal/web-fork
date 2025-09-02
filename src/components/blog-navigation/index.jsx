@@ -46,6 +46,7 @@ const BlogNavigation = ({ currentPage = 'blog', metadata = {} }) => {
     { title: 'Cocktails', path: '/cocktails', key: 'cocktails', count: data.cocktails.totalCount },
     { title: 'Travel', path: '/travel', key: 'travel', count: data.travel.totalCount },
     { title: 'Top Posts', path: '/top-posts', key: 'top-posts' },
+    { title: 'Recommendations', path: '/recommendations', key: 'recommendations' },
   ];
 
   return (

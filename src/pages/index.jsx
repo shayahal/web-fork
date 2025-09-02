@@ -6,18 +6,18 @@ import Header from '../components/header';
 import Layout from '../components/layout';
 import SectionAbout from '../components/section-about';
 import SectionBlog from '../components/section-blog';
-import SectionRecommendations from '../components/section-recommendations';
+
 import SectionProjects from '../components/section-projects';
-import SectionSkills from '../components/section-skills';
-import SectionTopPosts from '../components/section-top-posts';
+
+
 import SEO from '../components/seo';
 
 const Index = ({ data }) => {
   const about = get(data, 'site.siteMetadata.about', false);
   const projects = get(data, 'site.siteMetadata.projects', false);
   const posts = data.allMarkdownRemark.edges;
-  const recommendations = get(data, 'site.siteMetadata.recommendations', false);
-  const skills = get(data, 'site.siteMetadata.skills', false);
+
+
   const noBlog = !posts || !posts.length;
 
   return (
@@ -26,12 +26,10 @@ const Index = ({ data }) => {
       <Header metadata={data.site.siteMetadata} noBlog={noBlog} />
       {about && <SectionAbout about={about} />}
       {projects && projects.length && <SectionProjects projects={projects} />}
-      {!noBlog && <SectionTopPosts posts={posts} />}
+
       {!noBlog && <SectionBlog posts={posts} />}
-      {recommendations && recommendations.length && (
-        <SectionRecommendations recommendations={recommendations} />
-      )}
-      {skills && skills.length && <SectionSkills skills={skills} />}
+
+
     </Layout>
   );
 };
@@ -54,15 +52,8 @@ export const pageQuery = graphql`
           description
           link
         }
-        recommendations {
-          name
-          description
-          link
-        }
-        skills {
-          name
-          description
-        }
+
+
       }
     }
     allMarkdownRemark(
