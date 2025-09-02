@@ -13,7 +13,7 @@ const TopPostsPage = ({ data }) => {
       <SEO title="Top Posts" />
       <Header metadata={data.site.siteMetadata} />
       <div className="mt-16 max-w-4xl mx-auto px-4 animate-fade-in-up font-huninn">
-        <h1 className="text-4xl font-bold text-terracotta mb-6 animate-slide-in-left font-huninn">Top Posts</h1>
+        <h1 className="text-4xl font-bold text-terracotta mb-6 animate-slide-in-left font-play">Top Posts</h1>
         <p className="text-lg text-text-dark mb-4 animate-fade-in-up font-huninn" style={{animationDelay: '0.1s'}}>
           Discover the most popular and highly-rated blog posts.
         </p>
@@ -26,7 +26,7 @@ const TopPostsPage = ({ data }) => {
                 className="border-b border-blush pb-6 post-card animate-fade-in-up"
                 style={{animationDelay: `${(index + 1) * 0.1}s`}}
               >
-                <h2 className="text-2xl font-bold text-terracotta mb-2 font-huninn">
+                <h2 className="text-2xl font-bold text-terracotta mb-2 font-play">
                   <Link 
                     to={post.node.fields.slug} 
                     className="animated-link hover:text-sage transition-colors"

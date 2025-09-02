@@ -52,7 +52,10 @@ export const pageQuery = graphql`
         }
       }
     }
-    aboutMarkdown: markdownRemark(fileAbsolutePath: { regex: "/about.md$/" }) {
+    aboutMarkdown: markdownRemark(
+      fileAbsolutePath: { regex: "/content/about.md$/" }
+      parent: { sourceInstanceName: { eq: "content" } }
+    ) {
       html
       frontmatter {
         title

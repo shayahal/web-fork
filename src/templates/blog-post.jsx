@@ -9,7 +9,7 @@ import '../css/styles.css';
 
 const classes = {
   wrapper: 'mt-16 blog-content font-huninn animate-fade-in-up text-text-dark',
-  title: 'mt-16 text-4xl text-terracotta font-bold font-huninn animate-slide-in-left',
+  title: 'mt-16 text-4xl text-terracotta font-bold font-play animate-slide-in-left',
   date: 'text-sage font-light font-huninn',
   tags: 'mt-4 flex flex-wrap gap-2',
   tag: 'px-3 py-1 bg-blush text-terracotta text-sm rounded-full font-medium hover:bg-sage hover:text-cream transition-colors',

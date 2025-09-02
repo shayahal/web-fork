@@ -54,12 +54,17 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 
   if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode });
-    createNodeField({
-      name: `slug`,
-      node,
-      value: `/blog${value}`,
-    });
+    const parent = getNode(node.parent);
+    
+    // Only add slug to blog posts (files in content/blog directory)
+    if (parent && parent.sourceInstanceName === 'blog') {
+      const value = createFilePath({ node, getNode });
+      createNodeField({
+        name: `slug`,
+        node,
+        value: `/blog${value}`,
+      });
+    }
   }
 };
 
