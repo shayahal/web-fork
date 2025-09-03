@@ -2,8 +2,6 @@
 title: "About Me"
 ---
 
-![Fishing Adventure](/static/fishing.jpg)
-
 I've built this site because I:
 
 - **Was kind of jealous** of my friend's sites.

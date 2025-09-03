@@ -37,7 +37,7 @@
 
   .blog-content p,
   .gatsby-highlight {
-    @apply mb-6;
+    @apply mb-2;
   }
 
   .blog-content ul,
@@ -102,6 +102,11 @@
 
   .blog-content hr {
     @apply my-6;
+  }
+
+  /* About section specific styling */
+  .prose p {
+    @apply mb-2;
   }
 }
 
