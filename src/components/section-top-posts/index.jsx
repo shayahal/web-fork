@@ -19,14 +19,14 @@ const SectionTopPosts = ({ posts }) => {
     <Section title="Top Posts">
       {topPosts.map((post, index) => (
         <div 
-          key={post.node.fields.slug}
+          key={post.node.fields?.slug || post.node.id}
           className="animate-fade-in-up"
           style={{animationDelay: `${(index + 1) * 0.1}s`}}
         >
           <SummaryItem
             name={post.node.frontmatter.title}
             description={post.node.frontmatter.description}
-            link={post.node.fields.slug}
+            link={post.node.fields?.slug || '#'}
             internal
           />
         </div>

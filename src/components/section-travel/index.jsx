@@ -19,10 +19,10 @@ const SectionTravel = ({ posts }) => {
     <Section title="Travel Posts">
       {travelPosts.map((post) => (
         <SummaryItem
-          key={post.node.fields.slug}
+          key={post.node.fields?.slug || post.node.id}
           name={post.node.frontmatter.title}
           description={post.node.frontmatter.description}
-          link={post.node.fields.slug}
+          link={post.node.fields?.slug || '#'}
           internal
         />
       ))}

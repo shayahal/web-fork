@@ -34,9 +34,12 @@ exports.createPages = async ({ graphql, actions }) => {
   // Create blog posts pages.
   const posts = result.data.allMarkdownRemark.edges;
 
-  posts.forEach((post, index) => {
-    const previous = index === posts.length - 1 ? null : posts[index + 1].node;
-    const next = index === 0 ? null : posts[index - 1].node;
+  // Filter to only include posts that have a slug (blog posts)
+  const blogPosts = posts.filter(post => post.node.fields && post.node.fields.slug);
+
+  blogPosts.forEach((post, index) => {
+    const previous = index === blogPosts.length - 1 ? null : blogPosts[index + 1].node;
+    const next = index === 0 ? null : blogPosts[index - 1].node;
 
     createPage({
       path: post.node.fields.slug,

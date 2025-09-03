@@ -5,24 +5,27 @@ import Section from '../section';
 import SummaryItem from '../summary-item';
 
 const SectionBlog = ({ posts }) => {
+  // Filter to only include posts that have a slug (blog posts)
+  const blogPosts = posts.filter(post => post.node.fields?.slug);
+  
   return (
     <Section title="Latest Posts">
-      {posts.map((post, index) => (
+      {blogPosts.map((post, index) => (
         <div 
-          key={post.node.fields.slug}
+          key={post.node.fields?.slug || post.node.id}
           className="animate-fade-in-up"
           style={{animationDelay: `${(index + 1) * 0.1}s`}}
         >
           <SummaryItem
             name={post.node.frontmatter.title}
             description={post.node.frontmatter.description}
-            link={post.node.fields.slug}
+            link={post.node.fields?.slug || '#'}
             internal
           />
         </div>
       ))}
-      {posts.length >= 5 && (
-        <div className="animate-fade-in-up" style={{animationDelay: `${(posts.length + 1) * 0.1}s`}}>
+      {blogPosts.length >= 5 && (
+        <div className="animate-fade-in-up" style={{animationDelay: `${(blogPosts.length + 1) * 0.1}s`}}>
           <Link className="text-gray-500 text-sm hover:text-black font-heebo animated-link" to="/blog">
             View all posts &rarr;
           </Link>

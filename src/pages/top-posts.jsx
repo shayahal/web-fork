@@ -22,13 +22,13 @@ const TopPostsPage = ({ data }) => {
           <div className="space-y-6">
             {posts.map((post, index) => (
               <article 
-                key={post.node.fields.slug} 
+                key={post.node.fields?.slug || post.node.id} 
                 className="border-b border-blush pb-6 post-card animate-fade-in-up"
                 style={{animationDelay: `${(index + 1) * 0.1}s`}}
               >
                 <h2 className="text-2xl font-bold text-terracotta mb-2 font-play">
                   <Link 
-                    to={post.node.fields.slug} 
+                    to={post.node.fields?.slug || '#'} 
                     className="animated-link hover:text-sage transition-colors"
                   >
                     {post.node.frontmatter.title}

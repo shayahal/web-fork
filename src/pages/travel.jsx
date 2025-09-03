@@ -22,12 +22,12 @@ const TravelPage = ({ data }) => {
           <div className="space-y-6">
             {posts.map((post, index) => (
               <article 
-                key={post.node.fields.slug} 
+                key={post.node.fields?.slug || post.node.id} 
                 className="border-b border-gray-200 pb-6 post-card animate-fade-in-up"
               >
                 <h2 className="text-2xl font-bold text-gray-900 mb-2">
                   <Link 
-                    to={post.node.fields.slug} 
+                    to={post.node.fields?.slug || '#'} 
                     className="animated-link hover:text-blue-600 transition-colors"
                   >
                     {post.node.frontmatter.title}

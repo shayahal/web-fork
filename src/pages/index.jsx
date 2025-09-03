@@ -15,7 +15,9 @@ import SEO from '../components/seo';
 const Index = ({ data }) => {
   const projects = get(data, 'site.siteMetadata.projects', false);
   const posts = data.allMarkdownRemark.edges;
-  const aboutContent = data.aboutMarkdown ? data.aboutMarkdown.html : null;
+  const aboutContent = data.allAboutMarkdown && data.allAboutMarkdown.edges.length > 0 
+    ? data.allAboutMarkdown.edges[0].node.html 
+    : null;
 
   const noBlog = !posts || !posts.length;
 
@@ -52,15 +54,6 @@ export const pageQuery = graphql`
         }
       }
     }
-    aboutMarkdown: markdownRemark(
-      fileAbsolutePath: { regex: "/content/about.md$/" }
-      parent: { sourceInstanceName: { eq: "content" } }
-    ) {
-      html
-      frontmatter {
-        title
-      }
-    }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       limit: 5
@@ -76,6 +69,20 @@ export const pageQuery = graphql`
             title
             description
             tags
+          }
+        }
+      }
+    }
+    allAboutMarkdown: allMarkdownRemark(
+      filter: { 
+        fileAbsolutePath: { regex: "/about.md$/" }
+      }
+    ) {
+      edges {
+        node {
+          html
+          frontmatter {
+            title
           }
         }
       }

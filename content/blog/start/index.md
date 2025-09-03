@@ -1,7 +1,7 @@
 ---
 title: איך מתחילים 
 date: '2024-11-16T12:00:00.00Z'
-description: 'פשוט אוסף נחמד של מתכונים לקוקטיילים ומה חשבתי עליהם'
+description: 'origin story'
 direction: rtl
 language: 'he'
 tags: ['cocktails', 'beginner', 'personal']
