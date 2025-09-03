@@ -1,6 +1,6 @@
 ---
 title: French57 & Saint Herbe Punch
-date: '2024-11-16T12:00:00.00Z'
+date: '2024-11-16'
 description: 'מרחוב ברנר - לברנר'
 direction: rtl
 language: 'he'

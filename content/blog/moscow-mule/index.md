@@ -1,6 +1,6 @@
 ---
 title: Moscow-mule וטכניקות אחרות
-date: '2024-11-16T12:00:00.00Z'
+date: '2024-11-16'
 description: 'היופי שבפשטות'
 direction: rtl
 language: 'he'

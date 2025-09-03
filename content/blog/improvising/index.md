@@ -1,6 +1,6 @@
 ---
 title: איך לאלתר?
-date: '2025-06-21T12:00:00.00Z'
+date: '2024-06-21'
 description: 'מה לעשות כשאין לי חצי מהמרכיבים במתכון'
 direction: rtl
 language: 'he'

@@ -1,6 +1,6 @@
 ---
 title: איך מתחילים 
-date: '2024-11-16T12:00:00.00Z'
+date: '2024-11-16'
 description: 'origin story'
 direction: rtl
 language: 'he'
