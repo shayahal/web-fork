@@ -1,5 +1,4 @@
 import { graphql, Link } from 'gatsby';
-import moment from 'moment';
 import React from 'react';
 
 import Header from '../components/header';
@@ -39,7 +38,7 @@ const BlogPost = ({ data }) => {
       <div className={`blog-post ${isRTL ? 'rtl' : ''}`}>
         <h1 className={classes.title}>{post.frontmatter.title}</h1>
         <p className={classes.date}>
-          {moment(post.frontmatter.date).format('MMMM D, YYYY')}
+          {post.frontmatter.date}
         </p>
         {post.frontmatter.tags && (
           <div className={classes.tags}>
@@ -126,7 +125,7 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { frontmatter: { date: DESC } }
     ) {
       edges {
         node {

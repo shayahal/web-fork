@@ -1,5 +1,4 @@
 import { graphql, Link } from 'gatsby';
-import moment from 'moment';
 import React from 'react';
 
 import Header from '../components/header';
@@ -43,7 +42,7 @@ const BlogPage = ({ data }) => {
                 <p className="text-gray-600 mb-3">{post.node.frontmatter.description}</p>
                 <div className="flex items-center justify-between">
                   <p className="text-sm text-gray-500">
-                    {moment(post.node.frontmatter.date).format('MMMM D, YYYY')}
+                    {post.node.frontmatter.date}
                   </p>
                   {post.node.frontmatter.tags && (
                     <div className="flex gap-2">
