@@ -1,6 +1,6 @@
 ---
 title: "סודות אירוח"
-date: "2025-08-31"
+date: "2024-08-31"
 description: "קוקטיילים שמאפשרים לי להפסיק לעמוד במטבח כל הערב"
 direction: rtl
 language: 'he'
