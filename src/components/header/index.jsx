@@ -13,7 +13,7 @@ const classes = {
   list: 'mt-6 uppercase tracking-wider font-huninn',
   item: 'inline list-none pr-4',
   link:
-    'inline-block py-2 font-semibold text-xs text-sage hover:text-terracotta font-huninn animated-link',
+    'inline-block py-2 font-semibold text-xs text-nav-dark hover:text-nav-darker font-huninn animated-link',
 };
 
 const Header = ({ metadata = {}, noBlog = false, showProfileImage = true }) => {

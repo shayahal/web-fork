@@ -15,6 +15,8 @@ module.exports = {
         'blush': '#EBD9D1',
         'terracotta': 'rgb(188, 168, 141)',
         'text-dark': '#37353E',
+        'nav-dark': '#7D8D86',
+        'nav-darker': '#6B7A73',
       },
       keyframes: {
         'fade-in-up': {
