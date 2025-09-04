@@ -15,7 +15,7 @@ const CocktailsPage = ({ data }) => {
       <div className="mt-16 max-w-4xl mx-auto px-4">
         <h1 className="text-4xl font-bold text-terracotta mb-6 animate-fade-in-up font-play">Cocktails</h1>
         <p className="text-lg text-text-dark mb-4 animate-fade-in-up font-huninn">
-          Discover the art of cocktail making and explore delicious recipes.
+        מפה האתר התחיל - המתכונים שאני אוהבת, טיפים, המלצות לאיזה בקבוקים לקנות.
         </p>
         
         {posts.length > 0 ? (

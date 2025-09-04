@@ -15,7 +15,7 @@ const TravelPage = ({ data }) => {
       <div className="mt-16 max-w-4xl mx-auto px-4">
         <h1 className="text-4xl font-bold text-terracotta mb-6 animate-fade-in-up font-play">Travel</h1>
         <p className="text-lg text-text-dark mb-4 animate-fade-in-up font-huninn">
-          Explore travel adventures, tips, and experiences from around the world.
+          אני אוהבת לטייל. תמיד רציתי לשים איפשהו את כל ההמלצות שלי - תהנו.
         </p>
         
         {posts.length > 0 ? (

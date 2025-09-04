@@ -15,7 +15,7 @@ const TopPostsPage = ({ data }) => {
       <div className="mt-16 max-w-4xl mx-auto px-4 animate-fade-in-up font-huninn">
         <h1 className="text-4xl font-bold text-terracotta mb-6 animate-fade-in-up font-play">Top Posts</h1>
         <p className="text-lg text-text-dark mb-4 animate-fade-in-up font-huninn" style={{animationDelay: '0.1s'}}>
-          Discover the most popular and highly-rated blog posts.
+          the posts I'm most proud of.
         </p>
         
         {posts.length > 0 ? (

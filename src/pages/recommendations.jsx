@@ -17,7 +17,7 @@ const RecommendationsPage = ({ data }) => {
       <div className="mt-16 max-w-4xl mx-auto px-4">
         <h1 className="text-4xl font-bold text-terracotta mb-6 animate-fade-in-up font-play">Recommendations</h1>
         <p className="text-lg text-text-dark mb-4 animate-fade-in-up font-huninn">
-          Things I recommend and find valuable.
+          Random collection of things I recommend.
         </p>
         
         {recommendations && recommendations.length > 0 ? (

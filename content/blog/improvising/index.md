@@ -4,7 +4,7 @@ date: '2024-06-21'
 description: 'מה לעשות כשאין לי חצי מהמרכיבים במתכון'
 direction: rtl
 language: 'he'
-tags: ['cocktails', 'tips', 'improvisation', 'substitutions']
+tags: ['cocktails', 'substitutions', 'recipe']
 
 ---
 

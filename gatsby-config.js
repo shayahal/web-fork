@@ -78,8 +78,8 @@ module.exports = {
     // Optional: List your recommendations, they must have `name` and `description`. `link` is optional.
     recommendations: [
       {
-        name: 'Nothing intersting here yet',
-        description: 'To Be Added',
+        name: 'my.. github?',
+        description: 'not sure. wanted to put link',
         link: 'https://github.com/shayahal',
       },
     ],

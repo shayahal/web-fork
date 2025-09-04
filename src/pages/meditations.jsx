@@ -15,7 +15,7 @@ const MeditationsPage = ({ data }) => {
       <div className="mt-16 max-w-4xl mx-auto px-4">
         <h1 className="text-4xl font-bold text-terracotta mb-6 animate-fade-in-up font-play">Meditations</h1>
         <p className="text-lg text-text-dark mb-4 animate-fade-in-up font-huninn">
-          Welcome to the meditations section. This is where you'll find thoughtful reflections and insights.
+          place for me to write non-sence. not actual meditations, i don't have the patience.
         </p>
         
         {posts.length > 0 ? (
