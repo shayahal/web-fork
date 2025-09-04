@@ -8,6 +8,8 @@ import SectionAbout from '../components/section-about';
 import SectionBlog from '../components/section-blog';
 
 import SectionProjects from '../components/section-projects';
+import SectionAskMe from '../components/section-ask-me';
+import SectionLectures from '../components/section-lectures';
 
 
 import SEO from '../components/seo';
@@ -15,6 +17,8 @@ import SEO from '../components/seo';
 const Index = ({ data }) => {
   const projects = get(data, 'site.siteMetadata.projects', false);
   const posts = data.allMarkdownRemark.edges;
+  const lectures = get(data, 'site.siteMetadata.subjectsTalking', false);
+  const askMe = get(data, 'site.siteMetadata.subjectsAskMe', false);
   const aboutContent = data.allAboutMarkdown && data.allAboutMarkdown.edges.length > 0 
     ? data.allAboutMarkdown.edges[0].node.html 
     : null;
@@ -27,7 +31,8 @@ const Index = ({ data }) => {
       <Header metadata={data.site.siteMetadata} noBlog={noBlog} />
       {aboutContent && <SectionAbout aboutContent={aboutContent} />}
       {projects && projects.length && <SectionProjects projects={projects} />}
-
+      {lectures && lectures.length && <SectionLectures lectures={lectures} />}
+      {askMe && askMe.length && <SectionAskMe subjects={askMe} />}
       {!noBlog && <SectionBlog posts={posts} />}
 
 
@@ -52,7 +57,17 @@ export const pageQuery = graphql`
           description
           link
         }
-      }
+        subjectsTalking {
+          name
+          description
+          link
+        }
+        subjectsAskMe {
+          name
+          description
+          link
+        }
+    }
     }
     allMarkdownRemark(
       sort: { frontmatter: { date: DESC } }

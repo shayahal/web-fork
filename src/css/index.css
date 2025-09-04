@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Huninn:wght@400;700&display=swap');
+/* Fonts are now preloaded via gatsby-plugin-preload-fonts */
 
 @tailwind base;
 @tailwind components;
@@ -22,6 +21,17 @@
     will-change: transform, opacity;
     backface-visibility: hidden;
     transform: translateZ(0);
+  }
+  
+  /* Optimize font loading */
+  .font-huninn {
+    font-family: 'Huninn', 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
+    font-display: swap;
+  }
+  
+  .font-play {
+    font-family: 'Play', 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
+    font-display: swap;
   }
   
   .blog-content {
@@ -124,59 +134,27 @@
     animation: scaleIn 0.5s ease-out;
   }
   
-  /* Blog post card animations */
+  /* Blog post card animations - simplified for performance */
   .post-card {
-    transition: all 0.3s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     transform: translateY(0);
     position: relative;
-    overflow: hidden;
-  }
-  
-  .post-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s ease;
-  }
-  
-  .post-card:hover::before {
-    left: 100%;
   }
   
   .post-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
   
-  /* Tag animations */
+  /* Tag animations - simplified for performance */
   .tag-item {
-    transition: all 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     position: relative;
-    overflow: hidden;
-  }
-  
-  .tag-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(62, 63, 41, 0.1), transparent);
-    transition: left 0.3s ease;
-  }
-  
-  .tag-item:hover::before {
-    left: 100%;
   }
   
   .tag-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 2px 8px rgba(62, 63, 41, 0.3);
+    transform: scale(1.02);
+    box-shadow: 0 2px 8px rgba(62, 63, 41, 0.2);
   }
   
   /* Link hover effects - simplified without underlines */
@@ -265,6 +243,22 @@
       transition: none !important;
       transform: none !important;
     }
+  }
+  
+  .reduce-motion .animate-fade-in-up,
+  .reduce-motion .animate-fade-in,
+  .reduce-motion .animate-slide-in-left,
+  .reduce-motion .animate-scale-in,
+  .reduce-motion .post-card,
+  .reduce-motion .tag-item,
+  .reduce-motion .animated-link,
+  .reduce-motion .scroll-animate,
+  .reduce-motion .micro-bounce,
+  .reduce-motion .pulse-gentle,
+  .reduce-motion .float-gentle {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
   }
 }
 

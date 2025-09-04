@@ -3,44 +3,26 @@ import React from 'react';
 const classes = {
   wrapper: 'p-8 relative max-w-screen-xl xs:p-24 font-huninn animate-fade-in bg-cream min-h-screen',
   outerWrapper: 'relative font-huninn bg-cream',
-  svg: 'hidden fixed transform right-0 top-5 z-0 xl:block animate-slide-in-left float-gentle',
+  // Simplified decorative element using CSS instead of complex SVG
+  decoration: 'hidden fixed transform right-0 top-5 z-0 xl:block w-96 h-full opacity-30',
 };
 
 const Layout = ({ children }) => {
   return (
     <div className={classes.outerWrapper}>
-      <svg
-        className={classes.svg}
-        width="404"
-        height="784"
-        fill="none"
-        viewBox="0 0 404 784"
-      >
-        <defs>
-          <pattern
-            id="5d0dd344-b041-4d26-bec4-8d33ea57ec9b"
-            x="0"
-            y="0"
-            width="20"
-            height="20"
-            patternUnits="userSpaceOnUse"
-          >
-            <rect
-              x="0"
-              y="0"
-              width="4"
-              height="4"
-              className="text-blush"
-              fill="#EBD9D1"
-            />
-          </pattern>
-        </defs>
-        <rect
-          width="404"
-          height="784"
-          fill="url(#5d0dd344-b041-4d26-bec4-8d33ea57ec9b)"
-        />
-      </svg>
+      {/* Simplified decorative background using CSS pattern */}
+      <div 
+        className={classes.decoration}
+        style={{
+          background: `repeating-linear-gradient(
+            45deg,
+            #EBD9D1,
+            #EBD9D1 4px,
+            transparent 4px,
+            transparent 20px
+          )`
+        }}
+      />
       <div className={classes.wrapper}>{children}</div>
     </div>
   );

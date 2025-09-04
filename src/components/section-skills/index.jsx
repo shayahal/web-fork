@@ -6,12 +6,17 @@ import SummaryItem from '../summary-item';
 const SectionSkills = ({ skills }) => {
   return (
     <Section title="Skills">
-      {skills.map((skill) => (
-        <SummaryItem
+      {skills.map((skill, index) => (
+        <div 
           key={skill.name}
-          name={skill.name}
-          description={skill.description}
-        />
+          className="animate-fade-in-up stagger-1"
+          style={{animationDelay: `${(index + 1) * 0.1}s`}}
+        >
+          <SummaryItem
+            name={skill.name}
+            description={skill.description}
+          />
+        </div>
       ))}
     </Section>
   );

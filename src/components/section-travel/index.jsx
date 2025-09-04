@@ -17,14 +17,19 @@ const SectionTravel = ({ posts }) => {
 
   return (
     <Section title="Travel Posts">
-      {travelPosts.map((post) => (
-        <SummaryItem
+      {travelPosts.map((post, index) => (
+        <div 
           key={post.node.fields?.slug || post.node.id}
-          name={post.node.frontmatter.title}
-          description={post.node.frontmatter.description}
-          link={post.node.fields?.slug || '#'}
-          internal
-        />
+          className="animate-fade-in-up stagger-1"
+          style={{animationDelay: `${(index + 1) * 0.1}s`}}
+        >
+          <SummaryItem
+            name={post.node.frontmatter.title}
+            description={post.node.frontmatter.description}
+            link={post.node.fields?.slug || '#'}
+            internal
+          />
+        </div>
       ))}
     </Section>
   );

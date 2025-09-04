@@ -29,6 +29,52 @@ module.exports = {
         link: 'https://www.mako.co.il/nexter-news/Article-75518b5b5f2c681027.htm',
       },
     ],
+    // Subjects I'm talking about
+    subjectsTalking: [
+      {
+        name: 'Workplace Coalitions',
+        description: 'Or: politics for data scientists',
+        link: 'None',
+      },
+      {
+        name: 'How Not to Manage Your Time',
+        description: 'not your regular productivity Ted talk',
+        link: 'None',
+      },
+      {
+        name: 'Why Can\'t You Hire Female Software Engineers',
+        description: 'senior-it in the making',
+        link: 'None',
+      },
+      {
+        name: 'The Magic of Dimension Reduction',
+        description: 'i\'m still amazed'
+        link: 'None',
+      },
+      {
+        name: 'Why Women Aren\'t Funny (Archive)',
+        description: 'a curious exploration',
+        link: 'None',
+      },
+    ],
+    // Subjects you should ask me to talk about
+    subjectsAskMe: [
+      {
+        name: 'Mastering Multidisciplinary Management',
+        description: 'or die trying',
+        link: 'None',
+      },
+      {
+        name: 'Lost in East Africa',
+        description: 'Book of Mormon in real lift',
+        link: 'None',
+      },
+      {
+        name: 'The true secret for making amazing cocktails at home',
+        description: 'the secret is sugar',
+        link: 'None',
+      },
+    ],
     // Optional: List your recommendations, they must have `name` and `description`. `link` is optional.
     recommendations: [
       {
@@ -88,6 +134,9 @@ module.exports = {
             options: {
               maxWidth: 590,
               wrapperStyle: `margin: 0 0 30px;`,
+              quality: 85,
+              withWebp: true,
+              withAvif: true,
             },
           },
           {
@@ -105,6 +154,9 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-postcss`,
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-preload-fonts`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

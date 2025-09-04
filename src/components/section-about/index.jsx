@@ -5,7 +5,7 @@ import Section from '../section';
 const SectionAbout = ({ aboutContent }) => {
   return (
     <Section title="About">
-      <div className="flex flex-col md:flex-row gap-6 items-start">
+      <div className="flex flex-col md:flex-row gap-6 items-start animate-fade-in-up stagger-1">
         <div className="flex-1">
           <div 
             className="prose prose-lg max-w-none"

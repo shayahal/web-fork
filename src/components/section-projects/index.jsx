@@ -8,13 +8,18 @@ const SectionProjects = ({ projects }) => {
 
   return (
     <Section title="Projects">
-      {projects.map((project) => (
-        <SummaryItem
+      {projects.map((project, index) => (
+        <div 
           key={project.name}
-          name={project.name}
-          description={project.description}
-          link={project.link}
-        />
+          className="animate-fade-in-up stagger-1"
+          style={{animationDelay: `${(index + 1) * 0.1}s`}}
+        >
+          <SummaryItem
+            name={project.name}
+            description={project.description}
+            link={project.link}
+          />
+        </div>
       ))}
     </Section>
   );

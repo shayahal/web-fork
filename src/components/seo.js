@@ -62,7 +62,25 @@ const SEO = ({ description, lang, meta, title }) => {
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+      {/* Preload critical fonts */}
+      <link
+        rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap"
+        as="style"
+        onLoad="this.onload=null;this.rel='stylesheet'"
+      />
+      <link
+        rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Huninn:wght@400;700&display=swap"
+        as="style"
+        onLoad="this.onload=null;this.rel='stylesheet'"
+      />
+      <noscript>
+        {`<link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Huninn:wght@400;700&display=swap" rel="stylesheet" />`}
+      </noscript>
+    </Helmet>
   );
 };
 

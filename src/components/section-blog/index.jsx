@@ -13,7 +13,7 @@ const SectionBlog = ({ posts }) => {
       {blogPosts.map((post, index) => (
         <div 
           key={post.node.fields?.slug || post.node.id}
-          className="animate-fade-in-up"
+          className="animate-fade-in-up stagger-1"
           style={{animationDelay: `${(index + 1) * 0.1}s`}}
         >
           <SummaryItem
@@ -25,8 +25,8 @@ const SectionBlog = ({ posts }) => {
         </div>
       ))}
       {blogPosts.length >= 5 && (
-        <div className="animate-fade-in-up" style={{animationDelay: `${(blogPosts.length + 1) * 0.1}s`}}>
-          <Link className="text-gray-500 text-sm hover:text-black font-heebo animated-link" to="/blog">
+        <div className="animate-fade-in-up stagger-1" style={{animationDelay: `${(blogPosts.length + 1) * 0.1}s`}}>
+          <Link className="text-gray-500 text-sm hover:text-sage transition-colors font-heebo animated-link" to="/blog">
             View all posts &rarr;
           </Link>
         </div>

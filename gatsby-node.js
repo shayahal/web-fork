@@ -84,6 +84,8 @@ exports.createSchemaCustomization = ({ actions }) => {
       linkedin: String
       about: String
       projects: [SectionItem]
+      subjectsTalking: [SectionItem]
+      subjectsAskMe: [SectionItem]
       recommendation: [SectionItem]
       skills: [SectionItem]
     }

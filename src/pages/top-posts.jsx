@@ -42,7 +42,7 @@ const TopPostsPage = ({ data }) => {
                       {post.node.frontmatter.tags.map((tag, tagIndex) => (
                         <span 
                           key={tagIndex} 
-                          className="px-2 py-1 bg-blush text-terracotta text-xs rounded-full tag-item"
+                          className="px-3 py-1 bg-blush text-terracotta text-sm rounded-full font-medium hover:bg-sage hover:text-cream transition-colors tag-item"
                         >
                           {tag}
                         </span>

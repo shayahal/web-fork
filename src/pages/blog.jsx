@@ -21,7 +21,7 @@ const BlogPage = ({ data }) => {
       <div className="mt-16 max-w-4xl mx-auto px-4">
         <h1 className="text-4xl font-bold text-terracotta mb-6 animate-fade-in-up font-play">Blog</h1>
         <p className="text-lg text-text-dark mb-4 animate-fade-in-up font-huninn">
-          Thoughts, insights, and stories from my journey.
+          all posts.
         </p>
         
         {posts.length > 0 ? (

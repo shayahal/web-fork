@@ -20,7 +20,7 @@ const SectionTopPosts = ({ posts }) => {
       {topPosts.map((post, index) => (
         <div 
           key={post.node.fields?.slug || post.node.id}
-          className="animate-fade-in-up"
+          className="animate-fade-in-up stagger-1"
           style={{animationDelay: `${(index + 1) * 0.1}s`}}
         >
           <SummaryItem
