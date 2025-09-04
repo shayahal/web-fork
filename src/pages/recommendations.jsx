@@ -15,15 +15,15 @@ const RecommendationsPage = ({ data }) => {
       <SEO title="Recommendations" />
       <Header metadata={data.site.siteMetadata} />
       <div className="mt-16 max-w-4xl mx-auto px-4">
-        <h1 className="text-4xl font-bold text-gray-900 mb-6 animate-fade-in-up">Recommendations</h1>
-        <p className="text-lg text-gray-600 mb-4 animate-fade-in-up">
+        <h1 className="text-4xl font-bold text-terracotta mb-6 animate-fade-in-up font-play">Recommendations</h1>
+        <p className="text-lg text-text-dark mb-4 animate-fade-in-up font-huninn">
           Things I recommend and find valuable.
         </p>
         
         {recommendations && recommendations.length > 0 ? (
           <SectionRecommendations recommendations={recommendations} />
         ) : (
-          <p className="text-gray-600 animate-fade-in">No recommendations found yet.</p>
+          <p className="text-text-dark animate-fade-in font-huninn">No recommendations found yet.</p>
         )}
       </div>
     </Layout>

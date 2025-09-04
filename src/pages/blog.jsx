@@ -19,8 +19,8 @@ const BlogPage = ({ data }) => {
       <SEO title="Blog" />
       <Header metadata={data.site.siteMetadata} />
       <div className="mt-16 max-w-4xl mx-auto px-4">
-        <h1 className="text-4xl font-bold text-gray-900 mb-6 animate-fade-in-up">Blog</h1>
-        <p className="text-lg text-gray-600 mb-4 animate-fade-in-up">
+        <h1 className="text-4xl font-bold text-terracotta mb-6 animate-fade-in-up font-play">Blog</h1>
+        <p className="text-lg text-text-dark mb-4 animate-fade-in-up font-huninn">
           Thoughts, insights, and stories from my journey.
         </p>
         
@@ -29,19 +29,19 @@ const BlogPage = ({ data }) => {
             {posts.map((post, index) => (
               <article 
                 key={post.node.fields?.slug || post.node.id} 
-                className="border-b border-gray-200 pb-6 post-card animate-fade-in-up"
+                className="border-b border-blush pb-6 post-card animate-fade-in-up"
               >
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">
+                <h2 className="text-2xl font-bold text-terracotta mb-2 font-play">
                   <Link 
                     to={post.node.fields?.slug || '#'} 
-                    className="animated-link hover:text-blue-600 transition-colors"
+                    className="animated-link hover:text-sage transition-colors"
                   >
                     {post.node.frontmatter.title}
                   </Link>
                 </h2>
-                <p className="text-gray-600 mb-3">{post.node.frontmatter.description}</p>
+                <p className="text-text-dark mb-3 font-huninn">{post.node.frontmatter.description}</p>
                 <div className="flex items-center justify-between">
-                  <p className="text-sm text-gray-500">
+                  <p className="text-sm text-text-dark font-huninn">
                     {post.node.frontmatter.date}
                   </p>
                   {post.node.frontmatter.tags && (
@@ -49,7 +49,7 @@ const BlogPage = ({ data }) => {
                       {post.node.frontmatter.tags.map((tag, tagIndex) => (
                         <span 
                           key={tagIndex} 
-                          className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full tag-item"
+                          className="px-3 py-1 bg-blush text-terracotta text-sm rounded-full font-medium hover:bg-sage hover:text-cream transition-colors"
                         >
                           {tag}
                         </span>
@@ -61,7 +61,7 @@ const BlogPage = ({ data }) => {
             ))}
           </div>
         ) : (
-          <p className="text-gray-600 animate-fade-in">No blog posts found yet.</p>
+          <p className="text-text-dark animate-fade-in font-huninn">No blog posts found yet.</p>
         )}
       </div>
     </Layout>
