@@ -56,7 +56,7 @@ const BlogPost = ({ data }) => {
         
         {/* Navigation */}
         <div className={classes.navigation}>
-          {previousPost ? (
+          {previousPost && previousPost.node && previousPost.node.fields?.slug ? (
             <Link 
               to={previousPost.node.fields.slug} 
               className={isRTL ? classes.navLinkRTL : classes.navLink}
@@ -74,7 +74,7 @@ const BlogPost = ({ data }) => {
             <div></div>
           )}
           
-          {nextPost ? (
+          {nextPost && nextPost.node && nextPost.node.fields?.slug ? (
             <Link 
               to={nextPost.node.fields.slug} 
               className={isRTL ? classes.navLinkRTL : classes.navLink}
