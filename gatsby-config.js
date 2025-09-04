@@ -48,7 +48,7 @@ module.exports = {
       },
       {
         name: 'The Magic of Dimension Reduction',
-        description: 'i\'m still amazed'
+        description: 'i\'m still amazed',
         link: 'None',
       },
       {
