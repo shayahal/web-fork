@@ -11,10 +11,13 @@ const MeditationsPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Meditations" />
-      <Header metadata={data.site.siteMetadata} />
+      <Header 
+        metadata={data.site.siteMetadata}
+        currentLanguage="he"
+      />
       <div className="mt-16 max-w-4xl mx-auto px-4">
         <h1 className="text-4xl font-bold text-terracotta mb-6 animate-fade-in-up font-play">Meditations</h1>
-        <p className="text-lg text-text-dark mb-4 animate-fade-in-up font-huninn">
+        <p className="text-lg text-sage mb-4 animate-fade-in-up font-huninn">
           place for me to write non-sence. not actual meditations, i don't have the patience.
         </p>
         
@@ -76,7 +79,12 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      filter: { frontmatter: { tags: { in: ["meditations", "reflection", "thoughts"] } } }
+      filter: { 
+        frontmatter: { 
+          tags: { in: ["meditations", "reflection", "thoughts"] }
+          language: { eq: "he" }
+        } 
+      }
       sort: { frontmatter: { date: DESC } }
     ) {
       edges {

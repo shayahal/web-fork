@@ -3,11 +3,11 @@ import React from 'react';
 import Section from '../section';
 import SummaryItem from '../summary-item';
 
-const SectionAskMe = ({ subjects }) => {
+const SectionAskMe = ({ subjects, title = "Subjects you should ask me to talk about" }) => {
   if (!subjects.length) return null;
 
   return (
-    <Section title="Subjects you should ask me to talk about">
+    <Section title={title}>
       {subjects.map((subject, index) => (
         <div 
           key={subject.name}

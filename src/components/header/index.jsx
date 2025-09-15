@@ -2,6 +2,7 @@ import { Link } from 'gatsby';
 import React from 'react';
 
 import profileImg from '../../images/profile.jpg';
+import LanguageToggle from '../language-toggle';
 
 const classes = {
   wrapper: 'block mb-6 md:flex font-huninn animate-fade-in-up',
@@ -16,7 +17,7 @@ const classes = {
     'inline-block py-2 font-semibold text-xs text-nav-dark hover:text-nav-darker font-huninn animated-link',
 };
 
-const Header = ({ metadata = {}, noBlog = false, showProfileImage = true }) => {
+const Header = ({ metadata = {}, noBlog = false, showProfileImage = true, currentLanguage = 'en', alternateUrl = null }) => {
   return (
     <div className={classes.wrapper}>
       {showProfileImage && (
@@ -31,45 +32,51 @@ const Header = ({ metadata = {}, noBlog = false, showProfileImage = true }) => {
           <Link to="/">{metadata.name}</Link>
         </h1>
         <p className={classes.description}>{metadata.description}</p>
-        <ul className={classes.list}>
-          <li className={classes.item}>
-            <Link className={classes.link} to="/">
-              About
-            </Link>
-          </li>
-          {!noBlog && (
+        <div className="flex items-center justify-between">
+          <ul className={classes.list}>
             <li className={classes.item}>
-              <Link className={classes.link} to="/blog">
-                Blog
+              <Link className={classes.link} to="/">
+                About
               </Link>
             </li>
-          )}
-          <li className={classes.item}>
-            <Link className={classes.link} to="/meditations">
-              Meditations
-            </Link>
-          </li>
-          <li className={classes.item}>
-            <Link className={classes.link} to="/cocktails">
-              Cocktails
-            </Link>
-          </li>
-          <li className={classes.item}>
-            <Link className={classes.link} to="/travel">
-              Travel
-            </Link>
-          </li>
-          <li className={classes.item}>
-            <Link className={classes.link} to="/top-posts">
-              Top Posts
-            </Link>
-          </li>
-          <li className={classes.item}>
-            <Link className={classes.link} to="/recommendations">
-              Recommendations
-            </Link>
-          </li>
-        </ul>
+            {!noBlog && (
+              <li className={classes.item}>
+                <Link className={classes.link} to="/blog">
+                  Blog
+                </Link>
+              </li>
+            )}
+            <li className={classes.item}>
+              <Link className={classes.link} to="/meditations">
+                Meditations
+              </Link>
+            </li>
+            <li className={classes.item}>
+              <Link className={classes.link} to="/cocktails">
+                Cocktails
+              </Link>
+            </li>
+            <li className={classes.item}>
+              <Link className={classes.link} to="/travel">
+                Travel
+              </Link>
+            </li>
+            <li className={classes.item}>
+              <Link className={classes.link} to="/top-posts">
+                Top Posts
+              </Link>
+            </li>
+            <li className={classes.item}>
+              <Link className={classes.link} to="/recommendations">
+                Recommendations
+              </Link>
+            </li>
+          </ul>
+          <LanguageToggle 
+            currentLanguage={currentLanguage}
+            alternateUrl={alternateUrl}
+          />
+        </div>
       </div>
     </div>
   );

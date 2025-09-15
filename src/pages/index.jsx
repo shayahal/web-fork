@@ -10,15 +10,16 @@ import SectionBlog from '../components/section-blog';
 import SectionProjects from '../components/section-projects';
 import SectionAskMe from '../components/section-ask-me';
 import SectionLectures from '../components/section-lectures';
-
-
 import SEO from '../components/seo';
+import { getSubjectsTalking, getSubjectsAskMe, getSectionTitles } from '../utils/subjectsLoader';
 
 const Index = ({ data }) => {
   const projects = get(data, 'site.siteMetadata.projects', false);
   const posts = data.allMarkdownRemark.edges;
-  const lectures = get(data, 'site.siteMetadata.subjectsTalking', false);
-  const askMe = get(data, 'site.siteMetadata.subjectsAskMe', false);
+  const currentLanguage = 'en'; // Index page is in English
+  const lectures = getSubjectsTalking(currentLanguage);
+  const askMe = getSubjectsAskMe(currentLanguage);
+  const sectionTitles = getSectionTitles(currentLanguage);
   const aboutContent = data.allAboutMarkdown && data.allAboutMarkdown.edges.length > 0 
     ? data.allAboutMarkdown.edges[0].node.html 
     : null;
@@ -28,14 +29,17 @@ const Index = ({ data }) => {
   return (
     <Layout>
       <SEO />
-      <Header metadata={data.site.siteMetadata} noBlog={noBlog} />
+      <Header 
+        metadata={data.site.siteMetadata} 
+        noBlog={noBlog}
+        currentLanguage="en"
+        alternateUrl="/about-he"
+      />
       {aboutContent && <SectionAbout aboutContent={aboutContent} />}
       {projects && projects.length && <SectionProjects projects={projects} />}
-      {lectures && lectures.length && <SectionLectures lectures={lectures} />}
-      {askMe && askMe.length && <SectionAskMe subjects={askMe} />}
+      {lectures && lectures.length && <SectionLectures lectures={lectures} title={sectionTitles.talking} />}
+      {askMe && askMe.length && <SectionAskMe subjects={askMe} title={sectionTitles.askMe} />}
       {!noBlog && <SectionBlog posts={posts} />}
-
-
     </Layout>
   );
 };
@@ -70,8 +74,8 @@ export const pageQuery = graphql`
     }
     }
     allMarkdownRemark(
+      filter: { frontmatter: { language: { eq: "en" } } }
       sort: { frontmatter: { date: DESC } }
-      limit: 5
     ) {
       edges {
         node {
@@ -83,6 +87,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            language
             tags
           }
         }

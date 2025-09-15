@@ -11,10 +11,13 @@ const CocktailsPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Cocktails" />
-      <Header metadata={data.site.siteMetadata} />
+      <Header 
+        metadata={data.site.siteMetadata}
+        currentLanguage="he"
+      />
       <div className="mt-16 max-w-4xl mx-auto px-4">
         <h1 className="text-4xl font-bold text-terracotta mb-6 animate-fade-in-up font-play">Cocktails</h1>
-        <p className="text-lg text-text-dark mb-4 animate-fade-in-up font-huninn">
+        <p className="text-lg text-sage mb-4 animate-fade-in-up font-huninn">
         מפה האתר התחיל - המתכונים שאני אוהבת, טיפים, המלצות לאיזה בקבוקים לקנות.
         </p>
         
@@ -23,7 +26,7 @@ const CocktailsPage = ({ data }) => {
             {posts.map((post, index) => (
               <article 
                 key={post.node.fields?.slug || post.node.id} 
-                className="border-b border-blush pb-6 post-card animate-fade-in-up"
+                className="pb-6 post-card animate-fade-in-up"
               >
                 <h2 className="text-2xl font-bold text-terracotta mb-2 font-play">
                   <Link 
@@ -76,7 +79,12 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      filter: { frontmatter: { tags: { in: ["cocktails"] } } }
+      filter: { 
+        frontmatter: { 
+          tags: { in: ["cocktails"] }
+          language: { eq: "he" }
+        } 
+      }
       sort: { frontmatter: { date: DESC } }
     ) {
       edges {

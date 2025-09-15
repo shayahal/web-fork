@@ -17,11 +17,14 @@ const BlogPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Blog" />
-      <Header metadata={data.site.siteMetadata} />
+      <Header 
+        metadata={data.site.siteMetadata}
+        currentLanguage="en"
+      />
       <div className="mt-16 max-w-4xl mx-auto px-4">
         <h1 className="text-4xl font-bold text-terracotta mb-6 animate-fade-in-up font-play">Blog</h1>
-        <p className="text-lg text-text-dark mb-4 animate-fade-in-up font-huninn">
-          all posts.
+        <p className="text-lg text-sage mb-4 animate-fade-in-up font-huninn">
+          all posts
         </p>
         
         {posts.length > 0 ? (
@@ -83,7 +86,10 @@ export const pageQuery = graphql`
         linkedin
       }
     }
-    allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
+    allMarkdownRemark(
+      filter: { frontmatter: { language: { eq: "en" } } }
+      sort: { frontmatter: { date: DESC } }
+    ) {
       edges {
         node {
           excerpt

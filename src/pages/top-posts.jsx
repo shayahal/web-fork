@@ -11,10 +11,13 @@ const TopPostsPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Top Posts" />
-      <Header metadata={data.site.siteMetadata} />
+      <Header 
+        metadata={data.site.siteMetadata}
+        currentLanguage="en"
+      />
       <div className="mt-16 max-w-4xl mx-auto px-4 animate-fade-in-up font-huninn">
         <h1 className="text-4xl font-bold text-terracotta mb-6 animate-fade-in-up font-play">Top Posts</h1>
-        <p className="text-lg text-text-dark mb-4 animate-fade-in-up font-huninn" style={{animationDelay: '0.1s'}}>
+        <p className="text-lg text-sage mb-4 animate-fade-in-up font-huninn" style={{animationDelay: '0.1s'}}>
           the posts I'm most proud of.
         </p>
         
@@ -77,6 +80,7 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
+      filter: { frontmatter: { language: { eq: "en" } } }
       sort: { frontmatter: { date: DESC } }
       limit: 10
     ) {

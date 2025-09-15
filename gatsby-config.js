@@ -134,9 +134,9 @@ module.exports = {
             options: {
               maxWidth: 590,
               wrapperStyle: `margin: 0 0 30px;`,
-              quality: 85,
-              withWebp: true,
-              withAvif: true,
+              quality: 50,
+              withWebp: false,
+              withAvif: false,
             },
           },
           {
@@ -154,8 +154,8 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-postcss`,
-    `gatsby-plugin-offline`,
-    `gatsby-plugin-preload-fonts`,
+    // `gatsby-plugin-offline`, // Disabled for dev performance
+    // `gatsby-plugin-preload-fonts`, // Disabled for dev performance
     `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-google-analytics`,

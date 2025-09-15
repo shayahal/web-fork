@@ -4,6 +4,7 @@ import React from 'react';
 import Header from '../components/header';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import { getAlternateLanguageSlug, detectLanguage } from '../utils/languageUtils';
 import '../css/styles.css'; 
 
 const classes = {
@@ -22,7 +23,8 @@ const classes = {
 const BlogPost = ({ data }) => {
   const post = data.markdownRemark;
   const allPosts = data.allMarkdownRemark.edges;
-  const isRTL = post.frontmatter.language === 'he';
+  const currentLanguage = detectLanguage(post);
+  const isRTL = currentLanguage === 'he';
 
   // Find current post index
   const currentIndex = allPosts.findIndex(edge => edge.node.id === post.id);
@@ -31,9 +33,17 @@ const BlogPost = ({ data }) => {
   const previousPost = currentIndex > 0 ? allPosts[currentIndex - 1] : null;
   const nextPost = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null;
 
+  // Get alternate language version
+  const currentSlug = post.fields?.slug;
+  const alternateSlug = getAlternateLanguageSlug(currentSlug, currentLanguage, allPosts);
+
   return (
     <Layout>
-      <Header metadata={data.site.siteMetadata} />
+      <Header 
+        metadata={data.site.siteMetadata} 
+        currentLanguage={currentLanguage}
+        alternateUrl={alternateSlug}
+      />
       <SEO title={post.frontmatter.title} />
       <div className={`blog-post ${isRTL ? 'rtl' : ''}`}>
         <h1 className={classes.title}>{post.frontmatter.title}</h1>
@@ -122,6 +132,9 @@ export const pageQuery = graphql`
         description
         language
         tags
+      }
+      fields {
+        slug
       }
     }
     allMarkdownRemark(

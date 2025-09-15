@@ -8,21 +8,26 @@ const classes = {
 };
 
 const SummaryItem = ({ name, description, link = false, internal = false }) => {
+  // Check if link is valid (not null, empty, false, or 'None')
+  const hasValidLink = link && link !== 'None' && link.trim() !== '';
+  
   let linkContent;
-  if (internal) {
-    linkContent = <Link to={link}>{name}</Link>;
-  } else {
-    linkContent = <a href={link}>{name}</a>;
+  if (hasValidLink) {
+    if (internal) {
+      linkContent = <Link to={link}>{name}</Link>;
+    } else {
+      linkContent = <a href={link}>{name}</a>;
+    }
   }
 
   return (
     <div className={classes.wrapper}>
       <h3
         className={`${classes.name} ${
-          link ? 'hover:underline hover:text-black' : ''
+          hasValidLink ? 'hover:underline hover:text-black' : ''
         }`}
       >
-        {link ? linkContent : name}
+        {hasValidLink ? linkContent : name}
       </h3>
       <p className={classes.description}>{description}</p>
     </div>
