@@ -1,6 +1,7 @@
 ---
-title: 'יפן למתקדמים'
-date: '2024-11-16'
+title: '
+יפן למתקדמים'
+date: '2021-05-01'
 description: 'אוסף המלצות רנדומלי מהטיול שלנו ב2020'
 direction: rtl
 language: 'he'

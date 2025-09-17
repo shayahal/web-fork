@@ -41,8 +41,8 @@ const Header = ({ metadata = {}, noBlog = false, showProfileImage = true, curren
             </li>
             {!noBlog && (
               <li className={classes.item}>
-                <Link className={classes.link} to="/blog">
-                  All Posts
+                <Link className={classes.link} to={currentLanguage === 'he' ? '/blog-he' : '/blog'}>
+                  {currentLanguage === 'he' ? 'כל הפוסטים' : 'All Posts'}
                 </Link>
               </li>
             )}

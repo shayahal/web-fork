@@ -20,6 +20,7 @@ const BlogPage = ({ data }) => {
       <Header 
         metadata={data.site.siteMetadata}
         currentLanguage="en"
+        alternateUrl="/blog-he"
       />
       <div className="mt-16 max-w-4xl mx-auto px-4">
         <h1 className="text-4xl font-bold text-terracotta mb-6 animate-fade-in-up font-play">All Posts</h1>
@@ -32,6 +33,7 @@ const BlogPage = ({ data }) => {
               <article 
                 key={post.node.fields?.slug || post.node.id} 
                 className="border-b border-blush pb-6 post-card animate-fade-in-up"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <h2 className="text-2xl font-bold text-terracotta mb-2 font-play">
                   <Link 

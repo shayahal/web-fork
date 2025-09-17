@@ -1,6 +1,6 @@
 ---
 title: 'Japan for Advanced Travelers'
-date: '2024-11-16'
+date: '2021-05-01'
 description: 'Random collection of recommendations from our 2020 trip'
 direction: ltr
 language: 'en'
