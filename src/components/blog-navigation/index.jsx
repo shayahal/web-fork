@@ -23,8 +23,8 @@ const BlogNavigation = ({ currentPage = 'blog', metadata = {} }) => {
       ) {
         totalCount
       }
-      meditations: allMarkdownRemark(
-        filter: { frontmatter: { tags: { in: ["meditations", "reflection", "thoughts"] } } }
+      ai: allMarkdownRemark(
+        filter: { frontmatter: { tags: { in: ["ai", "artificial-intelligence", "technology"] } } }
       ) {
         totalCount
       }
@@ -41,8 +41,8 @@ const BlogNavigation = ({ currentPage = 'blog', metadata = {} }) => {
 
   const navigationItems = [
     { title: 'About', path: '/', key: 'about' },
-    { title: 'Blog', path: '/blog', key: 'blog', count: data.allPosts.totalCount },
-    { title: 'Meditations', path: '/meditations', key: 'meditations', count: data.meditations.totalCount },
+    { title: 'All Posts', path: '/blog', key: 'blog', count: data.allPosts.totalCount },
+    { title: 'AI', path: '/meditations', key: 'meditations', count: data.ai.totalCount },
     { title: 'Cocktails', path: '/cocktails', key: 'cocktails', count: data.cocktails.totalCount },
     { title: 'Travel', path: '/travel', key: 'travel', count: data.travel.totalCount },
     { title: 'Top Posts', path: '/top-posts', key: 'top-posts' },

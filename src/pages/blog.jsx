@@ -16,15 +16,14 @@ const BlogPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Blog" />
+      <SEO title="All Posts" />
       <Header 
         metadata={data.site.siteMetadata}
         currentLanguage="en"
       />
       <div className="mt-16 max-w-4xl mx-auto px-4">
-        <h1 className="text-4xl font-bold text-terracotta mb-6 animate-fade-in-up font-play">Blog</h1>
+        <h1 className="text-4xl font-bold text-terracotta mb-6 animate-fade-in-up font-play">All Posts</h1>
         <p className="text-lg text-sage mb-4 animate-fade-in-up font-huninn">
-          all posts
         </p>
         
         {posts.length > 0 ? (

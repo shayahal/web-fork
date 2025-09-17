@@ -5,20 +5,20 @@ import Header from '../components/header';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
-const MeditationsPage = ({ data }) => {
+const AIPage = ({ data }) => {
   const posts = data.allMarkdownRemark.edges;
   
   return (
     <Layout>
-      <SEO title="Meditations" />
+      <SEO title="AI" />
       <Header 
         metadata={data.site.siteMetadata}
         currentLanguage="he"
       />
       <div className="mt-16 max-w-4xl mx-auto px-4">
-        <h1 className="text-4xl font-bold text-terracotta mb-6 animate-fade-in-up font-play">Meditations</h1>
+        <h1 className="text-4xl font-bold text-terracotta mb-6 animate-fade-in-up font-play">AI</h1>
         <p className="text-lg text-sage mb-4 animate-fade-in-up font-huninn">
-          place for me to write non-sence. not actual meditations, i don't have the patience.
+          thoughts, experiments, and reflections on artificial intelligence and its impact on our world.
         </p>
         
         {posts.length > 0 ? (
@@ -56,14 +56,14 @@ const MeditationsPage = ({ data }) => {
             ))}
           </div>
         ) : (
-          <p className="text-text-dark animate-fade-in font-huninn">No meditation posts found yet.</p>
+          <p className="text-text-dark animate-fade-in font-huninn">No AI posts found yet.</p>
         )}
       </div>
     </Layout>
   );
 };
 
-export default MeditationsPage;
+export default AIPage;
 
 export const pageQuery = graphql`
   query {
@@ -81,7 +81,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       filter: { 
         frontmatter: { 
-          tags: { in: ["meditations", "reflection", "thoughts"] }
+          tags: { in: ["ai", "artificial-intelligence", "technology"] }
           language: { eq: "he" }
         } 
       }

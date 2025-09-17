@@ -42,13 +42,13 @@ const Header = ({ metadata = {}, noBlog = false, showProfileImage = true, curren
             {!noBlog && (
               <li className={classes.item}>
                 <Link className={classes.link} to="/blog">
-                  Blog
+                  All Posts
                 </Link>
               </li>
             )}
             <li className={classes.item}>
               <Link className={classes.link} to="/meditations">
-                Meditations
+                AI
               </Link>
             </li>
             <li className={classes.item}>
