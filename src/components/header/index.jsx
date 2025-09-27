@@ -39,13 +39,6 @@ const Header = ({ metadata = {}, noBlog = false, showProfileImage = true, curren
                 About
               </Link>
             </li>
-            {!noBlog && (
-              <li className={classes.item}>
-                <Link className={classes.link} to={currentLanguage === 'he' ? '/blog-he' : '/blog'}>
-                  {currentLanguage === 'he' ? 'כל הפוסטים' : 'All Posts'}
-                </Link>
-              </li>
-            )}
             <li className={classes.item}>
               <Link className={classes.link} to="/meditations">
                 AI
@@ -59,6 +52,11 @@ const Header = ({ metadata = {}, noBlog = false, showProfileImage = true, curren
             <li className={classes.item}>
               <Link className={classes.link} to="/travel">
                 Travel
+              </Link>
+            </li>
+            <li className={classes.item}>
+              <Link className={classes.link} to="/map">
+                Map
               </Link>
             </li>
             <li className={classes.item}>
