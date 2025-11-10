@@ -5,21 +5,21 @@ import Header from '../components/header';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
-const TopPostsPage = ({ data }) => {
+const MeditationsPageHe = ({ data }) => {
   const posts = data.allMarkdownRemark.edges;
   
   return (
     <Layout>
-      <SEO title="Top Posts" />
+      <SEO title="AI" />
       <Header 
         metadata={data.site.siteMetadata}
-        currentLanguage="en"
-        alternateUrl="/top-posts-heb"
+        currentLanguage="he"
+        alternateUrl="/meditations"
       />
-      <div className="mt-16 max-w-4xl mx-auto px-4 animate-fade-in-up font-huninn">
-        <h1 className="text-4xl font-bold text-terracotta mb-6 animate-fade-in-up font-play">Top Posts</h1>
-        <p className="text-lg text-sage mb-4 animate-fade-in-up font-huninn" style={{animationDelay: '0.1s'}}>
-          the posts I'm most proud of.
+      <div className="mt-16 max-w-4xl mx-auto px-4 rtl" dir="rtl">
+        <h1 className="text-4xl font-bold text-terracotta mb-6 animate-fade-in-up font-play">AI</h1>
+        <p className="text-lg text-sage mb-4 animate-fade-in-up font-huninn">
+          מחשבות, ניסויים והרהורים על בינה מלאכותית והשפעתה על עולמנו.
         </p>
         
         {posts.length > 0 ? (
@@ -28,7 +28,6 @@ const TopPostsPage = ({ data }) => {
               <article 
                 key={post.node.fields?.slug || post.node.id} 
                 className="border-b border-blush pb-6 post-card animate-fade-in-up"
-                style={{animationDelay: `${(index + 1) * 0.1}s`}}
               >
                 <h2 className="text-2xl font-bold text-terracotta mb-2 font-play">
                   <Link 
@@ -46,7 +45,7 @@ const TopPostsPage = ({ data }) => {
                       {post.node.frontmatter.tags.map((tag, tagIndex) => (
                         <span 
                           key={tagIndex} 
-                          className="px-3 py-1 bg-blush text-terracotta text-sm rounded-full font-medium hover:bg-sage hover:text-cream transition-colors tag-item"
+                          className="px-3 py-1 bg-blush text-terracotta text-sm rounded-full font-medium hover:bg-sage hover:text-cream transition-colors"
                         >
                           {tag}
                         </span>
@@ -58,14 +57,14 @@ const TopPostsPage = ({ data }) => {
             ))}
           </div>
         ) : (
-          <p className="text-text-dark animate-fade-in font-huninn">No top posts found yet.</p>
+          <p className="text-text-dark animate-fade-in font-huninn">עוד אין פוסטים על AI.</p>
         )}
       </div>
     </Layout>
   );
 };
 
-export default TopPostsPage;
+export default MeditationsPageHe;
 
 export const pageQuery = graphql`
   query {
@@ -81,9 +80,13 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      filter: { frontmatter: { language: { eq: "en" } } }
+      filter: { 
+        frontmatter: { 
+          tags: { in: ["ai", "artificial-intelligence", "technology"] }
+          language: { eq: "he" }
+        } 
+      }
       sort: { frontmatter: { date: DESC } }
-      limit: 10
     ) {
       edges {
         node {
@@ -101,4 +104,5 @@ export const pageQuery = graphql`
       }
     }
   }
-`; 
+`;
+

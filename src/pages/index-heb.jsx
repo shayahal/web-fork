@@ -13,10 +13,10 @@ import SectionLectures from '../components/section-lectures';
 import SEO from '../components/seo';
 import { getSubjectsTalking, getSubjectsAskMe, getSectionTitles } from '../utils/subjectsLoader';
 
-const Index = ({ data }) => {
+const IndexHeb = ({ data }) => {
   const projects = get(data, 'site.siteMetadata.projects', false);
   const posts = data.allMarkdownRemark.edges;
-  const currentLanguage = 'en'; // Index page is in English
+  const currentLanguage = 'he'; // Index page is in Hebrew
   const lectures = getSubjectsTalking(currentLanguage);
   const askMe = getSubjectsAskMe(currentLanguage);
   const sectionTitles = getSectionTitles(currentLanguage);
@@ -32,19 +32,21 @@ const Index = ({ data }) => {
       <Header 
         metadata={data.site.siteMetadata} 
         noBlog={noBlog}
-        currentLanguage="en"
-        alternateUrl="/index-heb"
+        currentLanguage="he"
+        alternateUrl="/"
       />
-      {aboutContent && <SectionAbout aboutContent={aboutContent} title={sectionTitles.about} />}
-      {projects && projects.length && <SectionProjects projects={projects} title={sectionTitles.projects} />}
-      {lectures && lectures.length && <SectionLectures lectures={lectures} title={sectionTitles.talking} />}
-      {askMe && askMe.length && <SectionAskMe subjects={askMe} title={sectionTitles.askMe} />}
-      {!noBlog && <SectionBlog posts={posts} title={sectionTitles.latestPosts} />}
+      <div className="rtl" dir="rtl">
+        {aboutContent && <SectionAbout aboutContent={aboutContent} title={sectionTitles.about} />}
+        {projects && projects.length && <SectionProjects projects={projects} title={sectionTitles.projects} />}
+        {lectures && lectures.length && <SectionLectures lectures={lectures} title={sectionTitles.talking} />}
+        {askMe && askMe.length && <SectionAskMe subjects={askMe} title={sectionTitles.askMe} />}
+        {!noBlog && <SectionBlog posts={posts} title={sectionTitles.latestPosts} />}
+      </div>
     </Layout>
   );
 };
 
-export default Index;
+export default IndexHeb;
 
 export const pageQuery = graphql`
   query {
@@ -71,10 +73,10 @@ export const pageQuery = graphql`
           description
           link
         }
-    }
+      }
     }
     allMarkdownRemark(
-      filter: { frontmatter: { language: { eq: "en" } } }
+      filter: { frontmatter: { language: { eq: "he" } } }
       sort: { frontmatter: { date: DESC } }
     ) {
       edges {
@@ -95,7 +97,7 @@ export const pageQuery = graphql`
     }
     allAboutMarkdown: allMarkdownRemark(
       filter: { 
-        fileAbsolutePath: { regex: "/about.md$/" }
+        fileAbsolutePath: { regex: "/about.he.md$/" }
       }
     ) {
       edges {
@@ -109,3 +111,4 @@ export const pageQuery = graphql`
     }
   }
 `;
+

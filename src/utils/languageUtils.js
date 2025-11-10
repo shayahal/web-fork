@@ -44,7 +44,7 @@ export const getAlternateLanguageSlug = (currentSlug, currentLanguage, allPosts)
  * @returns {string} - Alternate language path
  */
 export const getAlternateAboutPath = (currentLanguage) => {
-  return currentLanguage === 'he' ? '/about' : '/about-he';
+  return currentLanguage === 'he' ? '/about' : '/about-heb';
 };
 
 /**

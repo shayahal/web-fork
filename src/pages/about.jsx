@@ -21,7 +21,7 @@ const AboutPage = ({ data }) => {
       <Header 
         metadata={data.site.siteMetadata}
         currentLanguage="en" 
-        alternateUrl="/about-he"
+        alternateUrl="/about-heb"
       />
       <div className="mt-16 max-w-4xl mx-auto px-4">
         <div className="flex flex-col md:flex-row gap-6 items-start animate-fade-in-up stagger-1">

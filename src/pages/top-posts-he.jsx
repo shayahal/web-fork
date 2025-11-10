@@ -5,21 +5,21 @@ import Header from '../components/header';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
-const TopPostsPage = ({ data }) => {
+const TopPostsPageHe = ({ data }) => {
   const posts = data.allMarkdownRemark.edges;
   
   return (
     <Layout>
-      <SEO title="Top Posts" />
+      <SEO title="הפוסטים הטובים ביותר" />
       <Header 
         metadata={data.site.siteMetadata}
-        currentLanguage="en"
-        alternateUrl="/top-posts-heb"
+        currentLanguage="he"
+        alternateUrl="/top-posts"
       />
-      <div className="mt-16 max-w-4xl mx-auto px-4 animate-fade-in-up font-huninn">
-        <h1 className="text-4xl font-bold text-terracotta mb-6 animate-fade-in-up font-play">Top Posts</h1>
+      <div className="mt-16 max-w-4xl mx-auto px-4 animate-fade-in-up font-huninn rtl" dir="rtl">
+        <h1 className="text-4xl font-bold text-terracotta mb-6 animate-fade-in-up font-play">הפוסטים הטובים ביותר</h1>
         <p className="text-lg text-sage mb-4 animate-fade-in-up font-huninn" style={{animationDelay: '0.1s'}}>
-          the posts I'm most proud of.
+          הפוסטים שאני הכי גאה בהם.
         </p>
         
         {posts.length > 0 ? (
@@ -58,14 +58,14 @@ const TopPostsPage = ({ data }) => {
             ))}
           </div>
         ) : (
-          <p className="text-text-dark animate-fade-in font-huninn">No top posts found yet.</p>
+          <p className="text-text-dark animate-fade-in font-huninn">אין עדיין פוסטים מובילים.</p>
         )}
       </div>
     </Layout>
   );
 };
 
-export default TopPostsPage;
+export default TopPostsPageHe;
 
 export const pageQuery = graphql`
   query {
@@ -81,7 +81,7 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      filter: { frontmatter: { language: { eq: "en" } } }
+      filter: { frontmatter: { language: { eq: "he" } } }
       sort: { frontmatter: { date: DESC } }
       limit: 10
     ) {
@@ -101,4 +101,5 @@ export const pageQuery = graphql`
       }
     }
   }
-`; 
+`;
+
