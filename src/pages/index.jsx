@@ -33,13 +33,13 @@ const Index = ({ data }) => {
         metadata={data.site.siteMetadata} 
         noBlog={noBlog}
         currentLanguage="en"
-        alternateUrl="/about-he"
+        alternateUrl="/index-he"
       />
-      {aboutContent && <SectionAbout aboutContent={aboutContent} />}
-      {projects && projects.length && <SectionProjects projects={projects} />}
+      {aboutContent && <SectionAbout aboutContent={aboutContent} title={sectionTitles.about} />}
+      {projects && projects.length && <SectionProjects projects={projects} title={sectionTitles.projects} />}
       {lectures && lectures.length && <SectionLectures lectures={lectures} title={sectionTitles.talking} />}
       {askMe && askMe.length && <SectionAskMe subjects={askMe} title={sectionTitles.askMe} />}
-      {!noBlog && <SectionBlog posts={posts} />}
+      {!noBlog && <SectionBlog posts={posts} title={sectionTitles.latestPosts} />}
     </Layout>
   );
 };

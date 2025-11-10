@@ -2,9 +2,9 @@ import React from 'react';
 
 import Section from '../section';
 
-const SectionAbout = ({ aboutContent }) => {
+const SectionAbout = ({ aboutContent, title = "About" }) => {
   return (
-    <Section title="About">
+    <Section title={title}>
       <div className="flex flex-col md:flex-row gap-6 items-start animate-fade-in-up stagger-1">
         <div className="flex-1">
           <div 

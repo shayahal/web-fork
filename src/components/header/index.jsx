@@ -55,11 +55,6 @@ const Header = ({ metadata = {}, noBlog = false, showProfileImage = true, curren
               </Link>
             </li>
             <li className={classes.item}>
-              <Link className={classes.link} to="/map">
-                Map
-              </Link>
-            </li>
-            <li className={classes.item}>
               <Link className={classes.link} to="/top-posts">
                 Top Posts
               </Link>

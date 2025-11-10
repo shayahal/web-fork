@@ -14,6 +14,7 @@ const TopPostsPage = ({ data }) => {
       <Header 
         metadata={data.site.siteMetadata}
         currentLanguage="en"
+        alternateUrl="/top-posts-he"
       />
       <div className="mt-16 max-w-4xl mx-auto px-4 animate-fade-in-up font-huninn">
         <h1 className="text-4xl font-bold text-terracotta mb-6 animate-fade-in-up font-play">Top Posts</h1>

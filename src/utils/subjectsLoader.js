@@ -32,10 +32,16 @@ export const getSectionTitles = (language = 'en') => {
   return language === 'he' 
     ? {
         talking: 'נושאים שאני מרצה עליהם',
-        askMe: 'נושאים שכדאי לכם לבקש ממני להרצות עליהם'
+        askMe: 'נושאים שכדאי לכם לבקש ממני להרצות עליהם',
+        about: 'אודות',
+        projects: 'פרויקטים',
+        latestPosts: 'פוסטים אחרונים'
       }
     : {
         talking: 'Subjects I\'m talking about',
-        askMe: 'Subjects you should ask me to talk about'
+        askMe: 'Subjects you should ask me to talk about',
+        about: 'About',
+        projects: 'Projects',
+        latestPosts: 'Latest Posts'
       };
 };

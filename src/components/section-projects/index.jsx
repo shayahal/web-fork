@@ -3,11 +3,11 @@ import React from 'react';
 import Section from '../section';
 import SummaryItem from '../summary-item';
 
-const SectionProjects = ({ projects }) => {
+const SectionProjects = ({ projects, title = "Projects" }) => {
   if (!projects.length) return null;
 
   return (
-    <Section title="Projects">
+    <Section title={title}>
       {projects.map((project, index) => (
         <div 
           key={project.name}

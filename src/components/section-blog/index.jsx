@@ -4,12 +4,12 @@ import React from 'react';
 import Section from '../section';
 import SummaryItem from '../summary-item';
 
-const SectionBlog = ({ posts }) => {
+const SectionBlog = ({ posts, title = "Latest Posts" }) => {
   // Filter to only include posts that have a slug (blog posts)
   const blogPosts = posts.filter(post => post.node.fields?.slug);
   
   return (
-    <Section title="Latest Posts">
+    <Section title={title}>
       {blogPosts.map((post, index) => (
         <div 
           key={post.node.fields?.slug || post.node.id}
