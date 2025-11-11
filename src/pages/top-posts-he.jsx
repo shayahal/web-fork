@@ -11,24 +11,23 @@ const TopPostsPageHe = ({ data }) => {
   return (
     <Layout>
       <SEO title="הפוסטים הטובים ביותר" />
-      <Header 
+      <Header
         metadata={data.site.siteMetadata}
         currentLanguage="he"
-        alternateUrl="/top-posts"
+        alternateUrl="/top-posts-en"
       />
-      <div className="mt-16 max-w-4xl mx-auto px-4 animate-fade-in-up font-huninn rtl" dir="rtl">
-        <h1 className="text-4xl font-bold text-terracotta mb-6 animate-fade-in-up font-play">הפוסטים הטובים ביותר</h1>
-        <p className="text-lg text-sage mb-4 animate-fade-in-up font-huninn" style={{animationDelay: '0.1s'}}>
+      <div className="mt-16 max-w-4xl mx-auto px-4 font-huninn rtl" dir="rtl">
+        <h1 className="text-4xl font-bold text-terracotta mb-6 font-play">הפוסטים הטובים ביותר</h1>
+        <p className="text-lg text-sage mb-4 font-huninn">
           הפוסטים שאני הכי גאה בהם.
         </p>
         
         {posts.length > 0 ? (
           <div className="space-y-6">
             {posts.map((post, index) => (
-              <article 
-                key={post.node.fields?.slug || post.node.id} 
-                className="border-b border-blush pb-6 post-card animate-fade-in-up"
-                style={{animationDelay: `${(index + 1) * 0.1}s`}}
+              <article
+                key={post.node.fields?.slug || post.node.id}
+                className="border-b border-blush pb-6 post-card"
               >
                 <h2 className="text-2xl font-bold text-terracotta mb-2 font-play">
                   <Link 
@@ -44,9 +43,9 @@ const TopPostsPageHe = ({ data }) => {
                   {post.node.frontmatter.tags && (
                     <div className="flex gap-2">
                       {post.node.frontmatter.tags.map((tag, tagIndex) => (
-                        <span 
-                          key={tagIndex} 
-                          className="px-3 py-1 bg-blush text-terracotta text-sm rounded-full font-medium hover:bg-sage hover:text-cream transition-colors tag-item"
+                        <span
+                          key={tagIndex}
+                          className="px-3 py-1 bg-blush text-terracotta text-sm rounded-full font-medium hover:bg-sage hover:text-cream transition-colors"
                         >
                           {tag}
                         </span>
@@ -58,7 +57,7 @@ const TopPostsPageHe = ({ data }) => {
             ))}
           </div>
         ) : (
-          <p className="text-text-dark animate-fade-in font-huninn">אין עדיין פוסטים מובילים.</p>
+          <p className="text-text-dark font-huninn">אין עדיין פוסטים מובילים.</p>
         )}
       </div>
     </Layout>

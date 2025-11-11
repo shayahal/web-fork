@@ -11,15 +11,15 @@ const TravelPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Travel" />
-      <Header 
+      <Header
         metadata={data.site.siteMetadata}
-        currentLanguage="he"
-        alternateUrl="/travel"
+        currentLanguage="en"
+        alternateUrl="/travel-he"
       />
       <div className="mt-16 max-w-4xl mx-auto px-4">
         <h1 className="text-4xl font-bold text-terracotta mb-6 animate-fade-in-up font-play">Travel</h1>
         <p className="text-lg text-sage mb-4 animate-fade-in-up font-huninn">
-          אני אוהבת לטייל. תמיד רציתי לשים איפשהו את כל ההמלצות שלי - תהנו.
+          I love to travel. Always wanted to put all my recommendations somewhere - enjoy.
         </p>
         
         {posts.length > 0 ? (
@@ -80,11 +80,11 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      filter: { 
-        frontmatter: { 
+      filter: {
+        frontmatter: {
           tags: { in: ["travel", "adventure", "places"] }
-          language: { eq: "he" }
-        } 
+          language: { eq: "en" }
+        }
       }
       sort: { frontmatter: { date: DESC } }
     ) {

@@ -13,10 +13,10 @@ import SectionLectures from '../components/section-lectures';
 import SEO from '../components/seo';
 import { getSubjectsTalking, getSubjectsAskMe, getSectionTitles } from '../utils/subjectsLoader';
 
-const IndexHeb = ({ data }) => {
+const Index = ({ data }) => {
   const projects = get(data, 'site.siteMetadata.projects', false);
   const posts = data.allMarkdownRemark.edges;
-  const currentLanguage = 'he'; // Index page is in Hebrew
+  const currentLanguage = 'en'; // Index page is in English
   const lectures = getSubjectsTalking(currentLanguage);
   const askMe = getSubjectsAskMe(currentLanguage);
   const sectionTitles = getSectionTitles(currentLanguage);
@@ -29,24 +29,22 @@ const IndexHeb = ({ data }) => {
   return (
     <Layout>
       <SEO />
-      <Header 
-        metadata={data.site.siteMetadata} 
+      <Header
+        metadata={data.site.siteMetadata}
         noBlog={noBlog}
-        currentLanguage="he"
-        alternateUrl="/"
+        currentLanguage="en"
+        alternateUrl="/index-he"
       />
-      <div className="rtl" dir="rtl">
-        {aboutContent && <SectionAbout aboutContent={aboutContent} title={sectionTitles.about} />}
-        {projects && projects.length && <SectionProjects projects={projects} title={sectionTitles.projects} />}
-        {lectures && lectures.length && <SectionLectures lectures={lectures} title={sectionTitles.talking} />}
-        {askMe && askMe.length && <SectionAskMe subjects={askMe} title={sectionTitles.askMe} />}
-        {!noBlog && <SectionBlog posts={posts} title={sectionTitles.latestPosts} />}
-      </div>
+      {aboutContent && <SectionAbout aboutContent={aboutContent} title={sectionTitles.about} />}
+      {projects && projects.length && <SectionProjects projects={projects} title={sectionTitles.projects} />}
+      {lectures && lectures.length && <SectionLectures lectures={lectures} title={sectionTitles.talking} />}
+      {askMe && askMe.length && <SectionAskMe subjects={askMe} title={sectionTitles.askMe} />}
+      {!noBlog && <SectionBlog posts={posts} title={sectionTitles.latestPosts} />}
     </Layout>
   );
 };
 
-export default IndexHeb;
+export default Index;
 
 export const pageQuery = graphql`
   query {
@@ -73,10 +71,10 @@ export const pageQuery = graphql`
           description
           link
         }
-      }
+    }
     }
     allMarkdownRemark(
-      filter: { frontmatter: { language: { eq: "he" } } }
+      filter: { frontmatter: { language: { eq: "en" } } }
       sort: { frontmatter: { date: DESC } }
     ) {
       edges {
@@ -97,7 +95,7 @@ export const pageQuery = graphql`
     }
     allAboutMarkdown: allMarkdownRemark(
       filter: { 
-        fileAbsolutePath: { regex: "/about.he.md$/" }
+        fileAbsolutePath: { regex: "/about.md$/" }
       }
     ) {
       edges {
@@ -111,4 +109,3 @@ export const pageQuery = graphql`
     }
   }
 `;
-

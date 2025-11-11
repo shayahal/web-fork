@@ -5,9 +5,9 @@ import Header from '../components/header';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
-const CocktailsPage = ({ data }) => {
+const CocktailsPageEn = ({ data }) => {
   const posts = data.allMarkdownRemark.edges;
-  
+
   return (
     <Layout>
       <SEO title="Cocktails" />
@@ -21,17 +21,17 @@ const CocktailsPage = ({ data }) => {
         <p className="text-lg text-sage mb-4 animate-fade-in-up font-huninn">
           This is where the site started - the recipes I love, tips, recommendations for which bottles to buy.
         </p>
-        
+
         {posts.length > 0 ? (
           <div className="space-y-6">
             {posts.map((post, index) => (
-              <article 
-                key={post.node.fields?.slug || post.node.id} 
+              <article
+                key={post.node.fields?.slug || post.node.id}
                 className="pb-6 post-card animate-fade-in-up"
               >
                 <h2 className="text-2xl font-bold text-terracotta mb-2 font-play">
-                  <Link 
-                    to={post.node.fields?.slug || '#'} 
+                  <Link
+                    to={post.node.fields?.slug || '#'}
                     className="animated-link hover:text-sage transition-colors"
                   >
                     {post.node.frontmatter.title}
@@ -43,8 +43,8 @@ const CocktailsPage = ({ data }) => {
                   {post.node.frontmatter.tags && (
                     <div className="flex gap-2">
                       {post.node.frontmatter.tags.map((tag, tagIndex) => (
-                        <span 
-                          key={tagIndex} 
+                        <span
+                          key={tagIndex}
                           className="px-3 py-1 bg-blush text-terracotta text-sm rounded-full font-medium hover:bg-sage hover:text-cream transition-colors"
                         >
                           {tag}
@@ -64,7 +64,7 @@ const CocktailsPage = ({ data }) => {
   );
 };
 
-export default CocktailsPage;
+export default CocktailsPageEn;
 
 export const pageQuery = graphql`
   query {
@@ -104,4 +104,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`; 
+`;

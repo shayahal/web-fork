@@ -40,6 +40,11 @@ const Header = ({ metadata = {}, noBlog = false, showProfileImage = true, curren
               </Link>
             </li>
             <li className={classes.item}>
+              <Link className={classes.link} to="/thoughts">
+                Thoughts
+              </Link>
+            </li>
+            <li className={classes.item}>
               <Link className={classes.link} to="/meditations">
                 AI
               </Link>
@@ -57,11 +62,6 @@ const Header = ({ metadata = {}, noBlog = false, showProfileImage = true, curren
             <li className={classes.item}>
               <Link className={classes.link} to="/top-posts">
                 Top Posts
-              </Link>
-            </li>
-            <li className={classes.item}>
-              <Link className={classes.link} to="/recommendations">
-                Recommendations
               </Link>
             </li>
           </ul>

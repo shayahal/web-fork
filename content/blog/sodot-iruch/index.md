@@ -4,7 +4,7 @@ date: "2024-08-31"
 description: "קוקטיילים שמאפשרים לי להפסיק לעמוד במטבח כל הערב"
 direction: rtl
 language: 'he'
-tags: ['cocktails', 'hosting', 'top']
+tags: ['cocktails', 'hosting', 'top', 'recipe']
 
 ---
 

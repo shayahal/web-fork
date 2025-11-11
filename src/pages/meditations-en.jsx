@@ -5,33 +5,33 @@ import Header from '../components/header';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
-const CocktailsPage = ({ data }) => {
+const AIPageEn = ({ data }) => {
   const posts = data.allMarkdownRemark.edges;
-  
+
   return (
     <Layout>
-      <SEO title="Cocktails" />
+      <SEO title="AI" />
       <Header
         metadata={data.site.siteMetadata}
         currentLanguage="en"
-        alternateUrl="/cocktails-he"
+        alternateUrl="/meditations-he"
       />
       <div className="mt-16 max-w-4xl mx-auto px-4">
-        <h1 className="text-4xl font-bold text-terracotta mb-6 animate-fade-in-up font-play">Cocktails</h1>
+        <h1 className="text-4xl font-bold text-terracotta mb-6 animate-fade-in-up font-play">AI</h1>
         <p className="text-lg text-sage mb-4 animate-fade-in-up font-huninn">
-          This is where the site started - the recipes I love, tips, recommendations for which bottles to buy.
+          thoughts, experiments, and reflections on artificial intelligence and its impact on our world.
         </p>
-        
+
         {posts.length > 0 ? (
           <div className="space-y-6">
             {posts.map((post, index) => (
-              <article 
-                key={post.node.fields?.slug || post.node.id} 
-                className="pb-6 post-card animate-fade-in-up"
+              <article
+                key={post.node.fields?.slug || post.node.id}
+                className="border-b border-blush pb-6 post-card animate-fade-in-up"
               >
                 <h2 className="text-2xl font-bold text-terracotta mb-2 font-play">
-                  <Link 
-                    to={post.node.fields?.slug || '#'} 
+                  <Link
+                    to={post.node.fields?.slug || '#'}
                     className="animated-link hover:text-sage transition-colors"
                   >
                     {post.node.frontmatter.title}
@@ -43,8 +43,8 @@ const CocktailsPage = ({ data }) => {
                   {post.node.frontmatter.tags && (
                     <div className="flex gap-2">
                       {post.node.frontmatter.tags.map((tag, tagIndex) => (
-                        <span 
-                          key={tagIndex} 
+                        <span
+                          key={tagIndex}
                           className="px-3 py-1 bg-blush text-terracotta text-sm rounded-full font-medium hover:bg-sage hover:text-cream transition-colors"
                         >
                           {tag}
@@ -57,14 +57,14 @@ const CocktailsPage = ({ data }) => {
             ))}
           </div>
         ) : (
-          <p className="text-text-dark animate-fade-in font-huninn">No cocktail posts found yet.</p>
+          <p className="text-text-dark animate-fade-in font-huninn">No AI posts found yet.</p>
         )}
       </div>
     </Layout>
   );
 };
 
-export default CocktailsPage;
+export default AIPageEn;
 
 export const pageQuery = graphql`
   query {
@@ -82,7 +82,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       filter: {
         frontmatter: {
-          tags: { in: ["cocktails"] }
+          tags: { in: ["ai", "artificial-intelligence", "technology"] }
           language: { eq: "en" }
         }
       }
@@ -104,4 +104,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`; 
+`;

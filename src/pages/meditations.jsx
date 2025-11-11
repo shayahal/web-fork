@@ -11,10 +11,10 @@ const AIPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="AI" />
-      <Header 
+      <Header
         metadata={data.site.siteMetadata}
-        currentLanguage="he"
-        alternateUrl="/meditations"
+        currentLanguage="en"
+        alternateUrl="/meditations-he"
       />
       <div className="mt-16 max-w-4xl mx-auto px-4">
         <h1 className="text-4xl font-bold text-terracotta mb-6 animate-fade-in-up font-play">AI</h1>
@@ -80,11 +80,11 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      filter: { 
-        frontmatter: { 
+      filter: {
+        frontmatter: {
           tags: { in: ["ai", "artificial-intelligence", "technology"] }
-          language: { eq: "he" }
-        } 
+          language: { eq: "en" }
+        }
       }
       sort: { frontmatter: { date: DESC } }
     ) {

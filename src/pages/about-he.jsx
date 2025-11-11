@@ -18,10 +18,10 @@ const AboutPageHe = ({ data }) => {
   return (
     <Layout>
       <SEO title="אודות" />
-      <Header 
-        metadata={data.site.siteMetadata} 
+      <Header
+        metadata={data.site.siteMetadata}
         currentLanguage="he"
-        alternateUrl="/about"
+        alternateUrl="/about-en"
       />
       <div className="mt-16 max-w-4xl mx-auto px-4 rtl" dir="rtl">
         <div className="flex flex-col md:flex-row-reverse gap-6 items-start animate-fade-in-up stagger-1">

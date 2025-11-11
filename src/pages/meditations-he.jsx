@@ -11,10 +11,10 @@ const MeditationsPageHe = ({ data }) => {
   return (
     <Layout>
       <SEO title="AI" />
-      <Header 
+      <Header
         metadata={data.site.siteMetadata}
         currentLanguage="he"
-        alternateUrl="/meditations"
+        alternateUrl="/meditations-en"
       />
       <div className="mt-16 max-w-4xl mx-auto px-4 rtl" dir="rtl">
         <h1 className="text-4xl font-bold text-terracotta mb-6 animate-fade-in-up font-play">AI</h1>

@@ -1,6 +1,6 @@
 ---
 title: "What do ants, Baruch Spinoza and The Sims have in common?"
-date: '2025-01-11'
+date: '2025-09-01'
 description: 'How a Reddit thread sent me down questions about free will'
 direction: ltr
 language: 'en'

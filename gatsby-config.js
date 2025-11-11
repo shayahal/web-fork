@@ -75,14 +75,6 @@ module.exports = {
         link: 'None',
       },
     ],
-    // Optional: List your recommendations, they must have `name` and `description`. `link` is optional.
-    recommendations: [
-      {
-        name: 'my.. github?',
-        description: 'not sure. wanted to put link',
-        link: 'https://github.com/shayahal',
-      },
-    ],
     // Optional: List your skills, they must have `name` and `description`.
     skills: [
       {

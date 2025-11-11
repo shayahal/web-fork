@@ -17,10 +17,10 @@ const BlogPageHe = ({ data }) => {
   return (
     <Layout>
       <SEO title="כל הפוסטים" />
-      <Header 
+      <Header
         metadata={data.site.siteMetadata}
         currentLanguage="he"
-        alternateUrl="/blog"
+        alternateUrl="/blog-en"
       />
       <div className="mt-16 max-w-4xl mx-auto px-4 rtl" dir="rtl">
         <h1 className="text-4xl font-bold text-terracotta mb-6 animate-fade-in-up font-play">כל הפוסטים</h1>
