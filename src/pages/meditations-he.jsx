@@ -10,16 +10,16 @@ const MeditationsPageHe = ({ data }) => {
   
   return (
     <Layout>
-      <SEO title="AI" />
+      <SEO title="Tech" />
       <Header
         metadata={data.site.siteMetadata}
         currentLanguage="he"
         alternateUrl="/meditations-en"
       />
       <div className="mt-16 max-w-4xl mx-auto px-4 rtl" dir="rtl">
-        <h1 className="text-4xl font-bold text-terracotta mb-6 animate-fade-in-up font-play">AI</h1>
+        <h1 className="text-4xl font-bold text-terracotta mb-6 animate-fade-in-up font-play">Tech</h1>
         <p className="text-lg text-sage mb-4 animate-fade-in-up font-huninn">
-          מחשבות, ניסויים והרהורים על בינה מלאכותית והשפעתה על עולמנו.
+          מחשבות, ניסויים והרהורים על טכנולוגיה והשפעתה על עולמנו.
         </p>
         
         {posts.length > 0 ? (
@@ -57,7 +57,7 @@ const MeditationsPageHe = ({ data }) => {
             ))}
           </div>
         ) : (
-          <p className="text-text-dark animate-fade-in font-huninn">עוד אין פוסטים על AI.</p>
+          <p className="text-text-dark animate-fade-in font-huninn">עוד אין פוסטים על טכנולוגיה.</p>
         )}
       </div>
     </Layout>

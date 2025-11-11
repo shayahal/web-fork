@@ -24,6 +24,11 @@ module.exports = {
         link: 'None',
       },
       {
+        name: 'Now What? Podcast',
+        description: 'A podcast for IDF tech unit graduates entering Israel\'s private sector',
+        link: 'https://symbol.vc/nowwhat/',
+      },
+      {
         name: 'Senior-it',
         description: 'Research the differences between men and womens career paths in the Israeli Tech industry',
         link: 'https://www.mako.co.il/nexter-news/Article-75518b5b5f2c681027.htm',

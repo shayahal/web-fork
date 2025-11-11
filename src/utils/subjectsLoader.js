@@ -4,6 +4,8 @@ import talkingEn from '../../content/subjects/talking.en.json';
 import talkingHe from '../../content/subjects/talking.he.json';
 import askmeEn from '../../content/subjects/askme.en.json';
 import askmeHe from '../../content/subjects/askme.he.json';
+import projectsEn from '../../content/subjects/projects.en.json';
+import projectsHe from '../../content/subjects/projects.he.json';
 
 /**
  * Get subjects for "I'm talking about" section based on language
@@ -21,6 +23,15 @@ export const getSubjectsTalking = (language = 'en') => {
  */
 export const getSubjectsAskMe = (language = 'en') => {
   return language === 'he' ? askmeHe : askmeEn;
+};
+
+/**
+ * Get projects based on language
+ * @param {string} language - Language code ('en' or 'he')
+ * @returns {Array} - Array of project objects
+ */
+export const getProjects = (language = 'en') => {
+  return language === 'he' ? projectsHe : projectsEn;
 };
 
 /**

@@ -1,5 +1,4 @@
 import { graphql } from 'gatsby';
-import get from 'lodash/get';
 import React from 'react';
 
 import Header from '../components/header';
@@ -11,12 +10,12 @@ import SectionProjects from '../components/section-projects';
 import SectionAskMe from '../components/section-ask-me';
 import SectionLectures from '../components/section-lectures';
 import SEO from '../components/seo';
-import { getSubjectsTalking, getSubjectsAskMe, getSectionTitles } from '../utils/subjectsLoader';
+import { getSubjectsTalking, getSubjectsAskMe, getSectionTitles, getProjects } from '../utils/subjectsLoader';
 
 const Index = ({ data }) => {
-  const projects = get(data, 'site.siteMetadata.projects', false);
   const posts = data.allMarkdownRemark.edges;
   const currentLanguage = 'en'; // Index page is in English
+  const projects = getProjects(currentLanguage);
   const lectures = getSubjectsTalking(currentLanguage);
   const askMe = getSubjectsAskMe(currentLanguage);
   const sectionTitles = getSectionTitles(currentLanguage);

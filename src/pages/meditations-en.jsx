@@ -10,16 +10,16 @@ const AIPageEn = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="AI" />
+      <SEO title="Tech" />
       <Header
         metadata={data.site.siteMetadata}
         currentLanguage="en"
         alternateUrl="/meditations-he"
       />
       <div className="mt-16 max-w-4xl mx-auto px-4">
-        <h1 className="text-4xl font-bold text-terracotta mb-6 animate-fade-in-up font-play">AI</h1>
+        <h1 className="text-4xl font-bold text-terracotta mb-6 animate-fade-in-up font-play">Tech</h1>
         <p className="text-lg text-sage mb-4 animate-fade-in-up font-huninn">
-          thoughts, experiments, and reflections on artificial intelligence and its impact on our world.
+          thoughts, experiments, and reflections on technology and its impact on our world.
         </p>
 
         {posts.length > 0 ? (
@@ -57,7 +57,7 @@ const AIPageEn = ({ data }) => {
             ))}
           </div>
         ) : (
-          <p className="text-text-dark animate-fade-in font-huninn">No AI posts found yet.</p>
+          <p className="text-text-dark animate-fade-in font-huninn">No Tech posts found yet.</p>
         )}
       </div>
     </Layout>
