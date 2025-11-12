@@ -15,6 +15,8 @@ So I wondered - how do the Sims actually choose when they act independently (whe
 
 Instead of programming endless rules - the developers built (in the 90s!) an AI mechanism called a needs-based scoring engine - every object in the room broadcasts its ability to satisfy the Sims' needs (like hunger, fun, hygiene, etc.). For example, the sofa broadcasts "sit on me and I'll give you 10 comfort points."
 
+![Sims needs-based scoring](./sims-image.jpg)
+
 Turns out the idea for this mechanism comes from ants! When an ant finds food, it starts returning to the nest, dropping a pheromone along the way that creates an invisible scent trail. Ants encounter it and head to the food source, and when they return to the nest they also secrete the pheromone, making the trail even stronger. New ants will be drawn to the highest concentration of the chemical, attracting the whole colony. When the food runs out, the ants stop secreting the chemical trail and the substance evaporates.
 
 Will Wright, who designed the game, took this mechanism and used it - the pheromone is the digital weight given to objects, and the Sims are drawn to the object with the highest number. This explains why the Sims are glued to the computer - its score for "fun points" is terribly high, and it beats everything else!
