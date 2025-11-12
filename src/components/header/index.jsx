@@ -5,16 +5,16 @@ import profileImg from '../../images/profile.jpg';
 import LanguageToggle from '../language-toggle';
 
 const classes = {
-  wrapper: 'block mb-6 md:flex font-huninn animate-fade-in-up',
+  wrapper: 'block mb-6 md:flex font-lora animate-fade-in-up',
   imageWrapper: 'w-full max-w-150 animate-scale-in',
   image: 'rounded-full transform transition-all duration-150 hover:scale-105',
-  contentWrapper: 'flex-none pt-6 md:pt-1 md:flex-1 md:pl-20 font-huninn animate-fade-in-up',
+  contentWrapper: 'flex-none pt-6 md:pt-1 md:flex-1 md:pl-20 font-lora animate-fade-in-up',
   name: 'text-5xl text-terracotta font-bold leading-tight hover:text-sage font-play animated-link',
-  description: 'text-sage font-huninn',
-  list: 'mt-6 uppercase tracking-wider font-huninn',
+  description: 'text-sage font-lora',
+  list: 'mt-6 uppercase tracking-wider font-lora',
   item: 'inline list-none pr-4',
   link:
-    'inline-block py-2 font-semibold text-xs text-nav-dark hover:text-nav-darker font-huninn animated-link',
+    'inline-block py-2 font-semibold text-xs text-nav-dark hover:text-nav-darker font-lora animated-link',
 };
 
 const Header = ({ metadata = {}, noBlog = false, showProfileImage = true, currentLanguage = 'en', alternateUrl = null }) => {

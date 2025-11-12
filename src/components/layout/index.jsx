@@ -1,8 +1,8 @@
 import React from 'react';
 
 const classes = {
-  wrapper: 'p-8 relative max-w-screen-xl xs:p-24 font-huninn animate-fade-in bg-cream min-h-screen',
-  outerWrapper: 'relative font-huninn bg-cream',
+  wrapper: 'p-8 relative max-w-screen-xl xs:p-24 font-lora animate-fade-in bg-cream min-h-screen',
+  outerWrapper: 'relative font-lora bg-cream',
   // Simplified decorative element using CSS instead of complex SVG
   decoration: 'hidden fixed transform right-0 top-5 z-0 xl:block w-96 h-full opacity-30',
 };

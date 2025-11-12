@@ -72,9 +72,9 @@ const TranslateSection = ({
                 {post.frontmatter.title}
               </Link>
             </h2>
-            <p className="text-text-dark mb-3 font-huninn">{post.frontmatter.description}</p>
+            <p className="text-text-dark mb-3 font-lora">{post.frontmatter.description}</p>
             <div className="flex items-center justify-between">
-              <p className="text-sm text-text-dark font-huninn">{post.frontmatter.date}</p>
+              <p className="text-sm text-text-dark font-lora">{post.frontmatter.date}</p>
               {post.frontmatter.tags && (
                 <div className="flex gap-2">
                   {post.frontmatter.tags.map((tag, tagIndex) => (

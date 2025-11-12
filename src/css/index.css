@@ -6,9 +6,9 @@
 
 @layer base {
   body {
-    font-family: 'Huninn', 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
+    font-family: 'Lora', 'Segoe UI', 'Tahoma', 'Arial', serif;
   }
-  
+
   * {
     font-family: inherit;
   }
@@ -42,7 +42,7 @@
   .blog-content {
     @apply text-gray-600;
     @apply max-w-screen-md;
-    font-family: 'Heebo', 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
+    font-family: 'Lora', 'Segoe UI', 'Tahoma', 'Arial', serif;
   }
 
   .blog-content a {

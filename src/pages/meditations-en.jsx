@@ -18,7 +18,7 @@ const AIPageEn = ({ data }) => {
       />
       <div className="mt-16 max-w-4xl mx-auto px-4">
         <h1 className="text-4xl font-bold text-terracotta mb-6 animate-fade-in-up font-play">Tech</h1>
-        <p className="text-lg text-sage mb-4 animate-fade-in-up font-huninn">
+        <p className="text-lg text-sage mb-4 animate-fade-in-up font-lora">
           thoughts, experiments, and reflections on technology and its impact on our world.
         </p>
 
@@ -37,9 +37,9 @@ const AIPageEn = ({ data }) => {
                     {post.node.frontmatter.title}
                   </Link>
                 </h2>
-                <p className="text-text-dark mb-3 font-huninn">{post.node.frontmatter.description}</p>
+                <p className="text-text-dark mb-3 font-lora">{post.node.frontmatter.description}</p>
                 <div className="flex items-center justify-between">
-                  <p className="text-sm text-text-dark font-huninn">{post.node.frontmatter.date}</p>
+                  <p className="text-sm text-text-dark font-lora">{post.node.frontmatter.date}</p>
                   {post.node.frontmatter.tags && (
                     <div className="flex gap-2">
                       {post.node.frontmatter.tags.map((tag, tagIndex) => (
@@ -57,7 +57,7 @@ const AIPageEn = ({ data }) => {
             ))}
           </div>
         ) : (
-          <p className="text-text-dark animate-fade-in font-huninn">No Tech posts found yet.</p>
+          <p className="text-text-dark animate-fade-in font-lora">No Tech posts found yet.</p>
         )}
       </div>
     </Layout>

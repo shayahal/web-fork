@@ -8,14 +8,14 @@ import { getAlternateLanguageSlug, detectLanguage } from '../utils/languageUtils
 import '../css/styles.css'; 
 
 const classes = {
-  wrapper: 'mt-16 blog-content font-huninn animate-fade-in-up text-text-dark',
+  wrapper: 'mt-16 blog-content font-lora animate-fade-in-up text-text-dark',
   title: 'mt-16 text-4xl text-terracotta font-bold font-play animate-slide-in-left',
-  date: 'text-sage font-light font-huninn',
+  date: 'text-sage font-light font-lora',
   tags: 'mt-4 flex flex-wrap gap-2',
   tag: 'px-3 py-1 bg-blush text-terracotta text-sm rounded-full font-medium hover:bg-sage hover:text-cream transition-colors',
   navigation: 'mt-12 pt-8 border-t border-blush flex justify-between items-center',
-  navLink: 'flex items-center space-x-2 text-sage hover:text-terracotta transition-colors font-huninn',
-  navLinkRTL: 'flex items-center space-x-reverse space-x-2 text-sage hover:text-terracotta transition-colors font-huninn',
+  navLink: 'flex items-center space-x-2 text-sage hover:text-terracotta transition-colors font-lora',
+  navLinkRTL: 'flex items-center space-x-reverse space-x-2 text-sage hover:text-terracotta transition-colors font-lora',
   navText: 'text-sm',
   navTitle: 'font-medium',
 };

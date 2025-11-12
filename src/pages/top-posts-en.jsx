@@ -16,9 +16,9 @@ const TopPostsPage = ({ data }) => {
         currentLanguage="en"
         alternateUrl="/top-posts-he"
       />
-      <div className="mt-16 max-w-4xl mx-auto px-4 font-huninn">
+      <div className="mt-16 max-w-4xl mx-auto px-4 font-lora">
         <h1 className="text-4xl font-bold text-terracotta mb-6 font-play">Top Posts</h1>
-        <p className="text-lg text-sage mb-4 font-huninn">
+        <p className="text-lg text-sage mb-4 font-lora">
           the posts I'm most proud of.
         </p>
         
@@ -37,9 +37,9 @@ const TopPostsPage = ({ data }) => {
                     {post.node.frontmatter.title}
                   </Link>
                 </h2>
-                <p className="text-text-dark mb-3 font-huninn">{post.node.frontmatter.description}</p>
+                <p className="text-text-dark mb-3 font-lora">{post.node.frontmatter.description}</p>
                 <div className="flex items-center justify-between">
-                  <p className="text-sm text-text-dark font-huninn">{post.node.frontmatter.date}</p>
+                  <p className="text-sm text-text-dark font-lora">{post.node.frontmatter.date}</p>
                   {post.node.frontmatter.tags && (
                     <div className="flex gap-2">
                       {post.node.frontmatter.tags.map((tag, tagIndex) => (
@@ -57,7 +57,7 @@ const TopPostsPage = ({ data }) => {
             ))}
           </div>
         ) : (
-          <p className="text-text-dark font-huninn">No top posts found yet.</p>
+          <p className="text-text-dark font-lora">No top posts found yet.</p>
         )}
       </div>
     </Layout>

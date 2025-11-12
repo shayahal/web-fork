@@ -10,7 +10,7 @@ const classes = {
   slider: 'inline-block w-4 h-4 transform bg-white rounded-full transition-transform',
   sliderLeft: 'translate-x-1',
   sliderRight: 'translate-x-6',
-  label: 'text-xs font-semibold text-nav-dark font-huninn',
+  label: 'text-xs font-semibold text-nav-dark font-lora',
   labelActive: 'text-sage',
   labelInactive: 'text-nav-dark opacity-60',
 };
