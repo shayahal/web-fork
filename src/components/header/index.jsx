@@ -9,7 +9,7 @@ const classes = {
   imageWrapper: 'w-full max-w-150 animate-scale-in',
   image: 'rounded-full transform transition-all duration-150 hover:scale-105',
   contentWrapper: 'flex-none pt-6 md:pt-1 md:flex-1 md:pl-20 font-huninn animate-fade-in-up',
-  name: 'text-5xl text-terracotta font-bold leading-tight hover:text-sage font-lora animated-link',
+  name: 'text-5xl text-terracotta font-bold leading-tight hover:text-sage font-play animated-link',
   description: 'text-sage font-huninn',
   list: 'mt-6 uppercase tracking-wider font-huninn',
   item: 'inline list-none pr-4',

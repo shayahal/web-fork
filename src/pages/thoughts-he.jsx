@@ -17,7 +17,7 @@ const ThoughtsPageHe = ({ data }) => {
         alternateUrl="/thoughts-en"
       />
       <div className="mt-16 max-w-4xl mx-auto px-4 rtl" dir="rtl">
-        <h1 className="text-4xl font-bold text-terracotta mb-6 font-lora">מחשבות</h1>
+        <h1 className="text-4xl font-bold text-terracotta mb-6 font-play">מחשבות</h1>
         <p className="text-lg text-sage mb-4 font-huninn">
           הרהורים אקראיים, רפלקציות ורעיונות.
         </p>
@@ -29,7 +29,7 @@ const ThoughtsPageHe = ({ data }) => {
                 key={post.node.fields?.slug || post.node.id}
                 className="border-b border-blush pb-6 post-card"
               >
-                <h2 className="text-2xl font-bold text-terracotta mb-2 font-lora">
+                <h2 className="text-2xl font-bold text-terracotta mb-2 font-play">
                   <Link
                     to={post.node.fields?.slug || '#'}
                     className="animated-link hover:text-sage transition-colors"

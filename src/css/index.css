@@ -29,8 +29,13 @@
     font-display: swap;
   }
   
+  .font-play {
+    font-family: 'Play', 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
+    font-display: swap;
+  }
+
   .font-lora {
-    font-family: 'Lora', 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
+    font-family: 'Lora', 'Segoe UI', 'Tahoma', 'Arial', serif;
     font-display: swap;
   }
   

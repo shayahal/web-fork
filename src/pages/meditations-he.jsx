@@ -17,7 +17,7 @@ const MeditationsPageHe = ({ data }) => {
         alternateUrl="/meditations-en"
       />
       <div className="mt-16 max-w-4xl mx-auto px-4 rtl" dir="rtl">
-        <h1 className="text-4xl font-bold text-terracotta mb-6 animate-fade-in-up font-lora">Tech</h1>
+        <h1 className="text-4xl font-bold text-terracotta mb-6 animate-fade-in-up font-play">Tech</h1>
         <p className="text-lg text-sage mb-4 animate-fade-in-up font-huninn">
           מחשבות, ניסויים והרהורים על טכנולוגיה והשפעתה על עולמנו.
         </p>
@@ -29,7 +29,7 @@ const MeditationsPageHe = ({ data }) => {
                 key={post.node.fields?.slug || post.node.id} 
                 className="border-b border-blush pb-6 post-card animate-fade-in-up"
               >
-                <h2 className="text-2xl font-bold text-terracotta mb-2 font-lora">
+                <h2 className="text-2xl font-bold text-terracotta mb-2 font-play">
                   <Link 
                     to={post.node.fields?.slug || '#'} 
                     className="animated-link hover:text-sage transition-colors"
