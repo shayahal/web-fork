@@ -69,7 +69,7 @@ This document outlines all the animation effects and enhancements that have been
 - `src/css/index.css` - Enhanced with animation classes and performance optimizations
 
 ### Component Updates
-- `src/pages/meditations.jsx` - Added animations to AI posts
+- `src/pages/tech.jsx` - Added animations to AI posts
 - `src/pages/cocktails.jsx` - Added animations to cocktail posts
 - `src/pages/travel.jsx` - Added animations to travel posts
 - `src/pages/top-posts.jsx` - Added animations to top posts

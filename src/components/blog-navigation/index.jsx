@@ -48,7 +48,7 @@ const BlogNavigation = ({ currentPage = 'blog', metadata = {} }) => {
     { title: 'About', path: '/', key: 'about' },
     { title: 'Thoughts', path: '/thoughts', key: 'thoughts', count: data.thoughts.totalCount },
     { title: 'All Posts', path: '/blog', key: 'blog', count: data.allPosts.totalCount },
-    { title: 'Tech', path: '/meditations', key: 'meditations', count: data.ai.totalCount },
+    { title: 'Tech', path: '/tech', key: 'tech', count: data.ai.totalCount },
     { title: 'Cocktails', path: '/cocktails', key: 'cocktails', count: data.cocktails.totalCount },
     { title: 'Travel', path: '/travel', key: 'travel', count: data.travel.totalCount },
     { title: 'Top Posts', path: '/top-posts', key: 'top-posts' },

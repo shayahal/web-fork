@@ -5,7 +5,7 @@ import Header from '../components/header';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
-const MeditationsPageHe = ({ data }) => {
+const TechPageHe = ({ data }) => {
   const posts = data.allMarkdownRemark.edges;
   
   return (
@@ -14,7 +14,7 @@ const MeditationsPageHe = ({ data }) => {
       <Header
         metadata={data.site.siteMetadata}
         currentLanguage="he"
-        alternateUrl="/meditations-en"
+        alternateUrl="/tech-en"
       />
       <div className="mt-16 max-w-4xl mx-auto px-4 rtl" dir="rtl">
         <h1 className="text-4xl font-bold text-terracotta mb-6 animate-fade-in-up font-play">Tech</h1>
