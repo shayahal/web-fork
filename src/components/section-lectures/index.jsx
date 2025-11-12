@@ -9,10 +9,10 @@ const SectionLectures = ({ lectures, title = "Subjects I'm talking about" }) => 
   return (
     <Section title={title}>
       {lectures.map((lecture, index) => (
-        <div 
+        <div
           key={lecture.name}
-          className="animate-fade-in-up stagger-1"
-          style={{animationDelay: `${(index + 1) * 0.1}s`}}
+          className="animate-fade-in"
+          style={{animationDelay: `${(index + 1) * 0.05}s`}}
         >
           <SummaryItem
             name={lecture.name}
