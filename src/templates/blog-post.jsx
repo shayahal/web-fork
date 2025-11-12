@@ -26,12 +26,17 @@ const BlogPost = ({ data }) => {
   const currentLanguage = detectLanguage(post);
   const isRTL = currentLanguage === 'he';
 
-  // Find current post index
-  const currentIndex = allPosts.findIndex(edge => edge.node.id === post.id);
-  
-  // Get previous and next posts
-  const previousPost = currentIndex > 0 ? allPosts[currentIndex - 1] : null;
-  const nextPost = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null;
+  // Filter posts by current language
+  const postsInCurrentLanguage = allPosts.filter(edge =>
+    edge.node.frontmatter.language === currentLanguage
+  );
+
+  // Find current post index in filtered list
+  const currentIndex = postsInCurrentLanguage.findIndex(edge => edge.node.id === post.id);
+
+  // Get previous and next posts from same language
+  const previousPost = currentIndex > 0 ? postsInCurrentLanguage[currentIndex - 1] : null;
+  const nextPost = currentIndex < postsInCurrentLanguage.length - 1 ? postsInCurrentLanguage[currentIndex + 1] : null;
 
   // Get alternate language version
   const currentSlug = post.fields?.slug;
