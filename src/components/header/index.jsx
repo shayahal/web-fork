@@ -11,10 +11,10 @@ const classes = {
   contentWrapper: 'flex-none pt-6 md:pt-1 md:flex-1 md:pl-20 font-lora animate-fade-in-up',
   name: 'text-5xl text-terracotta font-bold leading-tight hover:text-sage font-play animated-link',
   description: 'text-sage font-lora',
-  list: 'mt-6 uppercase tracking-wider font-lora',
+  list: 'mt-6 uppercase tracking-wider font-huninn',
   item: 'inline list-none pr-4',
   link:
-    'inline-block py-2 font-semibold text-xs text-nav-dark hover:text-nav-darker font-lora animated-link',
+    'inline-block py-2 font-semibold text-xs text-nav-dark hover:text-nav-darker font-huninn animated-link',
 };
 
 const Header = ({ metadata = {}, noBlog = false, showProfileImage = true, currentLanguage = 'en', alternateUrl = null }) => {

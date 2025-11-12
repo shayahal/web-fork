@@ -29,7 +29,7 @@ const TravelPageEn = ({ data }) => {
                 key={post.node.fields?.slug || post.node.id}
                 className="border-b border-blush pb-6 post-card animate-fade-in-up"
               >
-                <h2 className="text-2xl font-bold text-terracotta mb-2 font-play">
+                <h2 className="text-2xl font-bold text-terracotta mb-2 font-lora">
                   <Link
                     to={post.node.fields?.slug || '#'}
                     className="animated-link hover:text-sage transition-colors"
