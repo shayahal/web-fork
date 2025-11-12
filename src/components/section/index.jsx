@@ -4,7 +4,7 @@ const classes = {
   wrapper: 'block pt-12 md:flex font-huninn animate-fade-in-up',
   title: 'pb-6 md:w-full md:max-w-150 md:p-0 animate-slide-in-left',
   heading:
-    'font-xs font-light tracking-widest text-sm text-sage leading-normal uppercase font-play',
+    'font-xs font-light tracking-widest text-sm text-sage leading-normal uppercase font-lora',
   content: 'flex-none text-lg text-text-dark font-light md:flex-1 md:px-20 font-huninn',
 };
 

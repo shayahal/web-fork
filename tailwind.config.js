@@ -7,7 +7,7 @@ module.exports = {
       },
       fontFamily: {
         'huninn': ['Huninn', 'sans-serif'],
-        'play': ['Play', 'sans-serif'],
+        'lora': ['Lora', 'serif'],
       },
       colors: {
         'sage': '#3E3F29',

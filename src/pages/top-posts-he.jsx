@@ -17,7 +17,7 @@ const TopPostsPageHe = ({ data }) => {
         alternateUrl="/top-posts-en"
       />
       <div className="mt-16 max-w-4xl mx-auto px-4 font-huninn rtl" dir="rtl">
-        <h1 className="text-4xl font-bold text-terracotta mb-6 font-play">הפוסטים הטובים ביותר</h1>
+        <h1 className="text-4xl font-bold text-terracotta mb-6 font-lora">הפוסטים הטובים ביותר</h1>
         <p className="text-lg text-sage mb-4 font-huninn">
           הפוסטים שאני הכי גאה בהם.
         </p>
@@ -29,7 +29,7 @@ const TopPostsPageHe = ({ data }) => {
                 key={post.node.fields?.slug || post.node.id}
                 className="border-b border-blush pb-6 post-card"
               >
-                <h2 className="text-2xl font-bold text-terracotta mb-2 font-play">
+                <h2 className="text-2xl font-bold text-terracotta mb-2 font-lora">
                   <Link 
                     to={post.node.fields?.slug || '#'} 
                     className="animated-link hover:text-sage transition-colors"

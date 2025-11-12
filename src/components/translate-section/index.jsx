@@ -47,7 +47,7 @@ const TranslateSection = ({
   
   return (
     <div className="mt-12 max-w-4xl mx-auto px-4">
-      <h2 className="text-3xl font-bold text-terracotta mb-6 animate-fade-in-up font-play">
+      <h2 className="text-3xl font-bold text-terracotta mb-6 animate-fade-in-up font-lora">
         {sectionTitle}
       </h2>
       <div className="space-y-6">
@@ -64,7 +64,7 @@ const TranslateSection = ({
                 {currentLanguage === 'he' ? 'עברית' : 'English'}
               </span>
             </div>
-            <h2 className="text-2xl font-bold text-terracotta mb-2 font-play">
+            <h2 className="text-2xl font-bold text-terracotta mb-2 font-lora">
               <Link 
                 to={post.fields?.slug || '#'} 
                 className="animated-link hover:text-sage transition-colors"

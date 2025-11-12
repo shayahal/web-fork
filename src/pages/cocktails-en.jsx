@@ -17,7 +17,7 @@ const CocktailsPageEn = ({ data }) => {
         alternateUrl="/cocktails-he"
       />
       <div className="mt-16 max-w-4xl mx-auto px-4">
-        <h1 className="text-4xl font-bold text-terracotta mb-6 animate-fade-in-up font-play">Cocktails</h1>
+        <h1 className="text-4xl font-bold text-terracotta mb-6 animate-fade-in-up font-lora">Cocktails</h1>
         <p className="text-lg text-sage mb-4 animate-fade-in-up font-huninn">
           This is where the site started - the recipes I love, tips, recommendations for which bottles to buy.
         </p>
@@ -29,7 +29,7 @@ const CocktailsPageEn = ({ data }) => {
                 key={post.node.fields?.slug || post.node.id}
                 className="pb-6 post-card animate-fade-in-up"
               >
-                <h2 className="text-2xl font-bold text-terracotta mb-2 font-play">
+                <h2 className="text-2xl font-bold text-terracotta mb-2 font-lora">
                   <Link
                     to={post.node.fields?.slug || '#'}
                     className="animated-link hover:text-sage transition-colors"
