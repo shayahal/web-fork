@@ -132,8 +132,10 @@ module.exports = {
               maxWidth: 590,
               wrapperStyle: `margin: 0 0 30px;`,
               quality: 50,
-              withWebp: false,
+              withWebp: true,
               withAvif: false,
+              loading: 'lazy',
+              decoding: 'async',
             },
           },
           {
@@ -149,7 +151,18 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: [`auto`, `webp`],
+          placeholder: `blurred`,
+          quality: 50,
+          breakpoints: [750, 1080, 1366, 1920],
+          backgroundColor: `transparent`,
+        },
+      },
+    },
     `gatsby-plugin-postcss`,
     // `gatsby-plugin-offline`, // Disabled for dev performance
     // `gatsby-plugin-preload-fonts`, // Disabled for dev performance

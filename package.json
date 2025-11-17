@@ -59,9 +59,10 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "GATSBY_CPU_COUNT=2 gatsby develop -H 0.0.0.0",
+    "develop:fast": "GATSBY_EXPERIMENTAL_FAST_DEV=1 GATSBY_CPU_COUNT=2 gatsby develop -H 0.0.0.0",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "npm run develop",
+    "start": "npm run develop:fast",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "predeploy": "gatsby build --prefix-paths",
