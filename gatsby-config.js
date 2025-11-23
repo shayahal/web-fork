@@ -25,7 +25,7 @@ module.exports = {
       },
       {
         name: 'Now What? Podcast',
-        description: 'A podcast for IDF tech unit graduates entering Israel\'s private sector',
+        description: 'A podcast for young professionals entering Israel\'s tech sector',
         link: 'https://symbol.vc/nowwhat/',
       },
       {
