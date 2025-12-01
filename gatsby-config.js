@@ -75,7 +75,7 @@ module.exports = {
         link: 'None',
       },
       {
-        name: 'The true secret for making amazing cocktails at home',
+        name: 'The True Secret For Making Amazing Cocktails At Home',
         description: 'the secret is sugar',
         link: 'None',
       },
