@@ -26,7 +26,12 @@ const FruitsPage = ({ data }) => {
         <div className="flex flex-col md:flex-row gap-6 items-start animate-fade-in-up stagger-1">
           <div className="flex-1">
             <div className="prose prose-lg max-w-none">
-              <p className="text-text-dark font-lora mb-4">inspire by Yoav</p>
+              <p className="text-text-dark font-lora mb-4">
+                the true inspiration for this website, <a href="https://web.stanford.edu/~cm5/fruit.html" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">Ciprian Manolescu</a>
+              </p>
+              <p className="text-text-dark font-lora mb-4">
+                my favourite fruits, as inspired by the true inspiration...
+              </p>
               <ul className="list-none space-y-2 font-lora">
                 {fruits.map((fruit, index) => (
                   <li key={fruit} className="text-text-dark">
@@ -34,9 +39,6 @@ const FruitsPage = ({ data }) => {
                   </li>
                 ))}
               </ul>
-              <p className="text-text-dark font-lora mt-4">
-                the true inspiration for this website, <a href="https://web.stanford.edu/~cm5/fruit.html" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">Ciprian Manolescu</a>
-              </p>
             </div>
           </div>
           <div className="flex-shrink-0 relative group">

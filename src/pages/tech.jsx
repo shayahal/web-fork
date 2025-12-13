@@ -82,7 +82,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       filter: {
         frontmatter: {
-          tags: { in: ["tech", "security", "technology"] }
+          tags: { in: ["tech", "security", "technology", "ai"] }
           language: { eq: "en" }
         }
       }

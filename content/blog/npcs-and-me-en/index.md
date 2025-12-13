@@ -1,7 +1,7 @@
 ---
 title: "Why Are There Still No LLMs in Video Games?"
 date: '2025-12-13'
-description: 'On NPCs, Fortnite, Darth Vader, and gaming studios\' fear of AI'
+description: "On NPCs, Fortnite, Darth Vader, and gaming studios' fear of AI"
 direction: ltr
 language: 'en'
 tags: ['ai', 'gaming', 'thoughts']
