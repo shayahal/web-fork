@@ -34,6 +34,9 @@ const FruitsPage = ({ data }) => {
                   </li>
                 ))}
               </ul>
+              <p className="text-text-dark font-lora mt-4">
+                the true inspiration for this website, <a href="https://web.stanford.edu/~cm5/fruit.html" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">Ciprian Manolescu</a>
+              </p>
             </div>
           </div>
           <div className="flex-shrink-0 relative group">
