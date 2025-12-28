@@ -52,7 +52,7 @@ export const getSectionTitles = (language = 'en') => {
         talking: 'Subjects I\'m talking about',
         askMe: 'Subjects you should ask me to talk about',
         about: 'About',
-        projects: 'Projects',
+        projects: 'Recent Projects',
         latestPosts: 'Latest Posts'
       };
 };
