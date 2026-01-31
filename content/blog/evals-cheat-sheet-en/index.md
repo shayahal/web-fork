@@ -23,7 +23,7 @@ It's about a collection of small tests that check the output of the model. They 
    - Good question: "Does the answer contain medical information? Answer yes/no"
    - Less good question: "Rate how accurate the answer is from 1-5"
 
-3. **Evals for Evaluators** - evaluation that is done on a model that judges. The most common would be to compare the answers that the LLM-as-a-judge gave to data that is human labeled. For example, "Is the model's answer identical to the answer given by our domain expert?"
+3. **Evals for Evaluators** - evaluation that is done on a model that judges. The most common would be to compare the answers that the LLM-as-a-Judge gave to data that is human labeled. For example, "Is the model's answer identical to the answer given by our domain expert?"
 
 ## How do we start?
 
@@ -35,15 +35,15 @@ But, from painful experience - this is almost never enough. We start and discove
 
 ## So what do we do?
 
-I recently found an excellent framework of two researchers, which in my opinion simply exploits a human weakness: we're not good at thinking of everything beforehand, but we really love identifying the mistakes of others.
+I recently found an excellent [framework](https://hamel.dev/blog/posts/evals-faq/) of two researchers, which in my opinion simply exploits a human weakness: we're not good at thinking of everything beforehand, but we really love identifying the mistakes of others.
 
-### The Simple Idea:
+## The Simple Idea
 
 1. Go through the data - in our case, traces (all the input and output) of the model, which we fed into an observability system. Read the traces and when you identify a problem - write what's wrong in a comment in the system itself. It's good to go through at least 100 examples.
 
 2. Take all the notes, put them in some LLM, and ask it to cluster them by types of errors (or failure modes), and also count how many notes appear in each cluster.
 
-3. Actually we got a prioritization of failure modes! For each one of them, we can build an eval, change the system prompt or the ground truth, or just ignore it.
+3. We actually got a prioritization of failure modes! For each one of them, we can build an eval, change the system prompt or the ground truth, or just ignore it.
 
 We choose to build an eval if we want to use it to help us in the development process, as monitoring that triggers an alert, or as a guardrail that blocks answers that didn't meet certain conditions.
 
@@ -51,13 +51,20 @@ Once we have a set of evals that work in real time - it basically works like CI/
 
 4. We do this process iteratively - once a week, we go through the data. Even half an hour like that works wonders.
 
-## Summary
+![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA5IAAAK6CAYAAABL+WP9AAAQAElEQVR4Aex9CZxcVZn9d6u6swAJS9JhJ4msKi5IQkI6wSDIKg7qgOOM6zjK3xl3Z0aFhLQEFJdxn3EZdWYcnRlhXNkRJJLukA113BBRk0DY0glLEkjS3VX3f86t916/qq7qrt6rqk/93ld3++527nu37nnffa8ypo8QEAJCQAgIASEgBISAEBACQkAICIFBICAiOQiwakdVLRECQkAICAEhIASEgBAQAkJACIwfAiKS44e9ap5oCKi/QkAICAEhIASEgBAQAkKgQRAQkWyQgVQ3hIAQGB0EVKoQEAJCQAgIASEgBIRAXwREJPtiohghIASEgBCobwTUeiEgBISAEBACQmCUERCRHGWAVbwQEAJCQAgIASFQDQLSEQJCQAgIgXpCQESynkZLbRUCQkAICAEhIASEQC0hoLYIASEwYREQkZywQ6+OCwEhIASEgBAQAkJACExEBNRnITASCIhIjgSKKkMICAEhIASEgBAQAkJACAgBITB6CNRcySKSNTckapAQEAJCQAgIASEgBISAEBACQqC2ERCRrGZ8pCMEhIAQEAJCQAgIASEgBISAEBACCQIikgkU8jQaAuqPEBACQkAICAEhIASEgBAQAqODgIjk6OCqUoWAEBgaAsolBISAEBACQkAICAEhUAcIiEjWwSCpiUJACAiB2kZArRMCQkAICAEhIAQmGgIikhNtxNVfISAEhIAQEAJEQCIEhIAQEAJCYBgIiEgOAzxlFQJCQAgIASEgBITAWCKguoSAEBACtYKAiGStjITaIQSEgBAQAkJACAgBIdCICKhPQqAhERCRbMhhVaeEgBAQAkJACAgBISAEhIAQGDoCyjkQAiKSAyGkdCEgBISAEBACQkAICAEhIASEgBAoQqAmiWRRCxUQAkJACAgBISAEhIAQEAJCQAgIgZpCQESypoajrhujxgsBISAEhIAQEAJCQAgIASEwQRAQkZwgA61uCoHyCChWCAgBISAEhIAQEAJCQAgMHgERycFjphxCQAgIgfFFQLULASEgBISAEBACQmCcERCRHOcBUPVCQAgIASEwMRBQL4WAEBACQkAINBICIpKNNJrqixAQAkJACAgBITCSCKgsISAEhIAQqICAiGQFYBQtBISAEBACQkAICAEhUI8IqM1CQAiMBQIikmOBsuoQAkJACAgBISAEhIAQEAJCoDICSqk7BEQk627I1GAhIASEgBAQAkJACAgBISAEhMD4IkAiOb4tUO1CQAgIASEgBISAEBACQkAICAEhUFcIiEjW1XClGyu/EBACQkAICAEhIASEgBAQAkJgfBAQkRwf3FXrREVA/RYCQkAICAEhIASEgBAQAg2AgIhkAwyiuiAEhMDoIqDShYAQEAJCQAgIASEgBIoREJEsxkMhISAEhIAQaAwE1AshIASEgBAQAkJgFBEQkRxFcFW0EBACQkAICAEhMBgEpCsEhIAQEAL1goCIZL2MlNopBISAEBACQkAICIFaREBtEgJCYEIiICI5IYddnRYCQkAICAEhIASEgBCYyAio70JguAiISA4XQeUXAkJACAgBISAEhIAQEAJCQAiMPgI1VYOIZE0NhxojBISAEBACQkAICAEhIASEgBCofQREJKsdI+kJASEgBISAEBACQkAICAEhIASEQEBERDLAoK9GRUD9EgJCQAgIASEgBISAEBACQmDkERCRHHlMVaIQEALDQ0C5hYAQEAJCQAgIASEgBGocARHJGh8gNU8ICAEhUB8IqJVCQAgIASEgBITAREJARHIijbb6KgSEgBAQAkIgjYD8QkAICAEhIASGiICI5BCBUzYhIASEgBAQAkJACIwHAqpTCAgBIVALCIhI1sIoqA1CQAgIASEgBISAEBACjYyA+iYEGg4BEcmGG1J1SAgIASEgBISAEBACQkAICIHhI6A
+...
+(This is a very large base64 string - I'll continue it)
 
-The key points are:
-- **Main premise**: GenAI makes it easy to reach 90% performance, but getting to 99-100% requires evaluation frameworks
-- **Three types of Evals**: Code Evals (format checks), LLM-as-a-Judge (semantic evaluation), and Evals for Evaluators (evaluating the evaluators)
-- **Implementation approach**: Characterize requirements upfront, acknowledge that edge cases will emerge, and iteratively identify and address failure modes
-- **The framework**: Review model outputs, identify issues, cluster them with LLM assistance to identify failure modes, build evals to monitor these modes, and repeat weekly
-- **Result**: A CI/CD-like system for AI that enables confidence in making system-wide changes
+In my opinion, all observability systems are quite similar for this purpose, and they also allow you to implement LLM-as-a-Judge within them. I work with Langfuse, many love Langsmith and I've heard Braintrust is excellent.
 
-The document emphasizes a practical, iterative approach to achieving high-quality AI model outputs through continuous evaluation.
+## Some answers to questions from the audience (updates with each lecture)
+
+- **How do you test different prompts or try to choose between two different models?** Exactly as we described. If we built a set of evals, we can simply run an a/b test and see who performs better against the evals we built. Science!
+
+- **What do you do when two different people tag errors differently?** Indeed a common problem in data science. Common solutions: only one person is the arbiter, or you average between several taggings.
+
+## So why am I really so obsessed with Evals?
+
+The balance in many professions is shifting from creation to verification.
+
+Building a precise and excellent set of evals through iterations and friction with our data - can enable us to run much faster, not be afraid to break things, test different models and different prompts at the click of a button (but with science, not vibe evals). This is a very significant organizational moat - which can actually help us get from 90% to 99%. Amazing.
