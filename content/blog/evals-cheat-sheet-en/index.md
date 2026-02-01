@@ -66,5 +66,3 @@ In my opinion, all observability systems are pretty similar for this purpose, an
 The balance in many professions is shifting from creation to verification.
 
 Build a solid set of evals through iteration and real friction with your data—and suddenly you can move fast, break things without panicking, test different models and prompts without guessing. That's a moat. That's how you get from 90% to 99%.
-
-![](./meme.png)
