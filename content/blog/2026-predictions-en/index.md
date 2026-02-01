@@ -1,5 +1,5 @@
 ---
-title: "MY HUMBLE PREDICTION FOR 2026"
+title: "My Humble Prediction for 2026"
 date: '2026-01-23'
 description: 'The only way to make AI work'
 direction: ltr
