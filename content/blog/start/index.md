@@ -1,7 +1,7 @@
 ---
-title: איך מתחילים 
+title: אתנול וחומצה 
 date: '2024-05-05'
-description: 'origin story'
+description: 'Origin story'
 direction: rtl
 language: 'he'
 tags: ['cocktails']

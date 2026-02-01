@@ -1,7 +1,7 @@
 ---
-title: How to Start
+title: Ethanol and Acid
 date: '2024-05-05'
-description: 'origin story'
+description: 'Origin story'
 direction: ltr
 language: 'en'
 tags: ['cocktails']
