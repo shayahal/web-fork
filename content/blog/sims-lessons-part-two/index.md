@@ -25,5 +25,4 @@ tags: ['reflection', 'thoughts', 'career']
 
 בפוסט הבא: על הפעם שבה עצרתי ברמזור ב-GTA-5
 
-![Sims helicopter career scene](./sims-helicopter.jpg)
-
+![סים במסוק](./helicopter.png)
