@@ -1,7 +1,7 @@
 ---
 title: "תמריצים הם המלך"
 date: '2025-01-15'
-description: 'הבנה כיצד תמריצים מניעים התנהגות בתחום האבטחה, עסקים ושינוי ארגוני'
+description: 'חייבים להתחיל לדבר על תמריצים בעולם הסקריוטי'
 direction: rtl
 language: 'he'
 tags: ['tech', 'security', 'thoughts']

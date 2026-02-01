@@ -1,7 +1,7 @@
 ---
 title: "לרמות את עצמי לדעת"
 date: '2025-01-28'
-description: 'איך בניתי הרגלים חדשים על ידי רימוי עצמי והשקתי תוסף Chrome'
+description: 'איך בניתי הרגלים חדשים על ידי רמאות והשקתי תוסף Chrome'
 direction: rtl
 language: 'he'
 tags: ['tech', 'thoughts', 'habits']
