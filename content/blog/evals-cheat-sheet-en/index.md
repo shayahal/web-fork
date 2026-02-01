@@ -66,3 +66,5 @@ In my opinion, all observability systems are quite similar for this purpose, and
 The balance in many professions is shifting from creation to verification.
 
 Building a precise and excellent set of evals through iterations and friction with our data - can enable us to run much faster, not be afraid to break things, test different models and different prompts at the click of a button (but with science, not vibe evals). This is a very significant organizational moat - which can actually help us get from 90% to 99%. Amazing.
+
+![](./meme.png)
