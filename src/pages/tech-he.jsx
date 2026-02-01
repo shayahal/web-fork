@@ -19,7 +19,7 @@ const TechPageHe = ({ data }) => {
       <div className="mt-16 max-w-4xl mx-auto px-4 rtl">
         <h1 className="text-4xl font-bold text-terracotta mb-6 font-play">טק</h1>
         <p className="text-lg text-sage mb-4 font-huninn">
-          פוסטים על טכנולוגיה, אבטחה ובניית מוצרים.
+          מחשבות על טכנולוגיה
         </p>
 
         {posts.length > 0 ? (
