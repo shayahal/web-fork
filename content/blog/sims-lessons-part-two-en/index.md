@@ -25,5 +25,5 @@ This might explain why people consult with me about careers. I've basically done
 
 In the next post: about the time I stopped at a red light in GTA-5.
 
-![Sims helicopter career](./helicopter.png)
+![Sims helicopter career scene](./sims-helicopter-career.png)
 
