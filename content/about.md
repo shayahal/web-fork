@@ -1,5 +1,1 @@
-I've built this site because i was kind of jealous of my friends' sites. And needed a place to store my [cocktail recipes](/cocktails). They're pretty good. 
-
-Also, I always wanted to write and lied to myself that I would do it only if I had a place to store it. Questionable excuse, but it actually worked. 
-
-Well, that's it. enjoy
+I'm Shay [https://www.linkedin.com/in/shay-yahal/], originally built this website to store my cocktails recipes. Now it contains many random stuff I'm thinking on - AI, security, math, tech in general, travel, etc. Enjoy!
