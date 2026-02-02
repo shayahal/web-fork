@@ -6,7 +6,7 @@ module.exports = {
     // Your Name
     name: 'Shay Yahal',
     // Main Site Title
-    title: `Shay Yahal | Yours`,
+    title: `Shay Yahal`,
     // Description that goes under your name in main bio
     description: `Also known as: ShayShu`,
     // Optional: Twitter account handle
