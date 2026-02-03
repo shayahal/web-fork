@@ -11,7 +11,8 @@ const LECTURES_WITH_EMAIL = [
   'How Not to Manage Your Time',
   'Why Can\'t You Hire Female Software Engineers',
   'קואליציות במקום העבודה',
-  'איך לא לנהל את הזמן שלכם'
+  'איך לא לנהל את הזמן שלכם',
+  'למה אתם לא מצליחים לגייס מתכנתות מנוסות לסטארטאפ שלכם'
 ];
 
 const EmailIcon = () => (

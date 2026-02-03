@@ -26,7 +26,7 @@ const SectionBlog = ({ posts, title = "Latest Posts" }) => {
       ))}
       {blogPosts.length >= 5 && (
         <div className="animate-fade-in" style={{animationDelay: `${(blogPosts.length + 1) * 0.05}s`}}>
-          <Link className="text-gray-500 text-sm hover:text-sage transition-colors font-heebo animated-link" to="/blog">
+          <Link className="text-gray-500 text-sm hover:text-sage transition-colors font-hebrew animated-link" to="/blog">
             View all posts &rarr;
           </Link>
         </div>

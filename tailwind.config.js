@@ -9,7 +9,6 @@ module.exports = {
         'huninn': ['Huninn', 'sans-serif'],
         'play': ['Play', 'sans-serif'],
         'lora': ['Lora', 'serif'],
-        'heebo': ['M PLUS Rounded 1c', 'sans-serif'],
         'hebrew': ['M PLUS Rounded 1c', 'sans-serif'],
       },
       colors: {

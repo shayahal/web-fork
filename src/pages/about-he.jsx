@@ -27,7 +27,7 @@ const AboutPageHe = ({ data }) => {
         <div className="flex flex-col md:flex-row-reverse gap-6 items-start animate-fade-in-up stagger-1">
           <div className="flex-1">
             <div
-              className="prose prose-lg max-w-none font-heebo"
+              className="prose prose-lg max-w-none font-hebrew"
               dangerouslySetInnerHTML={{ __html: aboutPost.html }}
             />
           </div>
