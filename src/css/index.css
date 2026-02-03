@@ -38,6 +38,11 @@
     font-family: 'Lora', 'Segoe UI', 'Tahoma', 'Arial', serif;
     font-display: swap;
   }
+
+  .font-hebrew {
+    font-family: 'M PLUS Rounded 1c', 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
+    font-display: swap;
+  }
   
   .blog-content {
     @apply text-gray-600;
