@@ -26,8 +26,8 @@ const AboutPageHe = ({ data }) => {
       <div className="mt-16 max-w-4xl mx-auto px-4 rtl" dir="rtl">
         <div className="flex flex-col md:flex-row-reverse gap-6 items-start animate-fade-in-up stagger-1">
           <div className="flex-1">
-            <div 
-              className="prose prose-lg max-w-none font-huninn"
+            <div
+              className="prose prose-lg max-w-none font-heebo"
               dangerouslySetInnerHTML={{ __html: aboutPost.html }}
             />
           </div>
