@@ -9,6 +9,7 @@ const EMAIL_ADDRESS = 'shay.yahal@gmail.com';
 const LECTURES_WITH_EMAIL = [
   'Workplace Coalitions',
   'How Not to Manage Your Time',
+  'Why Can\'t You Hire Female Software Engineers',
   'קואליציות במקום העבודה',
   'איך לא לנהל את הזמן שלכם'
 ];

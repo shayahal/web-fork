@@ -47,7 +47,7 @@ module.exports = {
         link: 'None',
       },
       {
-        name: 'Why Can\'t You Hire Female Software Engineers - Invite Me',
+        name: 'Why Can\'t You Hire Female Software Engineers',
         description: 'senior-it in the making',
         link: 'None',
       },
