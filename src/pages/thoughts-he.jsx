@@ -18,7 +18,7 @@ const ThoughtsPageHe = ({ data }) => {
       />
       <div className="mt-16 max-w-4xl mx-auto px-4 rtl" dir="rtl">
         <h1 className="text-4xl font-bold text-terracotta mb-6 font-play">מחשבות</h1>
-        <p className="text-lg text-sage mb-4 font-huninn">
+        <p className="text-lg text-sage mb-4 font-hebrew">
           הרהורים אקראיים, רפלקציות ורעיונות.
         </p>
 
@@ -29,7 +29,7 @@ const ThoughtsPageHe = ({ data }) => {
                 key={post.node.fields?.slug || post.node.id}
                 className="border-b border-blush pb-6 post-card"
               >
-                <h2 className="text-2xl font-bold text-terracotta mb-2 font-lora">
+                <h2 className="text-2xl font-bold text-terracotta mb-2 font-hebrew">
                   <Link
                     to={post.node.fields?.slug || '#'}
                     className="animated-link hover:text-sage transition-colors"
@@ -37,9 +37,9 @@ const ThoughtsPageHe = ({ data }) => {
                     {post.node.frontmatter.title}
                   </Link>
                 </h2>
-                <p className="text-text-dark mb-3 font-huninn">{post.node.frontmatter.description}</p>
+                <p className="text-text-dark mb-3 font-hebrew">{post.node.frontmatter.description}</p>
                 <div className="flex items-center justify-between">
-                  <p className="text-sm text-text-dark font-huninn">{post.node.frontmatter.date}</p>
+                  <p className="text-sm text-text-dark font-hebrew">{post.node.frontmatter.date}</p>
                   {post.node.frontmatter.tags && (
                     <div className="flex gap-2">
                       {post.node.frontmatter.tags.map((tag, tagIndex) => (
@@ -57,7 +57,7 @@ const ThoughtsPageHe = ({ data }) => {
             ))}
           </div>
         ) : (
-          <p className="text-text-dark font-huninn">עוד אין מחשבות.</p>
+          <p className="text-text-dark font-hebrew">עוד אין מחשבות.</p>
         )}
       </div>
     </Layout>

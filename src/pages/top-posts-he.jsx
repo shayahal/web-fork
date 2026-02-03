@@ -16,9 +16,9 @@ const TopPostsPageHe = ({ data }) => {
         currentLanguage="he"
         alternateUrl="/top-posts-en"
       />
-      <div className="mt-16 max-w-4xl mx-auto px-4 font-huninn rtl" dir="rtl">
+      <div className="mt-16 max-w-4xl mx-auto px-4 font-hebrew rtl" dir="rtl">
         <h1 className="text-4xl font-bold text-terracotta mb-6 font-play">הפוסטים הטובים ביותר</h1>
-        <p className="text-lg text-sage mb-4 font-huninn">
+        <p className="text-lg text-sage mb-4 font-hebrew">
           הפוסטים שאני הכי גאה בהם.
         </p>
         
@@ -37,9 +37,9 @@ const TopPostsPageHe = ({ data }) => {
                     {post.node.frontmatter.title}
                   </Link>
                 </h2>
-                <p className="text-text-dark mb-3 font-huninn">{post.node.frontmatter.description}</p>
+                <p className="text-text-dark mb-3 font-hebrew">{post.node.frontmatter.description}</p>
                 <div className="flex items-center justify-between">
-                  <p className="text-sm text-text-dark font-huninn">{post.node.frontmatter.date}</p>
+                  <p className="text-sm text-text-dark font-hebrew">{post.node.frontmatter.date}</p>
                   {post.node.frontmatter.tags && (
                     <div className="flex gap-2">
                       {post.node.frontmatter.tags.map((tag, tagIndex) => (
@@ -57,7 +57,7 @@ const TopPostsPageHe = ({ data }) => {
             ))}
           </div>
         ) : (
-          <p className="text-text-dark font-huninn">אין עדיין פוסטים מובילים.</p>
+          <p className="text-text-dark font-hebrew">אין עדיין פוסטים מובילים.</p>
         )}
       </div>
     </Layout>
