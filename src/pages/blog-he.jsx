@@ -24,7 +24,7 @@ const BlogPageHe = ({ data }) => {
       />
       <div className="mt-16 max-w-4xl mx-auto px-4 rtl" dir="rtl">
         <h1 className="text-4xl font-bold text-terracotta mb-6 animate-fade-in-up font-play">כל הפוסטים</h1>
-        <p className="text-lg text-sage mb-4 animate-fade-in-up font-huninn">
+        <p className="text-lg text-sage mb-4 animate-fade-in-up font-heebo">
         </p>
         
         {posts.length > 0 ? (
@@ -35,17 +35,17 @@ const BlogPageHe = ({ data }) => {
                 className="border-b border-blush pb-6 post-card animate-fade-in-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <h2 className="text-2xl font-bold text-terracotta mb-2 font-lora">
-                  <Link 
-                    to={post.node.fields?.slug || '#'} 
+                <h2 className="text-2xl font-bold text-terracotta mb-2 font-heebo">
+                  <Link
+                    to={post.node.fields?.slug || '#'}
                     className="animated-link hover:text-sage transition-colors"
                   >
                     {post.node.frontmatter.title}
                   </Link>
                 </h2>
-                <p className="text-text-dark mb-3 font-huninn">{post.node.frontmatter.description}</p>
+                <p className="text-text-dark mb-3 font-heebo">{post.node.frontmatter.description}</p>
                 <div className="flex items-center justify-between">
-                  <p className="text-sm text-text-dark font-huninn">
+                  <p className="text-sm text-text-dark font-heebo">
                     {post.node.frontmatter.date}
                   </p>
                   {post.node.frontmatter.tags && (
@@ -65,7 +65,7 @@ const BlogPageHe = ({ data }) => {
             ))}
           </div>
         ) : (
-          <p className="text-text-dark animate-fade-in font-huninn">עוד אין פוסטים.</p>
+          <p className="text-text-dark animate-fade-in font-heebo">עוד אין פוסטים.</p>
         )}
       </div>
     </Layout>
