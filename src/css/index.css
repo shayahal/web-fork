@@ -50,6 +50,11 @@
     font-family: 'Lora', 'Segoe UI', 'Tahoma', 'Arial', serif;
   }
 
+  /* Use Hebrew font for RTL blog content */
+  .rtl .blog-content {
+    font-family: 'M PLUS Rounded 1c', 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
+  }
+
   .blog-content a {
     @apply text-black;
     @apply underline;
@@ -127,6 +132,15 @@
   /* About section specific styling */
   .prose p {
     @apply mb-2;
+  }
+
+  /* Use Hebrew font for RTL prose content */
+  .rtl .prose {
+    font-family: 'M PLUS Rounded 1c', 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
+  }
+
+  .rtl .prose * {
+    font-family: 'M PLUS Rounded 1c', 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
   }
 }
 
