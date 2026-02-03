@@ -1,1 +1,1 @@
-I'm Shay [https://www.linkedin.com/in/shay-yahal/], originally built this website to store my cocktails recipes. Now it contains many random stuff I'm thinking on - AI, security, math, tech in general, travel, etc. Enjoy!
+I'm [Shay](https://www.linkedin.com/in/shay-yahal/), originally built this website to store my cocktails recipes. Now it contains many random stuff I'm thinking on - AI, security, math, tech in general, travel, etc. Enjoy!
