@@ -27,7 +27,7 @@ const FruitsPage = ({ data }) => {
           <div className="flex-1">
             <div className="prose prose-lg max-w-none">
               <p className="text-text-dark font-lora mb-4">
-                the true inspiration for this website, <a href="https://web.stanford.edu/~cm5/fruit.html" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">Ciprian Manolescu</a>
+                The true inspiration for this website, <a href="https://web.stanford.edu/~cm5/fruit.html" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">Ciprian Manolescu</a>
               </p>
               <p className="text-text-dark font-lora mb-4">
                 my favourite fruits:
