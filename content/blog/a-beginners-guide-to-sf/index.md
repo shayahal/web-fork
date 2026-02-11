@@ -1,7 +1,7 @@
 ---
 title: "מדריך למתחילים לסן פרנסיסקו"
 date: '2026-02-11'
-description: 'מעבר למגדלי הטכנולוגיה'
+description: 'לא רק AI'
 direction: rtl
 language: 'he'
 tags: ['san-francisco', 'travel', 'guide']
