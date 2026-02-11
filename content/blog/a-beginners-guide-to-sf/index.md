@@ -15,7 +15,7 @@ tags: ['san-francisco', 'travel', 'guide']
 
 [Tupper & Reed](https://maps.google.com/maps?q=Tupper+Reed+Berkeley): בר קוקטיילים מפתיע בברקלי. ברמן מקסיקני שמשלב מרכיבים ייחודיים מדרום אמריקה.
 
-[Smuggler's Cove](https://maps.google.com/maps?q=Smuggler%27s+Cove+San+Francisco): בר טיקי מפורסם. שימו לב, יש בקוקטיילים יותר אלכוהול ממה שאתם מצפיםץ...
+[Smuggler's Cove](https://maps.google.com/maps?q=Smuggler%27s+Cove+San+Francisco): בר טיקי מפורסם. שימו לב, יש בקוקטיילים יותר אלכוהול ממה שאתם מצפים.
 
 ---
 
