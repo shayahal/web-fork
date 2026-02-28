@@ -1,7 +1,7 @@
 {
   "restaurants": [
     {
-      "id": 1,
+      "id": "incomum-sintra",
       "name": "Incomum",
       "location": "Sintra",
       "coordinates": {
@@ -12,7 +12,7 @@
       "url": "https://www.incomum.pt"
     },
     {
-      "id": 2,
+      "id": "red-frog-lisbon",
       "name": "Red Frog",
       "location": "Lisbon",
       "coordinates": {
@@ -23,7 +23,7 @@
       "url": "https://www.redfrogtavern.com"
     },
     {
-      "id": 3,
+      "id": "oficio-lisbon",
       "name": "Ofício",
       "location": "Lisbon",
       "coordinates": {
@@ -34,7 +34,7 @@
       "url": "https://www.oficio.pt"
     },
     {
-      "id": 4,
+      "id": "lost-in-lisbon",
       "name": "Lost In",
       "location": "Lisbon",
       "coordinates": {
@@ -45,7 +45,7 @@
       "url": "https://www.lostinlisbon.pt"
     },
     {
-      "id": 5,
+      "id": "o-velho-eurico-lisbon",
       "name": "O Velho Eurico",
       "location": "Lisbon",
       "coordinates": {
@@ -56,7 +56,7 @@
       "url": "https://www.ovelhoeurico.com"
     },
     {
-      "id": 6,
+      "id": "solar-do-bacalhau-coimbra",
       "name": "Solar do Bacalhau",
       "location": "Coimbra",
       "coordinates": {
@@ -67,7 +67,7 @@
       "url": "https://thefork.co.uk/restaurant/solar-do-bacalhau-r64972/?cc=15114-9ef"
     },
     {
-      "id": 7,
+      "id": "castas-e-pratos-pesos-da-regua",
       "name": "Castas e Pratos",
       "location": "Pesos da Régua",
       "coordinates": {
@@ -78,7 +78,7 @@
       "url": "https://www.castasepratos.com"
     },
     {
-      "id": 8,
+      "id": "mito-porto",
       "name": "Mito",
       "location": "Porto",
       "coordinates": {
@@ -89,7 +89,7 @@
       "url": "https://www.mitorestaurant.pt"
     },
     {
-      "id": 9,
+      "id": "cantinho-do-avillez-porto",
       "name": "Cantinho do Avillez",
       "location": "Porto",
       "coordinates": {
@@ -100,7 +100,7 @@
       "url": "https://www.cantinhodavillez.pt"
     },
     {
-      "id": 10,
+      "id": "tapabento-porto",
       "name": "Tapabento",
       "location": "Porto",
       "coordinates": {
@@ -111,7 +111,7 @@
       "url": "https://www.tapabento.pt"
     },
     {
-      "id": 11,
+      "id": "gruta-porto",
       "name": "Gruta",
       "location": "Porto",
       "coordinates": {
