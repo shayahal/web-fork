@@ -1,0 +1,125 @@
+{
+  "restaurants": [
+    {
+      "id": 1,
+      "name": "Incomum",
+      "location": "Sintra",
+      "coordinates": {
+        "lat": 38.7967,
+        "lng": -9.3919
+      },
+      "note": "עסקית צהרים ממש מעולה ומשתלמת. יש להם גם בית קפה צמוד",
+      "url": "https://www.incomum.pt"
+    },
+    {
+      "id": 2,
+      "name": "Red Frog",
+      "location": "Lisbon",
+      "coordinates": {
+        "lat": 38.7223,
+        "lng": -9.1393
+      },
+      "note": "בר קוקטיילים ממש סודי, בתוך בר אחר. קוקטיילים מצוינים וחווייה כיפית",
+      "url": "https://www.redfrogtavern.com"
+    },
+    {
+      "id": 3,
+      "name": "Ofício",
+      "location": "Lisbon",
+      "coordinates": {
+        "lat": 38.7096,
+        "lng": -9.1455
+      },
+      "note": "אחת המסעדות הטובות של הטיול - אוכל פורטוגזי מודרני ומעניין מאוד. קינוחים מדהימים (במיוחד הקפה)",
+      "url": "https://www.oficio.pt"
+    },
+    {
+      "id": 4,
+      "name": "Lost In",
+      "location": "Lisbon",
+      "coordinates": {
+        "lat": 38.6867,
+        "lng": -9.1773
+      },
+      "note": "לא מרגש בכלל. הלכנו לראות שקיעה בלי לקלוט שהיא בכלל בצד השני",
+      "url": "https://www.lostinlisbon.pt"
+    },
+    {
+      "id": 5,
+      "name": "O Velho Eurico",
+      "location": "Lisbon",
+      "coordinates": {
+        "lat": 38.7158,
+        "lng": -9.1358
+      },
+      "note": "מסעדה של מקומיים, אוכל טעים מאוד, שירות לא משהו",
+      "url": "https://www.ovelhoeurico.com"
+    },
+    {
+      "id": 6,
+      "name": "Solar do Bacalhau",
+      "location": "Coimbra",
+      "coordinates": {
+        "lat": 40.2838,
+        "lng": -8.4953
+      },
+      "note": "מוסד מקומי של דגים, מקום עצום. היה בסדר בסה״כ, אבל לא איזו המלצה חמה - בעיקר כי כרגיל דג הקוד (בקלה) לא היה לנו טעים",
+      "url": "https://thefork.co.uk/restaurant/solar-do-bacalhau-r64972/?cc=15114-9ef"
+    },
+    {
+      "id": 7,
+      "name": "Castas e Pratos",
+      "location": "Pesos da Régua",
+      "coordinates": {
+        "lat": 41.1637,
+        "lng": -7.7897
+      },
+      "note": "מסעדה מדהימה! מהאהובות בטיול. שירות מעולה, מבחר יין משגע ואוכל פשוט מצוין. זכו לשבחים - סטייק אנגוס, קינוחים מיוחדים מאוד!",
+      "url": "https://www.castasepratos.com"
+    },
+    {
+      "id": 8,
+      "name": "Mito",
+      "location": "Porto",
+      "coordinates": {
+        "lat": 41.1629,
+        "lng": -8.6291
+      },
+      "note": "מקום סופר מתוק, חזרנו אליו לארוחת צהרים. אוכל מודרני ומצוין, כולל קינוחים מעולים",
+      "url": "https://www.mitorestaurant.pt"
+    },
+    {
+      "id": 9,
+      "name": "Cantinho do Avillez",
+      "location": "Porto",
+      "coordinates": {
+        "lat": 41.1625,
+        "lng": -8.6245
+      },
+      "note": "מקום מעולה! מהאהובות בטיול. תפריט צהרים מעולה, וכלל את אחת המנות המנצחות של הטיול - עוף תאילנדי מדהים",
+      "url": "https://www.cantinhodavillez.pt"
+    },
+    {
+      "id": 10,
+      "name": "Tapabento",
+      "location": "Porto",
+      "coordinates": {
+        "lat": 41.1608,
+        "lng": -8.6272
+      },
+      "note": "מסעדת טאפאס ספרדית-פורטוגזית מדליקה. באנו לא רעבים, והיה כל כך טעים שהזמנו עוד תוך כדי. אוכל פשוט, עשוי מצוין",
+      "url": "https://www.tapabento.pt"
+    },
+    {
+      "id": 11,
+      "name": "Gruta",
+      "location": "Porto",
+      "coordinates": {
+        "lat": 41.1612,
+        "lng": -8.6268
+      },
+      "note": "מסעדה חמודה משלבת מטבח פורטוגזי וברזילאי, אוכל מצוין וטעמים מעניינים. ריזוטו סלק מעולה",
+      "url": "https://www.gruta-restaurant.pt"
+    }
+  ]
+}
