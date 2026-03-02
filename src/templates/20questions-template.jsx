@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import Layout from '../components/layout';
 import Header from '../components/header';
@@ -27,6 +27,7 @@ const extractHTMLParts = (fullHTML) => {
 
 const AnalysisTemplate = ({ language = 'en', htmlContent, metadata }) => {
   const containerRef = useRef(null);
+  const [isClient, setIsClient] = useState(false);
   const alternateUrl = ALTERNATE_URLS[language] || '/20questions-en';
 
   const titles = {
@@ -49,19 +50,33 @@ const AnalysisTemplate = ({ language = 'en', htmlContent, metadata }) => {
     </div>
   ` : '';
 
+  // Mark as client-side only after first mount
   useEffect(() => {
-    // Execute the embedded JavaScript after content renders
-    if (containerRef.current && script && htmlContent) {
+    setIsClient(true);
+  }, []);
+
+  // Execute embedded JavaScript after hydration
+  useEffect(() => {
+    if (!isClient || !containerRef.current || !script || !htmlContent) {
+      return;
+    }
+
+    // Wait a bit longer to ensure all hydration is done
+    const timer = setTimeout(() => {
       try {
-        // Create a function with the script code and execute it
-        // This gives the script access to DOM elements and global scope
+        // Execute the script in page context
         const fn = new Function(script);
         fn();
       } catch (e) {
-        console.warn('Script execution error in 20questions:', e);
+        // Log only non-socket-related errors
+        if (!e?.message?.includes?.('socket') && !e?.message?.includes?.('emit')) {
+          console.debug('20questions script note:', e?.message);
+        }
       }
-    }
-  }, [script, bodyContent, htmlContent]);
+    }, 200);
+
+    return () => clearTimeout(timer);
+  }, [isClient, script, htmlContent]);
 
   if (!htmlContent) {
     return (
