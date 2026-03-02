@@ -1,7 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import Layout from '../components/layout';
-import Header from '../components/header';
 import SEO from '../components/seo';
 
 const ALTERNATE_URLS = {
@@ -80,28 +78,23 @@ const AnalysisTemplate = ({ language = 'en', htmlContent, metadata }) => {
 
   if (!htmlContent) {
     return (
-      <Layout>
+      <>
         <SEO title={titles[language]} description="Analysis not available" />
         <div className="px-4 py-8 text-center">
           <p>Content not available</p>
         </div>
-      </Layout>
+      </>
     );
   }
 
   return (
-    <Layout>
+    <>
       <SEO
         title={titles[language]}
         description={descriptions[language]}
       />
-      <Header
-        metadata={metadata}
-        currentLanguage={language}
-        alternateUrl={alternateUrl}
-      />
       <div ref={containerRef} dangerouslySetInnerHTML={{ __html: contentWithStyles }} />
-    </Layout>
+    </>
   );
 };
 
