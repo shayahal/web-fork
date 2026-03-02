@@ -804,10 +804,10 @@ function buildPie(svgId, legendId, data) {
     circle.setAttribute('fill', 'none');
     circle.setAttribute('stroke', col);
     circle.setAttribute('stroke-width', STROKE);
-    circle.setAttribute('stroke-dasharray', \`0 \${CIRC}\`);
+    circle.setAttribute('stroke-dasharray', '0 ' + CIRC);
     circle.setAttribute('stroke-dashoffset', -(offset * CIRC));
-    circle.style.transition = \`stroke-dasharray 1.3s cubic-bezier(0.4,0,0.2,1) \${i*0.08}s\`;
-    circle.setAttribute('transform', \`rotate(-90 \${CX} \${CY})\`);
+    circle.style.transition = 'stroke-dasharray 1.3s cubic-bezier(0.4,0,0.2,1) ' + (i*0.08) + 's';
+    circle.setAttribute('transform', 'rotate(-90 ' + CX + ' ' + CY + ')');
     circle.dataset.dash = dash;
     svg.appendChild(circle);
     offset += pct;
@@ -815,10 +815,7 @@ function buildPie(svgId, legendId, data) {
     // legend
     const item = document.createElement('div');
     item.className = 'legend-item';
-    item.innerHTML = \`
-      <div class="legend-dot" style="background:\${col}"></div>
-      <span class="legend-name">\${d.label}</span>
-      <span class="legend-pct">\${d.v}%</span>\`;
+    item.innerHTML = '<div class="legend-dot" style="background:' + col + '"></div><span class="legend-name">' + d.label + '</span><span class="legend-pct">' + d.v + '%</span>';
     leg.appendChild(item);
   });
 }
@@ -865,7 +862,7 @@ const io = new IntersectionObserver((entries) => {
     // pie slices inside this section
     el.querySelectorAll('circle[data-dash]').forEach(c => {
       setTimeout(() => {
-        c.setAttribute('stroke-dasharray', \`\${c.dataset.dash} \${CIRC}\`);
+        c.setAttribute('stroke-dasharray', c.dataset.dash + ' ' + CIRC);
       }, 150);
     });
 
@@ -877,4 +874,4 @@ document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
 </script>
 </body>
 </html>
-\`;
+`;
