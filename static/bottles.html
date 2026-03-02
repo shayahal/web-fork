@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ארון המשקאות שלי - My Bottles Cabinet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            background: #f7f4ea;
+            color: #4b5563;
+            line-height: 1.6;
+            direction: ltr;
+        }
+
+        .wrapper {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 2rem;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+
+        /* LEFT SIDE: BOTTLES GRID */
+        .cabinet-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #e5d9c9;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            color: #111827;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .header p {
+            font-size: 0.95rem;
+            color: #6b7280;
+        }
+
+        /* INTRO STORY */
+        .intro-story {
+            background: #ebe9d1;
+            border-left: 3px solid #bca88d;
+            padding: 1.5rem;
+            margin-bottom: 2.5rem;
+            border-radius: 4px;
+        }
+
+        .intro-story p {
+            margin-bottom: 1rem;
+            color: #4b5563;
+            line-height: 1.7;
+        }
+
+        .intro-story p:last-child {
+            margin-bottom: 0;
+        }
+
+        .intro-story strong {
+            color: #111827;
+        }
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .category-card {
+            background: white;
+            padding: 1rem;
+            border-radius: 6px;
+            border-left: 3px solid #bca88d;
+        }
+
+        .category-card strong {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #111827;
+            font-size: 0.95rem;
+        }
+
+        .category-card p {
+            font-size: 0.85rem;
+            color: #6b7280;
+            line-height: 1.5;
+        }
+
+        .spirit-group {
+            margin-bottom: 3rem;
+        }
+
+        .group-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 0.8rem;
+            padding-left: 0.5rem;
+            border-left: 3px solid #bca88d;
+        }
+
+        .spirit-context {
+            font-size: 0.9rem;
+            color: #6b7280;
+            margin-bottom: 1.2rem;
+            padding: 1rem;
+            background: rgba(235, 233, 209, 0.5);
+            border-left: 2px solid #d4a574;
+            border-radius: 3px;
+            line-height: 1.6;
+        }
+
+        .spirit-context strong {
+            color: #111827;
+        }
+
+        .bottles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            gap: 1rem;
+        }
+
+        /* BOTTLE CARD */
+        .bottle {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            padding: 0.8rem;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+
+        .bottle:hover {
+            background: #ebe9d1;
+            border-color: #bca88d;
+        }
+
+        .bottle-shape {
+            width: 32px;
+            height: 85px;
+            background: linear-gradient(to right, rgba(0,0,0,0.08), rgba(0,0,0,0));
+            border-radius: 2px 2px 10px 10px;
+            margin-bottom: 0.6rem;
+            transition: all 0.2s ease;
+        }
+
+        /* COLOR CODING */
+        .bottle[data-category="gin"] .bottle-shape {
+            background: linear-gradient(135deg, #c4d96f 0%, #a8c84f 100%);
+        }
+
+        .bottle[data-category="rum"] .bottle-shape {
+            background: linear-gradient(135deg, #d4a574 0%, #b8855a 100%);
+        }
+
+        .bottle[data-category="whiskey"] .bottle-shape {
+            background: linear-gradient(135deg, #a0826d 0%, #845d53 100%);
+        }
+
+        .bottle[data-category="tequila"] .bottle-shape {
+            background: linear-gradient(135deg, #c4d96f 0%, #a8c84f 100%);
+        }
+
+        .bottle[data-category="liqueur"] .bottle-shape {
+            background: linear-gradient(135deg, #f7b731 0%, #d4a574 100%);
+        }
+
+        .bottle[data-category="other"] .bottle-shape {
+            background: linear-gradient(135deg, #9b6b94 0%, #7a5577 100%);
+        }
+
+        .bottle-label {
+            font-size: 0.65rem;
+            font-weight: 500;
+            text-align: center;
+            width: 100%;
+            word-break: break-word;
+            line-height: 1.2;
+            color: #374151;
+        }
+
+        .bottle.active {
+            background: #e5dccf;
+            border-color: #bca88d;
+        }
+
+        /* RIGHT SIDE: DETAILS PANEL */
+        .side-panel {
+            background: white;
+            border: 1px solid #e5d9c9;
+            border-radius: 8px;
+            padding: 1.5rem;
+            height: fit-content;
+            position: sticky;
+            top: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .panel-intro {
+            display: none;
+            color: #6b7280;
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .panel-intro.visible {
+            display: block;
+        }
+
+        .panel-content {
+            display: none;
+        }
+
+        .panel-content.visible {
+            display: block;
+        }
+
+        .bottle-name {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 0.8rem;
+        }
+
+        .bottle-tier {
+            display: inline-block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            background: #f3f0e8;
+            color: #6b7280;
+            padding: 0.3rem 0.6rem;
+            border-radius: 3px;
+            margin-bottom: 1.2rem;
+            font-weight: 600;
+        }
+
+        .bottle-tier.work {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .bottle-tier.secondary {
+            background: #e0e7ff;
+            color: #3730a3;
+        }
+
+        .bottle-tier.impression {
+            background: #f3e8ff;
+            color: #6b21a8;
+        }
+
+        .detail-section {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #f3f0e8;
+        }
+
+        .detail-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .detail-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: #9ca3af;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .detail-content {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #4b5563;
+        }
+
+        .price-badge {
+            background: #f0e8dd;
+            padding: 0.5rem 0.8rem;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #111827;
+            display: inline-block;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1200px) {
+            .wrapper {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .side-panel {
+                position: static;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .wrapper {
+                padding: 1rem;
+            }
+
+            .header h1 {
+                font-size: 1.5rem;
+            }
+
+            .bottles-grid {
+                grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+                gap: 0.8rem;
+            }
+
+            .bottle {
+                padding: 0.6rem;
+            }
+
+            .side-panel {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- LEFT: BOTTLES CABINET -->
+        <div class="cabinet-section">
+            <div class="header">
+                <h1>ארון המשקאות שלי</h1>
+                <p>My Bottles Cabinet — Click any bottle to see details</p>
+            </div>
+
+            <!-- INTRO STORY -->
+            <div class="intro-story">
+                <p><strong>The most important thing about building a spirits cabinet is that it takes time—a lot of time.</strong> Each cocktail recipe requires 1-2 different types of spirits, liqueurs, syrups, bitters, and more. After years of building, I can make about 80% of the recipes I see.</p>
+                <p>I've organized my collection into three clear categories:</p>
+                <div class="categories">
+                    <div class="category-card">
+                        <strong>🏆 Work Bottles</strong>
+                        <p>Bottles I use frequently with high value-for-money</p>
+                    </div>
+                    <div class="category-card">
+                        <strong>◆ Secondary Circle</strong>
+                        <p>Special liqueurs and syrups that upgrade specific cocktails</p>
+                    </div>
+                    <div class="category-card">
+                        <strong>🌟 Impression Bottles</strong>
+                        <p>Collectibles I use in cocktails, not just decoration</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GIN -->
+            <div class="spirit-group">
+                <div class="group-title">🌿 Gin</div>
+                <div class="spirit-context">The dominant flavor in gin comes from juniper berries. Different gins vary dramatically based on botanicals used. Almost always look for <strong>"London dry gin"</strong>—the style that dominates the cocktail world.</div>
+                <div class="bottles-grid">
+                    <div class="bottle" data-category="gin" data-name="Tanqueray" data-tier="work" data-price="~110 ₪" data-desc="The world's largest gin brand. Consistently available and excellent value. A reliable choice for any gin cocktail.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Tanqueray</div>
+                    </div>
+                    <div class="bottle" data-category="gin" data-name="Bombay Sapphire" data-tier="" data-price="~110 ₪" data-desc="Often used in cocktail bars. Excellent value for money. A perfect step up from entry-level gins.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Bombay</div>
+                    </div>
+                    <div class="bottle" data-category="gin" data-name="Beefeater" data-tier="" data-price="~90 ₪" data-desc="The cheapest quality gin that makes great cocktails.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Beefeater</div>
+                    </div>
+                    <div class="bottle" data-category="gin" data-name="Plymouth" data-tier="" data-price="~140 ₪" data-desc="A different type of gin. Slightly smoother and sweeter. Perfect for sour-style cocktails.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Plymouth</div>
+                    </div>
+                    <div class="bottle" data-category="gin" data-name="Martin Miller's" data-tier="secondary" data-price="~140 ₪" data-desc="One of my personal favorites. More herbal and citrusy than standard London dry gins. Perfect for when you want to really taste the gin.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">M Miller's</div>
+                    </div>
+                    <div class="bottle" data-category="gin" data-name="Roku" data-tier="" data-price="~150 ₪" data-desc="Japanese gin with yuzu and jasmine. A special collectible showing gin's global reach.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Roku</div>
+                    </div>
+                    <div class="bottle" data-category="gin" data-name="Ki-No-Bi Gin" data-tier="impression" data-price="~150 ₪" data-desc="Japanese gin with yuzu and jasmine. Found in Japan, then discovered it locally. A beautiful example of gin's diversity.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Ki-No-Bi</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RUM -->
+            <div class="spirit-group">
+                <div class="group-title">🌴 Rum</div>
+                <div class="spirit-context">Now my most-used spirit. Made from molasses, a byproduct of sugar production—a drink of the poor that became royal. <strong>Rum style is defined by country of origin.</strong> Each region makes rum in a distinct style.</div>
+                <div class="bottles-grid">
+                    <div class="bottle" data-category="rum" data-name="Plantation 3 Étoiles" data-tier="work" data-price="~110 ₪" data-desc="A blend of different rums with complex, interesting flavors. Truly excellent for every use. The rum I reach for most often.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Plantation 3</div>
+                    </div>
+                    <div class="bottle" data-category="rum" data-name="Havana Club" data-tier="" data-price="~110 ₪" data-desc="Cuban rum. Refined and elegant. Excellent quality at great price.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Havana</div>
+                    </div>
+                    <div class="bottle" data-category="rum" data-name="El Dorado 3" data-tier="" data-price="~110 ₪" data-desc="Delicious and excellent value. A workhorse rum from Guyana.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">El Dorado 3</div>
+                    </div>
+                    <div class="bottle" data-category="rum" data-name="Bacardi" data-tier="" data-price="~80 ₪" data-desc="The world's most-sold rum from Puerto Rico. Slightly aggressive in taste but excellent for Daiquiris.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Bacardi</div>
+                    </div>
+                    <div class="bottle" data-category="rum" data-name="Veritas" data-tier="" data-price="~200+ ₪" data-desc="For advanced palates. Expensive but excellent.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Veritas</div>
+                    </div>
+                    <div class="bottle" data-category="rum" data-name="Appleton Signature" data-tier="secondary" data-price="~120 ₪" data-desc="Really excellent for cocktails. Interesting flavors without overwhelming. Great price. Made by Joy Spence, the first female master blender in the industry.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Appleton</div>
+                    </div>
+                    <div class="bottle" data-category="rum" data-name="Smith & Cross" data-tier="secondary" data-price="~140 ₪" data-desc="Much more complex and robust. Use sparingly in place of regular aged rum—it upgrades cocktails dramatically.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Smith & Cross</div>
+                    </div>
+                    <div class="bottle" data-category="rum" data-name="El Dorado 5" data-tier="" data-price="~120 ₪" data-desc="Light and pleasant for cocktails. Hard to find but excellent VFM when available.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">El Dorado 5</div>
+                    </div>
+                    <div class="bottle" data-category="rum" data-name="Rhum J.M VSOP" data-tier="impression" data-price="~230 ₪" data-desc="An agricole rum from Martinique. I've had this for years and absolutely love it. Shows rum's incredible diversity beyond white rums.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Rhum J.M</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WHISKEY -->
+            <div class="spirit-group">
+                <div class="group-title">🥃 Whiskey</div>
+                <div class="spirit-context">Many types of whiskey exist, with differences from ingredients, origin, and production method. I'm definitely a <strong>bourbon person</strong>—it's smoother and more approachable than other types, made primarily from corn.</div>
+                <div class="bottles-grid">
+                    <div class="bottle" data-category="whiskey" data-name="Buffalo Trace" data-tier="work" data-price="~150 ₪" data-desc="American bourbon. Sweet and smooth—a very pleasant gateway into the world of whiskey. Excellent in many cocktails.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Buffalo Trace</div>
+                    </div>
+                    <div class="bottle" data-category="whiskey" data-name="Wild Turkey 101" data-tier="" data-price="~110 ₪" data-desc="Works excellently in cocktails. Robust and flavorful bourbon.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">WT 101</div>
+                    </div>
+                    <div class="bottle" data-category="whiskey" data-name="Wild Turkey 81" data-tier="" data-price="~90 ₪" data-desc="Simpler but still good. Works well in cocktails.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">WT 81</div>
+                    </div>
+                    <div class="bottle" data-category="whiskey" data-name="Bullet" data-tier="" data-price="~80 ₪" data-desc="Affordable bourbon that does the job. Entry-level quality.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Bullet</div>
+                    </div>
+                    <div class="bottle" data-category="whiskey" data-name="Elijah Craig Small Batch" data-tier="secondary" data-price="~200 ₪" data-desc="So far has made the best cocktails I've ever prepared. A premium bourbon that creates exceptional cocktails. Worth every penny.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Elijah Craig</div>
+                    </div>
+                    <div class="bottle" data-category="whiskey" data-name="Monkey Shoulder" data-tier="secondary" data-price="~150 ₪" data-desc="Scottish blend. Smooth with interesting flavor and slight smokiness. Shows whiskey's diversity beyond bourbon.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Monkey</div>
+                    </div>
+                    <div class="bottle" data-category="whiskey" data-name="Naked Grouse" data-tier="" data-price="~150 ₪" data-desc="Another excellent Scottish option. Complex and interesting.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Naked Grouse</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TEQUILA & MEZCAL -->
+            <div class="spirit-group">
+                <div class="group-title">🌵 Tequila & Mezcal</div>
+                <div class="spirit-context"><strong>Tequila is a type of mezcal.</strong> Mezcal is made from agave plants. Mezcal production often includes smoking the agave heart, creating smoky flavor. I prefer half tequila, half mezcal in cocktails to avoid overwhelming smokiness.</div>
+                <div class="bottles-grid">
+                    <div class="bottle" data-category="tequila" data-name="Espolòn Blanco" data-tier="work" data-price="~140 ₪" data-desc="Silver (unaged) tequila. Essential for cocktails. Almost always what you use in cocktails rather than aged varieties.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Espolòn</div>
+                    </div>
+                    <div class="bottle" data-category="tequila" data-name="Mezcal Rosa" data-tier="work" data-price="~140 ₪" data-desc="My current mezcal with excellent value. Medium smoke level for balanced cocktails.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Mezcal Rosa</div>
+                    </div>
+                    <div class="bottle" data-category="tequila" data-name="Del Maguey Vida" data-tier="" data-price="~150 ₪" data-desc="Perfect smoke level. Beautiful in cocktails. Hard to find now.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Del Maguey</div>
+                    </div>
+                    <div class="bottle" data-category="tequila" data-name="400 Conejos" data-tier="" data-price="~160 ₪" data-desc="Tried this in cocktails in South America. Fantastic.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">400 Conejos</div>
+                    </div>
+                    <div class="bottle" data-category="tequila" data-name="Montelobos" data-tier="" data-price="~140 ₪" data-desc="Super pleasant and goes down smoothly. Perfect for cocktails.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Montelobos</div>
+                    </div>
+                    <div class="bottle" data-category="tequila" data-name="Ocho Plata" data-tier="" data-price="~140 ₪" data-desc="Premium silver tequila. Excellent value for 500ml bottle.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Ocho Plata</div>
+                    </div>
+                    <div class="bottle" data-category="tequila" data-name="Milagro Silver" data-tier="" data-price="~130 ₪" data-desc="Very good tequila. Reliable choice.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Milagro</div>
+                    </div>
+                    <div class="bottle" data-category="tequila" data-name="Lunazol" data-tier="" data-price="~140 ₪" data-desc="Slightly better than standard options.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Lunazol</div>
+                    </div>
+                    <div class="bottle" data-category="tequila" data-name="Cuervo" data-tier="" data-price="~100 ₪" data-desc="Decent but nothing special. A baseline option.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Cuervo</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LIQUEURS -->
+            <div class="spirit-group">
+                <div class="group-title">🍊 Liqueurs & Essential Spirits</div>
+                <div class="spirit-context">The supporting cast that appears in countless cocktails. These spirits elevate your capabilities dramatically without much complexity. Cointreau and Campari should come early to most home bars.</div>
+                <div class="bottles-grid">
+                    <div class="bottle" data-category="liqueur" data-name="Cointreau" data-tier="work" data-price="~80 ₪" data-desc="Orange liqueur. The most classic choice. Always in my bar. Appears in countless cocktails.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Cointreau</div>
+                    </div>
+                    <div class="bottle" data-category="liqueur" data-name="Campari" data-tier="work" data-price="~100 ₪" data-desc="King of bitters. Mixes with many spirits. Appears in countless classic cocktails. Long shelf life after opening.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Campari</div>
+                    </div>
+                    <div class="bottle" data-category="liqueur" data-name="Aperol" data-tier="" data-price="~90 ₪" data-desc="Lighter and sweeter than Campari. Famous for Aperol Spritz, which makes most of your friends happy.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Aperol</div>
+                    </div>
+                    <div class="bottle" data-category="liqueur" data-name="Vermouth" data-tier="" data-price="~80-120 ₪" data-desc="Three types: red, white, and dry. Fortified and botanicaled wine. Store in fridge after opening—they spoil.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Vermouth</div>
+                    </div>
+                    <div class="bottle" data-category="liqueur" data-name="Green Chartreuse" data-tier="secondary" data-price="~120 ₪" data-desc="Started with a small 200ml bottle to understand how to use it. Now absolutely essential. Complex herbal liqueur with 130 different botanicals.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Green Chart</div>
+                    </div>
+                    <div class="bottle" data-category="liqueur" data-name="Yellow Chartreuse" data-tier="" data-price="~120 ₪" data-desc="Sweeter sibling of Green Chartreuse. Different character, also useful.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Yellow Chart</div>
+                    </div>
+                    <div class="bottle" data-category="liqueur" data-name="Amaro" data-tier="secondary" data-price="~100 ₪" data-desc="Italian herbal liqueur with complex flavors. Elevates specific cocktails beautifully.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Amaro</div>
+                    </div>
+                    <div class="bottle" data-category="liqueur" data-name="Maraschino Liqueur" data-tier="" data-price="~90 ₪" data-desc="Sweet cherry liqueur. Appears in classic cocktails.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Maraschino</div>
+                    </div>
+                    <div class="bottle" data-category="liqueur" data-name="Elder Flower Liqueur" data-tier="" data-price="~100 ₪" data-desc="Floral and delicate. Beautiful in certain cocktails.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Elder Flower</div>
+                    </div>
+                    <div class="bottle" data-category="liqueur" data-name="Angostura Bitters" data-tier="" data-price="~50 ₪" data-desc="The spice of cocktails. Use in drops. Essential for classic drinks.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Angostura</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OTHER SPIRITS -->
+            <div class="spirit-group">
+                <div class="group-title">🍷 Cognac & Other Spirits</div>
+                <div class="spirit-context"><strong>Cognac</strong> is brandy made in the Cognac region with strict production standards—which means quality is almost guaranteed. These are the specialty and collectible bottles that add character to your bar.</div>
+                <div class="bottles-grid">
+                    <div class="bottle" data-category="other" data-name="Hennessy VS" data-tier="work" data-price="~150 ₪" data-desc="A Cognac—brandy made in the Cognac region with strict production standards. Perfect for classic cocktails. Quality almost guaranteed.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Hennessy VS</div>
+                    </div>
+                    <div class="bottle" data-category="other" data-name="Rouskii Standard" data-tier="" data-price="~80 ₪" data-desc="Quality vodka. I use it frequently for making homemade infusions and liqueurs by steeping ingredients in it.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Rouskii</div>
+                    </div>
+                    <div class="bottle" data-category="other" data-name="Veche Vodka" data-tier="impression" data-price="~130 ₪" data-desc="Moldovan vodka. A bottle with a story. I collect these as much for the memories as for the spirit.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Veche</div>
+                    </div>
+                    <div class="bottle" data-category="other" data-name="Pisco" data-tier="" data-price="~120 ₪" data-desc="South American spirit. Fun to use in cocktails. Represents the diversity of spirits around the world.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Pisco</div>
+                    </div>
+                    <div class="bottle" data-category="other" data-name="Pimm's" data-tier="" data-price="~90 ₪" data-desc="British spirit liqueur. Great for refreshing summer cocktails.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Pimm's</div>
+                    </div>
+                    <div class="bottle" data-category="other" data-name="Bénédictine" data-tier="" data-price="~100 ₪" data-desc="French herbal liqueur. Complex and aromatic.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Bénédictine</div>
+                    </div>
+                    <div class="bottle" data-category="other" data-name="Violet Liqueur" data-tier="" data-price="~80 ₪" data-desc="Only used for one specific cocktail: Aviation. Took time to master it, but it's truly wonderful.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Violet</div>
+                    </div>
+                    <div class="bottle" data-category="other" data-name="Akvavit" data-tier="" data-price="~100 ₪" data-desc="Scandinavian spirit, mainly caraway flavor. Not very frequently used, but interesting when you want something different.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Akvavit</div>
+                    </div>
+                    <div class="bottle" data-category="other" data-name="Crème de Cacao" data-tier="" data-price="Homemade" data-desc="I make this myself. Homemade liqueurs can be special and suit your taste perfectly.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Crème Cacao</div>
+                    </div>
+                    <div class="bottle" data-category="other" data-name="Coffee Liqueur" data-tier="" data-price="Homemade" data-desc="Also homemade. Great for coffee-based cocktails and adds personal touch to your collection.">
+                        <div class="bottle-shape"></div>
+                        <div class="bottle-label">Coffee Liqueur</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT: SIDE PANEL -->
+        <div class="side-panel">
+            <div class="panel-intro visible">
+                <p><strong>Click any bottle</strong> to see details, price, and my notes.</p>
+                <p style="margin-top: 1rem; font-size: 0.85rem; color: #9ca3af;">🏆 = My go-to choice<br>💎 = Secondary/premium<br>🌟 = Collectible</p>
+            </div>
+
+            <div class="panel-content"></div>
+        </div>
+    </div>
+
+    <script>
+        const panel = document.querySelector('.side-panel');
+        const panelIntro = document.querySelector('.panel-intro');
+        const panelContent = document.querySelector('.panel-content');
+
+        document.querySelectorAll('.bottle').forEach(bottle => {
+            bottle.addEventListener('click', () => {
+                const name = bottle.dataset.name;
+                const tier = bottle.dataset.tier;
+                const price = bottle.dataset.price;
+                const desc = bottle.dataset.desc;
+
+                document.querySelectorAll('.bottle').forEach(b => b.classList.remove('active'));
+                bottle.classList.add('active');
+
+                panelIntro.classList.remove('visible');
+                panelContent.classList.add('visible');
+
+                let tierBadge = '';
+                if (tier === 'work') tierBadge = '<span class="bottle-tier work">🏆 My Go-To</span>';
+                else if (tier === 'secondary') tierBadge = '<span class="bottle-tier secondary">💎 Secondary</span>';
+                else if (tier === 'impression') tierBadge = '<span class="bottle-tier impression">🌟 Collectible</span>';
+
+                panelContent.innerHTML = `
+                    <div class="bottle-name">${name}</div>
+                    ${tierBadge}
+                    <div class="detail-section">
+                        <div class="detail-label">About</div>
+                        <div class="detail-content">${desc}</div>
+                    </div>
+                    <div class="detail-section">
+                        <div class="detail-label">Price</div>
+                        <div class="price-badge">${price}</div>
+                    </div>
+                `;
+            });
+        });
+    </script>
+</body>
+</html>

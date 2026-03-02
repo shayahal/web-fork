@@ -1,0 +1,311 @@
+.bottles-cabinet {
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.cabinet-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 2rem;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.cabinet-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e5d9c9;
+}
+
+.header h2 {
+  font-size: 2rem;
+  color: #111827;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.header p {
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+
+.intro-story {
+  background: #ebe9d1;
+  border-left: 3px solid #bca88d;
+  padding: 1.5rem;
+  margin-bottom: 2.5rem;
+  border-radius: 4px;
+}
+
+.intro-story p {
+  margin-bottom: 1rem;
+  color: #4b5563;
+  line-height: 1.7;
+}
+
+.intro-story p:last-child {
+  margin-bottom: 0;
+}
+
+.intro-story strong {
+  color: #111827;
+}
+
+.categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.category-card {
+  background: white;
+  padding: 1rem;
+  border-radius: 6px;
+  border-left: 3px solid #bca88d;
+}
+
+.category-card strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #111827;
+  font-size: 0.95rem;
+}
+
+.category-card p {
+  font-size: 0.85rem;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+.spirit-group {
+  margin-bottom: 3rem;
+}
+
+.group-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.8rem;
+  padding-left: 0.5rem;
+  border-left: 3px solid #bca88d;
+}
+
+.spirit-context {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 1.2rem;
+  padding: 1rem;
+  background: rgba(235, 233, 209, 0.5);
+  border-left: 2px solid #d4a574;
+  border-radius: 3px;
+  line-height: 1.6;
+}
+
+.spirit-context strong {
+  color: #111827;
+}
+
+.bottles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 1rem;
+}
+
+.bottle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.8rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.bottle:hover {
+  background: #ebe9d1;
+  border-color: #bca88d;
+}
+
+.bottle-shape {
+  width: 32px;
+  height: 85px;
+  background: linear-gradient(to right, rgba(0,0,0,0.08), rgba(0,0,0,0));
+  border-radius: 2px 2px 10px 10px;
+  margin-bottom: 0.6rem;
+  transition: all 0.2s ease;
+}
+
+.bottle[data-category="gin"] .bottle-shape {
+  background: linear-gradient(135deg, #c4d96f 0%, #a8c84f 100%);
+}
+
+.bottle[data-category="rum"] .bottle-shape {
+  background: linear-gradient(135deg, #d4a574 0%, #b8855a 100%);
+}
+
+.bottle[data-category="whiskey"] .bottle-shape {
+  background: linear-gradient(135deg, #a0826d 0%, #845d53 100%);
+}
+
+.bottle[data-category="tequila"] .bottle-shape {
+  background: linear-gradient(135deg, #c4d96f 0%, #a8c84f 100%);
+}
+
+.bottle[data-category="liqueur"] .bottle-shape {
+  background: linear-gradient(135deg, #f7b731 0%, #d4a574 100%);
+}
+
+.bottle[data-category="other"] .bottle-shape {
+  background: linear-gradient(135deg, #9b6b94 0%, #7a5577 100%);
+}
+
+.bottle-label {
+  font-size: 0.65rem;
+  font-weight: 500;
+  text-align: center;
+  width: 100%;
+  word-break: break-word;
+  line-height: 1.2;
+  color: #374151;
+}
+
+.bottle.active {
+  background: #e5dccf;
+  border-color: #bca88d;
+}
+
+.side-panel {
+  background: white;
+  border: 1px solid #e5d9c9;
+  border-radius: 8px;
+  padding: 1.5rem;
+  height: fit-content;
+  position: sticky;
+  top: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.panel-intro {
+  color: #6b7280;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.panel-content {
+  display: block;
+}
+
+.bottle-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.8rem;
+}
+
+.bottle-tier {
+  display: inline-block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: #f3f0e8;
+  color: #6b7280;
+  padding: 0.3rem 0.6rem;
+  border-radius: 3px;
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+}
+
+.bottle-tier.work {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.bottle-tier.secondary {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
+.bottle-tier.impression {
+  background: #f3e8ff;
+  color: #6b21a8;
+}
+
+.detail-section {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #f3f0e8;
+}
+
+.detail-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.detail-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: #9ca3af;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.detail-content {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+.price-badge {
+  background: #f0e8dd;
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+  font-weight: 600;
+  color: #111827;
+  display: inline-block;
+}
+
+@media (max-width: 1200px) {
+  .cabinet-wrapper {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .side-panel {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .cabinet-wrapper {
+    padding: 1rem;
+  }
+
+  .header h2 {
+    font-size: 1.5rem;
+  }
+
+  .bottles-grid {
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    gap: 0.8rem;
+  }
+
+  .bottle {
+    padding: 0.6rem;
+  }
+
+  .side-panel {
+    order: -1;
+  }
+}
