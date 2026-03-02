@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkweb_fork=self.webpackChunkweb_fork||[]).push([[583],{9556:function(e,t,a){a.r(t);var n=a(6540),r=a(4478),u=a(2774);t.default=e=>{let{data:t}=e;return n.createElement(r.A,{language:"en",htmlContent:u.U,metadata:t.site.siteMetadata})}}}]);
+//# sourceMappingURL=component---src-pages-20-questions-jsx-88d251691e90ff774aa2.js.map
