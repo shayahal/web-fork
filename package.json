@@ -34,7 +34,7 @@
     "leaflet": "^1.9.4",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",
-    "next-mdx-remote": "^5.0.0",
+    "next-mdx-remote": "^6.0.0",
     "postcss": "^8.4.31",
     "prismjs": "^1.29.0",
     "prop-types": "^15.8.1",
