@@ -7,3 +7,5 @@ I originally built this website to store my cocktail recipes. Now it's home to m
 ## Recent Projects
 
 - [20Questions](/20questions) — A comprehensive analysis of the 20 questions by Yoaana Gonen
+- [Now What? Podcast](https://symbol.vc/nowwhat/) — A podcast for young professionals entering Israel's tech sector
+- [Senior-it](https://www.mako.co.il/nexter-news/Article-75518b5b5f2c681027.htm) — Research the differences between men and women's career paths in the Israeli Tech industry
