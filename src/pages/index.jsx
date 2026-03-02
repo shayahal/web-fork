@@ -5,8 +5,6 @@ import Header from '../components/header';
 import Layout from '../components/layout';
 import SectionAbout from '../components/section-about';
 import SectionBlog from '../components/section-blog';
-
-import SectionProjects from '../components/section-projects';
 import SectionAskMe from '../components/section-ask-me';
 import SectionLectures from '../components/section-lectures';
 import SEO from '../components/seo';
@@ -35,7 +33,6 @@ const Index = ({ data }) => {
         alternateUrl="/index-he"
       />
       {aboutContent && <SectionAbout aboutContent={aboutContent} title={sectionTitles.about} />}
-      {projects && projects.length && <SectionProjects projects={projects} title={sectionTitles.projects} />}
       {lectures && lectures.length && <SectionLectures lectures={lectures} title={sectionTitles.talking} />}
       {askMe && askMe.length && <SectionAskMe subjects={askMe} title={sectionTitles.askMe} />}
       {!noBlog && <SectionBlog posts={posts} title={sectionTitles.latestPosts} />}
