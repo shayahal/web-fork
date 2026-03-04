@@ -89,7 +89,7 @@ header {
   border-radius: 99px;
   padding: 6px 16px;
   font-size: 0.72rem;
-  font-family: var(--mono);
+  font-family: var(--sans);
   letter-spacing: 1.5px;
   color: var(--accent1);
   text-transform: uppercase;
@@ -520,7 +520,7 @@ footer a { color: var(--accent1); text-decoration: none; }
   <div class="wrap">
     <div class="chip">מה משותף לבבל, שמעון פרס ואמא שלך?</div>
     <h1>נמאס לך<br>להפסיד ב<span class="hero-accent">20 שאלות</span><br>של הארץ?</h1>
-    <p class="hero-sub">גם לנו. אז החלטנו לקחת את גורלנו בידיים, ולבדוק אחת ולתמיד מה כדאי ללמוד כדי לנצח בשאלון בכבוד (בלי לרמות!). <br>חקרנו כמה מאות שאלונים, וחזרנו עם תובנות שיכולות לעזור לכם להרשים את כולם בשישי הבא (או במקלט השכונתי). הנה הצצה ראשונית לממצאים:</p>
+    <p class="hero-sub">גם לנו. אז החלטנו לקחת את גורלנו בידיים, ולבדוק אחת ולתמיד מה כדאי ללמוד כדי לנצח בשאלון בכבוד (בלי לרמות!). <br>חקרנו כמה מאות שאלונים, וחזרנו עם תובנות שיכולות לעזור לכם להרשים את כולם בשישי הבא. הנה הצצה ראשונית לממצאים:</p>
   </div>
 </header>
 
