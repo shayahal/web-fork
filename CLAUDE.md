@@ -79,3 +79,9 @@ npm link
 - **Custom Scripts**: `add-blogpost.sh` and `publish-post.py` handle content workflow
 - **Frontmatter Fields**: `title`, `date`, `description`, `author`, `tags`
 - **Publishing**: Markdown files automatically become pages in site structure
+
+### Deployment & Verification
+- **Production Deployment**: When pushing to main branch, site automatically deploys to Vercel
+- **Verification**: Always use Vercel MCP to verify successful deployment before confirming the task is complete
+- **Check command**: Use `vercel:logs` skill to view deployment logs and confirm the build succeeded
+- **Expected behavior**: Vercel builds on git push, logs show successful build and deployment URL

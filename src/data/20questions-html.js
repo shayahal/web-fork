@@ -5,7 +5,7 @@ export const analysisHTML = `<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>20 שאלות של הארץ — מחקר</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@300;400;500;700;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -23,7 +23,7 @@ export const analysisHTML = `<!DOCTYPE html>
   --accent4: #34d399;   /* emerald */
   --accent5: #60a5fa;   /* sky */
   --mono: 'DM Mono', monospace;
-  --sans: 'Heebo', sans-serif;
+  --sans: 'Noto Sans Hebrew', sans-serif;
   --radius: 20px;
   --radius-sm: 12px;
 }
@@ -518,9 +518,9 @@ footer a { color: var(--accent1); text-decoration: none; }
 <!-- ════════ HEADER ════════ -->
 <header>
   <div class="wrap">
-    <div class="chip">מחקר נתונים · 20 שאלות של הארץ</div>
+    <div class="chip">מה משותף לבבל, שמעון פרס ואמא שלך?</div>
     <h1>נמאס לך<br>להפסיד ב<span class="hero-accent">20 שאלות</span><br>של הארץ?</h1>
-    <p class="hero-sub">גם לנו. אז החלטנו לנתח את החידון כדי לדעת מה הכי כדאי ללמוד כדי לנצח ולהרשים את כולם בארוחת שישי.</p>
+    <p class="hero-sub">גם לנו. אז החלטנו לקחת את גורלנו בידיים, ולבדוק אחת ולתמיד מה כדאי ללמוד כדי לנצח בשאלון בכבוד (בלי לרמות!). <br>חקרנו כמה מאות שאלונים, וחזרנו עם תובנות שיכולות לעזור לכם להרשים את כולם בשישי הבא (או במקלט השכונתי). הנה הצצה ראשונית לממצאים:</p>
   </div>
 </header>
 
