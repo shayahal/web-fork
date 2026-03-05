@@ -69,6 +69,11 @@ const Header = ({ metadata = {}, noBlog = false, showProfileImage = true, curren
                 Top Posts
               </Link>
             </li>
+            <li className={classes.item}>
+              <Link className={classes.link} to="/now">
+                Now
+              </Link>
+            </li>
           </ul>
           <LanguageToggle 
             currentLanguage={currentLanguage}
