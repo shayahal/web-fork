@@ -11,10 +11,15 @@ const NowPage = ({ data }) => (
     <Header
       metadata={data.site.siteMetadata}
       currentLanguage="en"
+      alternateUrl="/now-he"
     />
     <div className="mt-16 max-w-4xl mx-auto px-4">
       <div className="prose prose-lg max-w-none font-lora text-text-dark animate-fade-in-up">
-        <div dangerouslySetInnerHTML={{ __html: data.file.childMarkdownRemark.html }} />
+        <div
+          dangerouslySetInnerHTML={{
+            __html: data.file.childMarkdownRemark.html,
+          }}
+        />
       </div>
     </div>
   </Layout>
