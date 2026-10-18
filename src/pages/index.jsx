@@ -7,8 +7,15 @@ import SectionAbout from '../components/section-about';
 import SectionBlog from '../components/section-blog';
 import SectionAskMe from '../components/section-ask-me';
 import SectionLectures from '../components/section-lectures';
+import SectionWhereAmI from '../components/section-where-am-i';
+import events from '../../content/subjects/events.json';
 import SEO from '../components/seo';
-import { getSubjectsTalking, getSubjectsAskMe, getSectionTitles, getProjects } from '../utils/subjectsLoader';
+import {
+  getSubjectsTalking,
+  getSubjectsAskMe,
+  getSectionTitles,
+  getProjects,
+} from '../utils/subjectsLoader';
 
 const Index = ({ data }) => {
   const posts = data.allMarkdownRemark.edges;
@@ -17,9 +24,10 @@ const Index = ({ data }) => {
   const lectures = getSubjectsTalking(currentLanguage);
   const askMe = getSubjectsAskMe(currentLanguage);
   const sectionTitles = getSectionTitles(currentLanguage);
-  const aboutContent = data.allAboutMarkdown && data.allAboutMarkdown.edges.length > 0 
-    ? data.allAboutMarkdown.edges[0].node.html 
-    : null;
+  const aboutContent =
+    data.allAboutMarkdown && data.allAboutMarkdown.edges.length > 0
+      ? data.allAboutMarkdown.edges[0].node.html
+      : null;
 
   const noBlog = !posts || !posts.length;
 
@@ -32,10 +40,19 @@ const Index = ({ data }) => {
         currentLanguage="en"
         alternateUrl="/index-he"
       />
-      {aboutContent && <SectionAbout aboutContent={aboutContent} title={sectionTitles.about} />}
-      {lectures && lectures.length && <SectionLectures lectures={lectures} title={sectionTitles.talking} />}
-      {askMe && askMe.length && <SectionAskMe subjects={askMe} title={sectionTitles.askMe} />}
-      {!noBlog && <SectionBlog posts={posts} title={sectionTitles.latestPosts} />}
+      {aboutContent && (
+        <SectionAbout aboutContent={aboutContent} title={sectionTitles.about} />
+      )}
+      <SectionWhereAmI events={events} language="en" />
+      {lectures && lectures.length && (
+        <SectionLectures lectures={lectures} title={sectionTitles.talking} />
+      )}
+      {askMe && askMe.length && (
+        <SectionAskMe subjects={askMe} title={sectionTitles.askMe} />
+      )}
+      {!noBlog && (
+        <SectionBlog posts={posts} title={sectionTitles.latestPosts} />
+      )}
     </Layout>
   );
 };
@@ -67,7 +84,7 @@ export const pageQuery = graphql`
           description
           link
         }
-    }
+      }
     }
     allMarkdownRemark(
       filter: { frontmatter: { language: { eq: "en" } } }
@@ -90,9 +107,7 @@ export const pageQuery = graphql`
       }
     }
     allAboutMarkdown: allMarkdownRemark(
-      filter: { 
-        fileAbsolutePath: { regex: "/about.md$/" }
-      }
+      filter: { fileAbsolutePath: { regex: "/about.md$/" } }
     ) {
       edges {
         node {
