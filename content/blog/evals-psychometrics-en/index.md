@@ -26,7 +26,7 @@ It turned out that this g is one of the strongest psychometric predictors of an 
 
 The gold standard for IQ is the Wechsler intelligence test. Wechsler didn't believe in a single g score, so he built a different kind of test: you sit 1:1 with a certified psychologist who gives you a series of verbal and practical subtests. After 3 mistakes in a subtest you move on to the next one, so the better you are, the longer the test gets.
 
-Fun fact: the goal of the Psychometric exam (Israel's university entrance exam) is to approximate the Wechsler score, with an emphasis on the subtests that predict academic performance. And even though we love to hate it, it's actually a really successful test: the correlation between its score and students' success in their first year is really high, which is exactly what it's supposed to do.
+Fun fact: the goal of the SAT is to approximate the Wechsler score, with an emphasis on the subtests that predict academic performance. And even though we love to hate it, it's actually a really successful test: the correlation between its score and students' success in their first year is really high, which is exactly what it's supposed to do.
 
 So what can test theory teach us about how we treat LLM benchmarks?
 
