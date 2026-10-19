@@ -10,6 +10,8 @@ import SectionBlog from '../components/section-blog';
 import SectionProjects from '../components/section-projects';
 import SectionAskMe from '../components/section-ask-me';
 import SectionLectures from '../components/section-lectures';
+import SectionWhereAmI from '../components/section-where-am-i';
+import events from '../../content/subjects/events.json';
 import SEO from '../components/seo';
 import {
   getSubjectsTalking,
@@ -46,6 +48,7 @@ const Index = ({ data }) => {
       {projects && projects.length && (
         <SectionProjects projects={projects} title={sectionTitles.projects} />
       )}
+      <SectionWhereAmI events={events} language="en" />
       {lectures && lectures.length && (
         <SectionLectures lectures={lectures} title={sectionTitles.talking} />
       )}
