@@ -7,8 +7,6 @@ import SectionAbout from '../components/section-about';
 import SectionBlog from '../components/section-blog';
 import SectionAskMe from '../components/section-ask-me';
 import SectionLectures from '../components/section-lectures';
-import SectionWhereAmI from '../components/section-where-am-i';
-import events from '../../content/subjects/events.json';
 import SEO from '../components/seo';
 import {
   getSubjectsTalking,
@@ -43,7 +41,6 @@ const Index = ({ data }) => {
       {aboutContent && (
         <SectionAbout aboutContent={aboutContent} title={sectionTitles.about} />
       )}
-      <SectionWhereAmI events={events} language="en" />
       {lectures && lectures.length && (
         <SectionLectures lectures={lectures} title={sectionTitles.talking} />
       )}
